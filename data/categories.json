@@ -1,0 +1,7 @@
+[
+  { "id": "rings", "name": "Rings" },
+  { "id": "charms", "name": "Charms Bar" },
+  { "id": "chains", "name": "Chains" },
+  { "id": "earrings", "name": "Earrings" },
+  { "id": "bracelets", "name": "Bracelets" }
+]

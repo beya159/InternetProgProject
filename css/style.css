@@ -1,0 +1,119 @@
+/* Typography - Using a classic serif for the 'Jewelry' feel */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Pushes Nav, Search, and Icons apart */
+    align-items: center;           /* Centers them vertically */
+    padding: 10px 4%;
+    border-bottom: 2px solid #000;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    gap: 20px; /* Adds space between Home, Shop, etc. */
+    align-items: center;
+}
+
+.nav-center {
+    flex-grow: 1; /* Allows the center area to take up available space */
+    display: flex;
+    justify-content: center;
+}
+
+/* Nav Links */
+.nav-left a, .dropbtn {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevents text from wrapping to a second line */
+}
+
+/* Search Bar from your wireframe */
+.search-container {
+    display: flex;
+    border: 1px solid #000;
+    padding: 2px 5px;
+    width: 300px;
+}
+
+#global-search {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.nav-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Icons */
+.nav-right .icon {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+
+:root {
+    --brand-purple: #9D5DC2;
+    --brand-purple-dark: #7b469c; /* A slightly darker version for hover effects */
+    --gold: #D4AF37;
+    --black: #000000;
+    --white: #ffffff;
+    --light-grey: #f4f4f4;
+}
+
+/* 1. Use purple for the Cart Badge (from your nav-right wireframe) */
+#cart-badge {
+    background-color: var(--brand-purple);
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+/* 2. Highlight the active link or hover state in the Nav */
+.nav-left a:hover, .dropbtn:hover {
+    color: var(--brand-purple);
+    transition: 0.3s;
+}
+
+/* 3. The 'Add to Cart' button (from your product card/detail wireframes) */
+.add-to-cart, .hero button, .login-btn {
+    background-color: var(--brand-purple);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.add-to-cart:hover, .hero button:hover {
+    background-color: var(--brand-purple-dark);
+}
+
+/* 4. Use purple for the Search Bar focus */
+.search-container:focus-within {
+    border: 2px solid var(--brand-purple);
+}
+
+/* 5. Heart icon hover (Wishlist) */
+.wishlist-btn:hover {
+    color: var(--brand-purple);
+}
