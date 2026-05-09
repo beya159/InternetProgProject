@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewelry Website</title>
+    <title>Jewelry Website -- Jewelry Deliverable</title>
      <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="main-header">
     <nav class="nav-left">
-        <ul class="menu">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="shop.html">SHOP</a></li>
+    <ul class="menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop.html">SHOP</a></li>
         
-        <div class="dropdown">
-            <button class="dropbtn">CATEGORIES <span class="arrow">▼</span></button>
-            <div class="dropdown-content">
-                <a href="category.html?type=rings">RINGS</a>
-                <a href="category.html?type=necklaces">NECKLACES</a>
-                <a href="category.html?type=earrings">EARRINGS</a>
-                <!-- Add others from your 'categories-(2click).png' wireframe -->
-            </div>
-        </div>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT US</a>
-        </ul>
-    </nav>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">CATEGORIES <span class="arrow">▼</span></a>
+    
+            <ul class="dropdown-content">
+                <li><a href="#" onclick="filterByCategory('chains')">CHAINS</a></li>
+                <li><a href="#" onclick="filterByCategory('bracelets')">BRACELETS</a></li>
+                <li><a href="#" onclick="filterByCategory('rings')">RINGS</a></li>
+                <li><a href="#" onclick="filterByCategory('earrings')">EARRINGS</a></li>
+                <li><a href="#" onclick="filterByCategory('charms')">CHARMS BAR</a></li>
+            </ul>
+</li>
+
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+    </ul>
+</nav>
 
     <div class="nav-center">
         <div class="search-container">
@@ -40,6 +43,15 @@
         <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
     </div>
 </header>
+<main>
+        <div class="hero">
+            <h1>Elegance in Every Detail</h1>
+            <p>Discover our latest handcrafted arrivals.</p>
+        </div>
+
+        <div id="product-grid" class="product-grid">
+            </div>
+    </main>
 <script src="main.js"></script>
 </body>
 </html>
