@@ -1,866 +1,867 @@
 [
-  {
-    "id": 1,
-    "name": "Pearl Gold Ring",
-    "category": "rings",
-    "sku": "RG-PL-001",
-    "availability": "In Stock",
-    "price": 45.00,
-    "color": "gold",
-    "style": "feminine",
-    "description": "A slim gold band with a single white pearl.",
-    "mainImage": "images/products/rings/ring1/main.jpg",
-    "angles": [
-      "images/products/rings/ring1/angle1.jpg",
-      "images/products/rings/ring1/angle2.jpg",
-      "images/products/rings/ring1/angle3.jpg"
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Twist Gold Ring",
-    "category": "rings",
-    "sku": "RG-TW-002",
-    "availability": "In Stock",
-    "price": 35.00,
-    "color": "gold",
-    "style": "feminine",
-    "description": "A simple gold band with a twisted rope design.",
-    "mainImage": "images/products/rings/ring2/main.jpg",
-    "angles": [
-      "images/products/rings/ring2/angle1.jpg",
-      "images/products/rings/ring2/angle2.jpg",
-      "images/products/rings/ring2/angle3.jpg"
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Plain Gold Band",
-    "category": "rings",
-    "sku": "RG-PB-003",
-    "availability": "Low Stock",
-    "price": 30.00,
-    "color": "gold",
-    "style": "feminine",
-    "description": "A classic, smooth polished gold band.",
-    "mainImage": "images/products/rings/ring3/main.jpg",
-    "angles": [
-      "images/products/rings/ring3/angle1.jpg",
-      "images/products/rings/ring3/angle2.jpg",
-      "images/products/rings/ring3/angle3.jpg"
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Crystal Gold Ring",
-    "category": "rings",
-    "sku": "RG-CR-004",
-    "availability": "In Stock",
-    "price": 50.00,
-    "color": "gold",
-    "style": "feminine",
-    "description": "A gold ring with a single round clear crystal.",
-    "mainImage": "images/products/rings/ring4/main.jpg",
-    "angles": [
-      "images/products/rings/ring4/angle1.jpg",
-      "images/products/rings/ring4/angle2.jpg",
-      "images/products/rings/ring4/angle3.jpg"
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Sparkle Stack Ring",
-    "category": "rings",
-    "sku": "RG-SS-005",
-    "availability": "In Stock",
-    "price": 40.00,
-    "color": "gold",
-    "style": "feminine",
-    "description": "A thin gold band lined with tiny crystals.",
-    "mainImage": "images/products/rings/ring5/main.jpg",
-    "angles": [
-      "images/products/rings/ring5/angle1.jpg",
-      "images/products/rings/ring5/angle2.jpg",
-      "images/products/rings/ring5/angle3.jpg"
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Wide Gold Ring",
-    "category": "rings",
-    "sku": "RG-WG-006",
-    "availability": "In Stock",
-    "price": 55.00,
-    "color": "gold",
-    "style": "feminine",
-    "description": "A thick, solid gold statement band.",
-    "mainImage": "images/products/rings/ring6/main.jpg",
-    "angles": [
-      "images/products/rings/ring6/angle1.jpg",
-      "images/products/rings/ring6/angle2.jpg",
-      "images/products/rings/ring6/angle3.jpg"
-    ]
-  },
-  {
-    "id": 7,
-    "name": "Small Silver Crystals",
-    "category": "earrings",
-    "sku": "ER-SS-007",
-    "availability": "In Stock",
-    "price": 25.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Small, classic silver earrings.",
-    "mainImage": "images/products/earrings/earrings1/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings1/angle1.jpg",
-      "images/products/earrings/earrings1/angle2.jpg",
-      "images/products/earrings/earrings1/angle3.jpg"
-    ]
-  },
-  {
-    "id": 8,
-    "name": "Silver Detailed Hoops",
-    "category": "earrings",
-    "sku": "ER-SD-008",
-    "availability": "In Stock",
-    "price": 28.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Small silver hoops with a set of silver rocks on top, making it elegant and original",
-    "mainImage": "images/products/earrings/earrings2/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings2/angle1.jpg",
-      "images/products/earrings/earrings2/angle2.jpg",
-      "images/products/earrings/earrings2/angle3.jpg"
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Gold Jacket",
-    "category": "earrings",
-    "sku": "ER-GJ-009",
-    "availability": "In Stock",
-    "price": 30.00,
-    "color": "gold",
-    "style": "feminine",
-    "description": "Gold jacket with a silver rock.",
-    "mainImage": "images/products/earrings/earrings3/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings3/angle1.jpg",
-      "images/products/earrings/earrings3/angle2.jpg",
-      "images/products/earrings/earrings3/angle3.jpg"
-    ]
-  },
-  {
-    "id": 10,
-    "name": "Silver Twist Huggie",
-    "category": "earrings",
-    "sku": "ER-ST-010",
-    "availability": "Low Stock",
-    "price": 28.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Textured silver hoops with a twist design.",
-    "mainImage": "images/products/earrings/earrings4/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings4/angle1.jpg",
-      "images/products/earrings/earrings4/angle2.jpg",
-      "images/products/earrings/earrings4/angle3.jpg"
-    ]
-  },
-  {
-    "id": 11,
-    "name": "Silver Thunder Earrings",
-    "category": "earrings",
-    "sku": "ER-ST-011",
-    "availability": "In Stock",
-    "price": 35.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Elegant silver earrings with a thunderish shape.",
-    "mainImage": "images/products/earrings/earrings5/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings5/angle1.jpg",
-      "images/products/earrings/earrings5/angle2.jpg",
-      "images/products/earrings/earrings5/angle3.jpg"
-    ]
-  },
-  {
-    "id": 12,
-    "name": "Pearls Drop Earrings",
-    "category": "earrings",
-    "sku": "ER-PD-012",
-    "availability": "In Stock",
-    "price": 40.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Silver drop featuring many different shapes symetrically.",
-    "mainImage": "images/products/earrings/earrings6/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings6/angle1.jpg",
-      "images/products/earrings/earrings6/angle2.jpg",
-      "images/products/earrings/earrings6/angle3.jpg"
-    ]
-  },
-  {
-    "id": 13,
-    "name": "Ruby Heart Studs",
-    "category": "earrings",
-    "sku": "ER-RH-013",
-    "availability": "In Stock",
-    "price": 32.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Small, simple silver studs with a red heart.",
-    "mainImage": "images/products/earrings/earrings7/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings7/angle1.jpg",
-      "images/products/earrings/earrings7/angle2.jpg",
-      "images/products/earrings/earrings7/angle3.jpg"
-    ]
-  },
-  {
-    "id": 14,
-    "name": "Silver Dropping Leafs Studs",
-    "category": "earrings",
-    "sku": "ER-SD-014",
-    "availability": "In Stock",
-    "price": 22.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Tiny, polished silver earrings with a leaf shape, containing pink and purple pearls.",
-    "mainImage": "images/products/earrings/earrings8/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings8/angle1.jpg",
-      "images/products/earrings/earrings8/angle2.jpg",
-      "images/products/earrings/earrings8/angle3.jpg"
-    ]
-  },
-  {
-    "id": 15,
-    "name": "Silver Snowflake Shell",
-    "category": "earrings",
-    "sku": "ER-SS-015",
-    "availability": "In Stock",
-    "price": 38.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "A matching set of silver studs containing a small polished shell and a detail snowflake",
-    "mainImage": "images/products/earrings/earrings9/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings9/angle1.jpg",
-      "images/products/earrings/earrings9/angle2.jpg",
-      "images/products/earrings/earrings9/angle3.jpg"
-    ]
-  },
-  {
-    "id": 16,
-    "name": "Silver Stars Aligned",
-    "category": "earrings",
-    "sku": "ER-SS-016",
-    "availability": "Low Stock",
-    "price": 25.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Aligned set of stars silver stud earrings",
-    "mainImage": "images/products/earrings/earrings10/main.jpg",
-    "angles": [
-      "images/products/earrings/earrings10/angle1.jpg",
-      "images/products/earrings/earrings10/angle2.jpg",
-      "images/products/earrings/earrings10/angle3.jpg"
-    ]
-  },
-  {
-    "id": 17,
-    "name": "Angel Heart Charm",
-    "category": "charms",
-    "sku": "CH-AH-017",
-    "availability": "In Stock",
-    "price": 25.00,
-    "color": "silver",
-    "style": "artistic",
-    "description": "A heart-shaped charm featuring a winged angel child against a sky blue backdrop.",
-    "mainImage": "images/products/charms/charm1/main.jpg",
-    "angles": ["images/products/charms/charm1/angle1.jpg", "images/products/charms/charm1/angle2.jpg", "images/products/charms/charm1/angle3.jpg"]
-  },
-  {
-    "id": 18,
-    "name": "Umbrella Pig Charm",
-    "category": "charms",
-    "sku": "CH-UP-018",
-    "availability": "In Stock",
-    "price": 28.00,
-    "color": "pink",
-    "style": "whimsical",
-    "description": "A whimsical charm of a small pig holding a bright red umbrella.",
-    "mainImage": "images/products/charms/charm2/main.jpg",
-    "angles": ["images/products/charms/charm2/angle1.jpg", "images/products/charms/charm2/angle2.jpg", "images/products/charms/charm2/angle3.jpg"]
-  },
-  {
-    "id": 19,
-    "name": "Silver Fish Charm",
-    "category": "charms",
-    "sku": "CH-SF-019",
-    "availability": "In Stock",
-    "price": 20.00,
-    "color": "silver",
-    "style": "minimalist",
-    "description": "A sleek, polished silver charm in the shape of a fish.",
-    "mainImage": "images/products/charms/charm3/main.jpg",
-    "angles": ["images/products/charms/charm3/angle1.jpg", "images/products/charms/charm3/angle2.jpg", "images/products/charms/charm3/angle3.jpg"]
-  },
-  {
-    "id": 20,
-    "name": "Ladybug Charm",
-    "category": "charms",
-    "sku": "CH-LB-020",
-    "availability": "In Stock",
-    "price": 22.00,
-    "color": "red",
-    "style": "nature",
-    "description": "A vibrant ladybug charm with red wings and black spots.",
-    "mainImage": "images/products/charms/charm4/main.jpg",
-    "angles": ["images/products/charms/charm4/angle1.jpg", "images/products/charms/charm4/angle2.jpg", "images/products/charms/charm4/angle3.jpg"]
-  },
-  {
-    "id": 21,
-    "name": "Heart Card Charm",
-    "category": "charms",
-    "sku": "CH-HC-021",
-    "availability": "Low Stock",
-    "price": 30.00,
-    "color": "multi",
-    "style": "vintage",
-    "description": "A playing card style charm featuring a man holding a gray object.",
-    "mainImage": "images/products/charms/charm5/main.jpg",
-    "angles": ["images/products/charms/charm5/angle1.jpg", "images/products/charms/charm5/angle2.jpg", "images/products/charms/charm5/angle3.jpg"]
-  },
-  {
-    "id": 22,
-    "name": "Puppy Charm",
-    "category": "charms",
-    "sku": "CH-DG-022",
-    "availability": "In Stock",
-    "price": 24.00,
-    "color": "silver",
-    "style": "animal",
-    "description": "A cute, detailed silver charm shaped like a small dog.",
-    "mainImage": "images/products/charms/charm6/main.jpg",
-    "angles": ["images/products/charms/charm6/angle1.jpg", "images/products/charms/charm6/angle2.jpg", "images/products/charms/charm6/angle3.jpg"]
-  },
-  {
-    "id": 23,
-    "name": "Pearl Scorpio Tail",
-    "category": "charms",
-    "sku": "CH-PS-023",
-    "availability": "In Stock",
-    "price": 35.00,
-    "color": "silver",
-    "style": "eccentric",
-    "description": "A unique mix of pearls transitioning into a shell-like scorpio tail.",
-    "mainImage": "images/products/charms/charm7/main.jpg",
-    "angles": ["images/products/charms/charm7/angle1.jpg", "images/products/charms/charm7/angle2.jpg", "images/products/charms/charm7/angle3.jpg"]
-  },
-  {
-    "id": 24,
-    "name": "Gold Heart Lock",
-    "category": "charms",
-    "sku": "CH-HL-024",
-    "availability": "In Stock",
-    "price": 26.00,
-    "color": "gold",
-    "style": "classic",
-    "description": "A classic, romantic heart-shaped padlock in polished gold.",
-    "mainImage": "images/products/charms/charm8/main.jpg",
-    "angles": ["images/products/charms/charm8/angle1.jpg", "images/products/charms/charm8/angle2.jpg", "images/products/charms/charm8/angle3.jpg"]
-  },
-  {
-    "id": 25,
-    "name": "Maple Leaf Charm",
-    "category": "charms",
-    "sku": "CH-ML-025",
-    "availability": "Low Stock",
-    "price": 20.00,
-    "color": "gold",
-    "style": "nature",
-    "description": "A gold-toned charm shaped like a Canadian maple leaf.",
-    "mainImage": "images/products/charms/charm9/main.jpg",
-    "angles": ["images/products/charms/charm9/angle1.jpg", "images/products/charms/charm9/angle2.jpg", "images/products/charms/charm9/angle3.jpg"]
-  },
-  {
-    "id": 26,
-    "name": "Pink Bubble Butterfly",
-    "category": "charms",
-    "sku": "CH-BB-026",
-    "availability": "In Stock",
-    "price": 32.00,
-    "color": "silver",
-    "style": "feminine",
-    "description": "Bubbly light pink wings with a silvery body containing pearl details.",
-    "mainImage": "images/products/charms/charm10/main.jpg",
-    "angles": ["images/products/charms/charm10/angle1.jpg", "images/products/charms/charm10/angle2.jpg", "images/products/charms/charm10/angle3.jpg"]
-  },
-  {
-    "id": 27,
-    "name": "Pearl Bouquet Oval",
-    "category": "charms",
-    "sku": "CH-PB-027",
-    "availability": "In Stock",
-    "price": 28.00,
-    "color": "gold",
-    "style": "vintage",
-    "description": "A gold oval charm featuring a 3D bouquet of pearls and leaves.",
-    "mainImage": "images/products/charms/charm11/main.jpg",
-    "angles": ["images/products/charms/charm11/angle1.jpg", "images/products/charms/charm11/angle2.jpg", "images/products/charms/charm11/angle3.jpg"]
-  },
-  {
-    "id": 28,
-    "name": "Golden Cherry Charm",
-    "category": "charms",
-    "sku": "CH-GC-028",
-    "availability": "In Stock",
-    "price": 22.00,
-    "color": "red",
-    "style": "nature",
-    "description": "Red cherries with a green leaf and a polished gold body.",
-    "mainImage": "images/products/charms/charm12/main.jpg",
-    "angles": ["images/products/charms/charm12/angle1.jpg", "images/products/charms/charm12/angle2.jpg", "images/products/charms/charm12/angle3.jpg"]
-  },
-  {
-    "id": 29,
-    "name": "3D Golden Umbrella",
-    "category": "charms",
-    "sku": "CH-GU-029",
-    "availability": "In Stock",
-    "price": 25.00,
-    "color": "gold",
-    "style": "whimsical",
-    "description": "A miniature three-dimensional umbrella crafted in gold.",
-    "mainImage": "images/products/charms/charm13/main.jpg",
-    "angles": ["images/products/charms/charm13/angle1.jpg", "images/products/charms/charm13/angle2.jpg", "images/products/charms/charm13/angle3.jpg"]
-  },
-  {
-    "id": 30,
-    "name": "Hello Telephone Charm",
-    "category": "charms",
-    "sku": "CH-HT-030",
-    "availability": "In Stock",
-    "price": 18.00,
-    "color": "white",
-    "style": "vintage",
-    "description": "A circular charm with a vintage phone and 'Just to say hello' text.",
-    "mainImage": "images/products/charms/charm14/main.jpg",
-    "angles": ["images/products/charms/charm14/angle1.jpg", "images/products/charms/charm14/angle2.jpg", "images/products/charms/charm14/angle3.jpg"]
-  },
-  {
-    "id": 31,
-    "name": "Vertical Rock Pick",
-    "category": "charms",
-    "sku": "CH-RP-031",
-    "availability": "Low Stock",
-    "price": 20.00,
-    "color": "gold",
-    "style": "minimalist",
-    "description": "A long, vertical gold charm shaped like a climbing rock pick.",
-    "mainImage": "images/products/charms/charm15/main.jpg",
-    "angles": ["images/products/charms/charm15/angle1.jpg", "images/products/charms/charm15/angle2.jpg", "images/products/charms/charm15/angle3.jpg"]
-  },
-  {
-    "id": 32,
-    "name": "Butterfly Wing Pearl",
-    "category": "charms",
-    "sku": "CH-BP-032",
-    "availability": "In Stock",
-    "price": 30.00,
-    "color": "pink",
-    "style": "feminine",
-    "description": "A large white pearl topped with delicate pink butterfly wings.",
-    "mainImage": "images/products/charms/charm16/main.jpg",
-    "angles": ["images/products/charms/charm16/angle1.jpg", "images/products/charms/charm16/angle2.jpg", "images/products/charms/charm16/angle3.jpg"]
-  },
-  {
-    "id": 33,
-    "name": "Gold Vase Charm",
-    "category": "charms",
-    "sku": "CH-GV-033",
-    "availability": "In Stock",
-    "price": 24.00,
-    "color": "gold",
-    "style": "classic",
-    "description": "A small, elegantly shaped classic vase in polished gold.",
-    "mainImage": "images/products/charms/charm17/main.jpg",
-    "angles": ["images/products/charms/charm17/angle1.jpg", "images/products/charms/charm17/angle2.jpg", "images/products/charms/charm17/angle3.jpg"]
-  },
-  {
-    "id": 34,
-    "name": "Heart and Anchor T",
-    "category": "charms",
-    "sku": "CH-HT-034",
-    "availability": "In Stock",
-    "price": 26.00,
-    "color": "gold",
-    "style": "romantic",
-    "description": "A gold heart charm with a unique 'T' shaped anchor attached below.",
-    "mainImage": "images/products/charms/charm18/main.jpg",
-    "angles": ["images/products/charms/charm18/angle1.jpg", "images/products/charms/charm18/angle2.jpg", "images/products/charms/charm18/angle3.jpg"]
-  },
-  {
-    "id": 35,
-    "name": "Blue Floral Cameo",
-    "category": "charms",
-    "sku": "CH-BF-035",
-    "availability": "In Stock",
-    "price": 28.00,
-    "color": "blue",
-    "style": "vintage",
-    "description": "A silver oval with a white flower set against a blue background.",
-    "mainImage": "images/products/charms/charm19/main.jpg",
-    "angles": ["images/products/charms/charm19/angle1.jpg", "images/products/charms/charm19/angle2.jpg", "images/products/charms/charm19/angle3.jpg"]
-  },
-  {
-    "id": 26,
-    "name": "Ancient Pointed Shoe",
-    "category": "charms",
-    "sku": "CH-AS-036",
-    "availability": "Low Stock",
-    "price": 25.00,
-    "color": "gold",
-    "style": "vintage",
-    "description": "A traditional gold shoe charm with a distinct upward-curving toe.",
-    "mainImage": "images/products/charms/charm20/main.jpg",
-    "angles": ["images/products/charms/charm20/angle1.jpg", "images/products/charms/charm20/angle2.jpg", "images/products/charms/charm20/angle3.jpg"]
-  },
-  {
-    "id": 37,
-    "name": "Pearl Leaf Strand",
-    "category": "charms",
-    "sku": "CH-PL-037",
-    "availability": "In Stock",
-    "price": 27.00,
-    "color": "gold",
-    "style": "feminine",
-    "description": "A white pearl hanging from a curved gold strand with leaf detail.",
-    "mainImage": "images/products/charms/charm21/main.jpg",
-    "angles": ["images/products/charms/charm21/angle1.jpg", "images/products/charms/charm21/angle2.jpg", "images/products/charms/charm21/angle3.jpg"]
-  },
-  {
-    "id": 38,
-    "name": "Horizontal Crescent",
-    "category": "charms",
-    "sku": "CH-HC-038",
-    "availability": "In Stock",
-    "price": 20.00,
-    "color": "gold",
-    "style": "minimalist",
-    "description": "A unique, horizontally oriented gold crescent moon charm.",
-    "mainImage": "images/products/charms/charm22/main.jpg",
-    "angles": ["images/products/charms/charm22/angle1.jpg", "images/products/charms/charm22/angle2.jpg", "images/products/charms/charm22/angle3.jpg"]
-  },
-  {
-    "id": 39,
-    "name": "Silver Box Chain with Square Pendant",
-    "category": "chains",
-    "sku": "CH-BX-039",
-    "availability": "In Stock",
-    "price": 55.00,
-    "color": "silver",
-    "style": "elegant",
-    "description": "A dainty silver box chain featuring a brilliant square halo pendant paved with small crystals.",
-    "mainImage": "images/products/chains/chain1/main.jpg",
-    "angles": [
-      "images/products/chains/chain1/angle1.jpg",
-      "images/products/chains/chain1/angle2.jpg",
-      "images/products/chains/chain1/angle3.jpg"
-    ]
-  },
-  {
-    "id": 40,
-    "name": "Layered Gold Coin Set",
-    "category": "chains",
-    "sku": "CH-LG-040",
-    "availability": "In Stock",
-    "price": 65.00,
-    "color": "gold",
-    "style": "boho",
-    "description": "A stylish triple-layered gold-tone necklace featuring varied link styles and a textured circular coin pendant.",
-    "mainImage": "images/products/chains/chain2/main.jpg",
-    "angles": [
-      "images/products/chains/chain2/angle1.jpg",
-      "images/products/chains/chain2/angle2.jpg",
-      "images/products/chains/chain2/angle3.jpg"
-    ]
-  },
-  {
-    "id": 41,
-    "name": "Golden Rope Chain with Crown",
-    "category": "chains",
-    "sku": "CH-RC-041",
-    "availability": "In Stock",
-    "price": 85.00,
-    "color": "gold",
-    "style": "regal",
-    "description": "A bold gold-toned rope chain paired with a detailed crown pendant featuring a ruby-red center and crystal detailing.",
-    "mainImage": "images/products/chains/chain3/main.jpg",
-    "angles": [
-      "images/products/chains/chain3/angle1.jpg",
-      "images/products/chains/chain3/angle2.jpg",
-      "images/products/chains/chain3/angle3.jpg"
-    ]
-  },
-  {
-    "id": 42,
-    "name": "Silver Ball Chain with Heart",
-    "category": "chains",
-    "sku": "CH-BC-042",
-    "availability": "In Stock",
-    "price": 48.00,
-    "color": "silver",
-    "style": "romantic",
-    "description": "A classic silver ball chain featuring a delicate open heart pendant encrusted with small, brilliant crystals.",
-    "mainImage": "images/products/chains/chain4/main.jpg",
-    "angles": [
-      "images/products/chains/chain4/angle1.jpg",
-      "images/products/chains/chain4/angle2.jpg",
-      "images/products/chains/chain4/angle3.jpg"
-    ]
-  },
-  {
-    "id": 43,
-    "name": "Silver Emerald Station Chain",
-    "category": "chains",
-    "sku": "CH-ES-043",
-    "availability": "In Stock",
-    "price": 52.00,
-    "color": "silver",
-    "style": "bohemian",
-    "description": "A refined silver-tone link chain decorated with seven dangling, bezel-set green stones for a vibrant station-style look.",
-    "mainImage": "images/products/chains/chain5/main.jpg",
-    "angles": [
-      "images/products/chains/chain5/angle1.jpg",
-      "images/products/chains/chain5/angle2.jpg",
-      "images/products/chains/chain5/angle3.jpg"
-    ]
-  },
-  {
-    "id": 44,
-    "name": "Silver Heart Station Chain",
-    "category": "chains",
-    "sku": "CH-HS-044",
-    "availability": "In Stock",
-    "price": 42.00,
-    "color": "silver",
-    "style": "romantic",
-    "description": "A charming silver-tone paperclip chain adorned with five dangling, solid heart charms for a sweet and modern look.",
-    "mainImage": "images/products/chains/chain6/main.jpg",
-    "angles": [
-      "images/products/chains/chain6/angle1.jpg",
-      "images/products/chains/chain6/angle2.jpg",
-      "images/products/chains/chain6/angle3.jpg"
-    ]
-  },
-  {
-    "id": 45,
-    "name": "Silver Orbital Star Chain",
-    "category": "chains",
-    "sku": "CH-OS-045",
-    "availability": "In Stock",
-    "price": 38.00,
-    "color": "silver",
-    "style": "minimalist",
-    "description": "A modern silver-toned cable chain featuring a striking celestial pendant of a four-pointed star with a surrounding orbital ring.",
-    "mainImage": "images/products/chains/chain7/main.jpg",
-    "angles": [
-      "images/products/chains/chain7/angle1.jpg",
-      "images/products/chains/chain7/angle2.jpg",
-      "images/products/chains/chain7/angle3.jpg"
-    ]
-  },
-  {
-    "id": 46,
-    "name": "Silver Celestial Charm Curb Chain",
-    "category": "chains",
-    "sku": "CH-CC-046",
-    "availability": "In Stock",
-    "price": 58.00,
-    "color": "silver",
-    "style": "edgy",
-    "description": "A statement curb chain featuring a complex celestial design with a moon and star centerpiece, accented by a black marquise stone and additional charms.",
-    "mainImage": "images/products/chains/chain8/main.jpg",
-    "angles": [
-      "images/products/chains/chain8/angle1.jpg",
-      "images/products/chains/chain8/angle2.jpg",
-      "images/products/chains/chain8/angle3.jpg"
-    ]
-  },
-  {
-    "id": 47,
-    "name": "Silver North Star Connector Chain",
-    "category": "chains",
-    "sku": "CH-NS-047",
-    "availability": "In Stock",
-    "price": 54.00,
-    "color": "silver",
-    "style": "edgy",
-    "description": "A bold silver curb chain featuring a unique 3D North Star connector link accented with a shimmering central crystal.",
-    "mainImage": "images/products/chains/chain9/main.jpg",
-    "angles": [
-      "images/products/chains/chain9/angle1.jpg",
-      "images/products/chains/chain9/angle2.jpg",
-      "images/products/chains/chain9/angle3.jpg"
-    ]
-  },
-  {
-    "id": 48,
-    "name": "Silver Spiral Sun Chain",
-    "category": "chains",
-    "sku": "CH-SS-048",
-    "availability": "In Stock",
-    "price": 44.00,
-    "color": "silver",
-    "style": "bohemian",
-    "description": "A beautiful silver-toned cable chain featuring a large, artistic sun pendant with a spiral center and wavy rays, accented by a single shimmering crystal.",
-    "mainImage": "images/products/chains/chain10/main.jpg",
-    "angles": [
-      "images/products/chains/chain10/angle1.jpg",
-      "images/products/chains/chain10/angle2.jpg",
-      "images/products/chains/chain10/angle3.jpg"
-    ]
-  },
-  {
-    "id": 49,
-    "name": "Teal Heart Silver Bracelet",
-    "category": "bracelets",
-    "sku": "BR-TH-049",
-    "availability": "In Stock",
-    "price": 35.00,
-    "color": "silver",
-    "style": "elegant",
-    "description": "A delicate silver link bracelet showcasing a vibrant teal heart-shaped stone centered between four shimmering clear crystals.",
-    "mainImage": "images/products/bracelets/bracelet1/main.jpg",
-    "angles": [
-      "images/products/bracelets/bracelet1/angle1.jpg",
-      "images/products/bracelets/bracelet1/angle2.jpg",
-      "images/products/bracelets/bracelet1/angle3.jpg"
-    ]
-  },
-  {
-    "id": 50,
-    "name": "Pink Heart Silver Station Bracelet",
-    "category": "bracelets",
-    "sku": "BR-PH-050",
-    "availability": "In Stock",
-    "price": 32.00,
-    "color": "silver",
-    "style": "playful",
-    "description": "A charming silver-tone station bracelet adorned with a central polished heart and two sparkling pink heart-shaped stones.",
-    "mainImage": "images/products/bracelets/bracelet2/main.jpg",
-    "angles": [
-      "images/products/bracelets/bracelet2/angle1.jpg",
-      "images/products/bracelets/bracelet2/angle2.jpg",
-      "images/products/bracelets/bracelet2/angle3.jpg"
-    ]
-  },
-  {
-    "id": 51,
-    "name": "Green Heart Silver Station Bracelet",
-    "category": "bracelets",
-    "sku": "BR-GH-051",
-    "availability": "In Stock",
-    "price": 32.00,
-    "color": "silver",
-    "style": "fresh",
-    "description": "A charming silver-tone station bracelet adorned with a central polished heart and two sparkling emerald-green heart stones.",
-    "mainImage": "images/products/bracelets/bracelet3/main.jpg",
-    "angles": [
-      "images/products/bracelets/bracelet3/angle1.jpg",
-      "images/products/bracelets/bracelet3/angle2.jpg",
-      "images/products/bracelets/bracelet3/angle3.jpg"
-    ]
-  },
-  {
-    "id": 52,
-    "name": "Rose Gold Vintage Pavé Band",
-    "category": "bracelets",
-    "sku": "BR-RG-052",
-    "availability": "In Stock",
-    "price": 45.00,
-    "color": "rose gold",
-    "style": "vintage",
-    "description": "An elegant rose gold-toned stackable bracelet featuring a sequence of round bezel-set crystals and vintage-inspired marquise pavé settings.",
-    "mainImage": "images/products/bracelets/bracelet4/main.jpg",
-    "angles": [
-      "images/products/bracelets/bracelet4/angle1.jpg",
-      "images/products/bracelets/bracelet4/angle2.jpg",
-      "images/products/bracelets/bracelet4/angle3.jpg"
-    ]
-  },
-  {
-    "id": 53,
-    "name": "Multi-Color Clover Gold Bracelet",
-    "category": "bracelets",
-    "sku": "BR-MC-053",
-    "availability": "In Stock",
-    "price": 52.00,
-    "color": "gold",
-    "style": "sophisticated",
-    "description": "A vibrant gold-toned station bracelet adorned with six unique clover charms in blue, black, red, white, orange, and pink, each finished with a delicate beaded edge.",
-    "mainImage": "images/products/bracelets/bracelet5/main.jpg",
-    "angles": [
-      "images/products/bracelets/bracelet5/angle1.jpg",
-      "images/products/bracelets/bracelet5/angle2.jpg",
-      "images/products/bracelets/bracelet5/angle3.jpg"
-    ]
-  },
-  {
-    "id": 54,
-    "name": "Pink Crystal & Open Heart Bracelet",
-    "category": "bracelets",
-    "sku": "BR-OH-054",
-    "availability": "In Stock",
-    "price": 30.00,
-    "color": "silver",
-    "style": "romantic",
-    "description": "A graceful silver-tone bracelet designed with alternating open heart motifs and vibrant pink bezel-set stones for a light, airy look.",
-    "mainImage": "images/products/bracelets/bracelet6/main.jpg",
-    "angles": [
-      "images/products/bracelets/bracelet6/angle1.jpg",
-      "images/products/bracelets/bracelet6/angle2.jpg",
-      "images/products/bracelets/bracelet6/angle3.jpg"
-    ]
-  },
-  {
-    "id": 55,
-    "name": "Classic Silver Tennis Bracelet",
-    "category": "bracelets",
-    "sku": "BR-CT-055",
-    "availability": "In Stock",
-    "price": 65.00,
-    "color": "silver",
-    "style": "glamorous",
-    "description": "A stunning, timeless tennis bracelet featuring a seamless row of brilliant round-cut crystals, secured with a professional box-and-tongue safety clasp.",
-    "mainImage": "images/products/bracelets/bracelet7/main.jpg",
-    "angles": [
-      "images/products/bracelets/bracelet7/angle1.jpg",
-      "images/products/bracelets/bracelet7/angle2.jpg",
-      "images/products/bracelets/bracelet7/angle3.jpg"
-    ]
-  },
-  {
-    "id": 56,
-    "name": "Golden Pavé Paisley Bangle",
-    "category": "bracelets",
-    "sku": "BR-PP-056",
-    "availability": "In Stock",
-    "price": 88.00,
-    "color": "gold",
-    "style": "luxurious",
-    "description": "An exquisite gold-finish statement bangle featuring a continuous paisley swirl pattern, meticulously detailed with hundreds of pavé-set crystals.",
-    "mainImage": "images/products/bracelets/bracelet8/main.jpg",
-    "angles": [
-      "images/products/bracelets/bracelet8/angle1.jpg",
-      "images/products/bracelets/bracelet8/angle2.jpg",
-      "images/products/bracelets/bracelet8/angle3.jpg"
-    ]
-  }
+        {
+            "id": 1,
+            "name": "Pearl Gold Ring",
+            "category": "rings",
+            "sku": "RG-PL-001",
+            "availability": "In Stock",
+            "price": 45.00,
+            "color": "gold",
+            "style": "feminine",
+            "description": "A slim gold band with a single white pearl.",
+            "mainImage": "images/products/rings/ring1/main.jpg",
+            "angles": [
+            "images/products/rings/ring1/angle1.jpg",
+            "images/products/rings/ring1/angle2.jpg",
+            "images/products/rings/ring1/angle3.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Twist Gold Ring",
+            "category": "rings",
+            "sku": "RG-TW-002",
+            "availability": "In Stock",
+            "price": 35.00,
+            "color": "gold",
+            "style": "feminine",
+            "description": "A simple gold band with a twisted rope design.",
+            "mainImage": "images/products/rings/ring2/main.jpg",
+            "angles": [
+            "images/products/rings/ring2/angle1.jpg",
+            "images/products/rings/ring2/angle2.jpg",
+            "images/products/rings/ring2/angle3.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Plain Gold Band",
+            "category": "rings",
+            "sku": "RG-PB-003",
+            "availability": "Low Stock",
+            "price": 30.00,
+            "color": "gold",
+            "style": "feminine",
+            "description": "A classic, smooth polished gold band.",
+            "mainImage": "images/products/rings/ring3/main.jpg",
+            "angles": [
+            "images/products/rings/ring3/angle1.jpg",
+            "images/products/rings/ring3/angle2.jpg",
+            "images/products/rings/ring3/angle3.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Crystal Gold Ring",
+            "category": "rings",
+            "sku": "RG-CR-004",
+            "availability": "In Stock",
+            "price": 50.00,
+            "color": "gold",
+            "style": "feminine",
+            "description": "A gold ring with a single round clear crystal.",
+            "mainImage": "images/products/rings/ring4/main.jpg",
+            "angles": [
+            "images/products/rings/ring4/angle1.jpg",
+            "images/products/rings/ring4/angle2.jpg",
+            "images/products/rings/ring4/angle3.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Sparkle Stack Ring",
+            "category": "rings",
+            "sku": "RG-SS-005",
+            "availability": "In Stock",
+            "price": 40.00,
+            "color": "gold",
+            "style": "feminine",
+            "description": "A thin gold band lined with tiny crystals.",
+            "mainImage": "images/products/rings/ring5/main.jpg",
+            "angles": [
+            "images/products/rings/ring5/angle1.jpg",
+            "images/products/rings/ring5/angle2.jpg",
+            "images/products/rings/ring5/angle3.jpg"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Wide Gold Ring",
+            "category": "rings",
+            "sku": "RG-WG-006",
+            "availability": "In Stock",
+            "price": 55.00,
+            "color": "gold",
+            "style": "feminine",
+            "description": "A thick, solid gold statement band.",
+            "mainImage": "images/products/rings/ring6/main.jpg",
+            "angles": [
+            "images/products/rings/ring6/angle1.jpg",
+            "images/products/rings/ring6/angle2.jpg",
+            "images/products/rings/ring6/angle3.jpg"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Small Silver Crystals",
+            "category": "earrings",
+            "sku": "ER-SS-007",
+            "availability": "In Stock",
+            "price": 25.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Small, classic silver earrings.",
+            "mainImage": "images/products/earrings/earrings1/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings1/angle1.jpg",
+            "images/products/earrings/earrings1/angle2.jpg",
+            "images/products/earrings/earrings1/angle3.jpg"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Silver Detailed Hoops",
+            "category": "earrings",
+            "sku": "ER-SD-008",
+            "availability": "In Stock",
+            "price": 28.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Small silver hoops with a set of silver rocks on top, making it elegant and original",
+            "mainImage": "images/products/earrings/earrings2/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings2/angle1.jpg",
+            "images/products/earrings/earrings2/angle2.jpg",
+            "images/products/earrings/earrings2/angle3.jpg"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Gold Jacket",
+            "category": "earrings",
+            "sku": "ER-GJ-009",
+            "availability": "In Stock",
+            "price": 30.00,
+            "color": "gold",
+            "style": "feminine",
+            "description": "Gold jacket with a silver rock.",
+            "mainImage": "images/products/earrings/earrings3/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings3/angle1.jpg",
+            "images/products/earrings/earrings3/angle2.jpg",
+            "images/products/earrings/earrings3/angle3.jpg"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Silver Twist Huggie",
+            "category": "earrings",
+            "sku": "ER-ST-010",
+            "availability": "Low Stock",
+            "price": 28.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Textured silver hoops with a twist design.",
+            "mainImage": "images/products/earrings/earrings4/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings4/angle1.jpg",
+            "images/products/earrings/earrings4/angle2.jpg",
+            "images/products/earrings/earrings4/angle3.jpg"
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Silver Thunder Earrings",
+            "category": "earrings",
+            "sku": "ER-ST-011",
+            "availability": "In Stock",
+            "price": 35.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Elegant silver earrings with a thunderish shape.",
+            "mainImage": "images/products/earrings/earrings5/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings5/angle1.jpg",
+            "images/products/earrings/earrings5/angle2.jpg",
+            "images/products/earrings/earrings5/angle3.jpg"
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Pearls Drop Earrings",
+            "category": "earrings",
+            "sku": "ER-PD-012",
+            "availability": "In Stock",
+            "price": 40.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Silver drop featuring many different shapes symetrically.",
+            "mainImage": "images/products/earrings/earrings6/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings6/angle1.jpg",
+            "images/products/earrings/earrings6/angle2.jpg",
+            "images/products/earrings/earrings6/angle3.jpg"
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Ruby Heart Studs",
+            "category": "earrings",
+            "sku": "ER-RH-013",
+            "availability": "In Stock",
+            "price": 32.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Small, simple silver studs with a red heart.",
+            "mainImage": "images/products/earrings/earrings7/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings7/angle1.jpg",
+            "images/products/earrings/earrings7/angle2.jpg",
+            "images/products/earrings/earrings7/angle3.jpg"
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Silver Dropping Leafs Studs",
+            "category": "earrings",
+            "sku": "ER-SD-014",
+            "availability": "In Stock",
+            "price": 22.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Tiny, polished silver earrings with a leaf shape, containing pink and purple pearls.",
+            "mainImage": "images/products/earrings/earrings8/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings8/angle1.jpg",
+            "images/products/earrings/earrings8/angle2.jpg",
+            "images/products/earrings/earrings8/angle3.jpg"
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Silver Snowflake Shell",
+            "category": "earrings",
+            "sku": "ER-SS-015",
+            "availability": "In Stock",
+            "price": 38.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "A matching set of silver studs containing a small polished shell and a detail snowflake",
+            "mainImage": "images/products/earrings/earrings9/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings9/angle1.jpg",
+            "images/products/earrings/earrings9/angle2.jpg",
+            "images/products/earrings/earrings9/angle3.jpg"
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Silver Stars Aligned",
+            "category": "earrings",
+            "sku": "ER-SS-016",
+            "availability": "Low Stock",
+            "price": 25.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Aligned set of stars silver stud earrings",
+            "mainImage": "images/products/earrings/earrings10/main.jpg",
+            "angles": [
+            "images/products/earrings/earrings10/angle1.jpg",
+            "images/products/earrings/earrings10/angle2.jpg",
+            "images/products/earrings/earrings10/angle3.jpg"
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Angel Heart Charm",
+            "category": "charms",
+            "sku": "CH-AH-017",
+            "availability": "In Stock",
+            "price": 25.00,
+            "color": "silver",
+            "style": "artistic",
+            "description": "A heart-shaped charm featuring a winged angel child against a sky blue backdrop.",
+            "mainImage": "images/products/charms/charm1/main.jpg",
+            "angles": ["images/products/charms/charm1/angle1.jpg", "images/products/charms/charm1/angle2.jpg", "images/products/charms/charm1/angle3.jpg"]
+        },
+        {
+            "id": 18,
+            "name": "Umbrella Pig Charm",
+            "category": "charms",
+            "sku": "CH-UP-018",
+            "availability": "In Stock",
+            "price": 28.00,
+            "color": "pink",
+            "style": "whimsical",
+            "description": "A whimsical charm of a small pig holding a bright red umbrella.",
+            "mainImage": "images/products/charms/charm2/main.jpg",
+            "angles": ["images/products/charms/charm2/angle1.jpg", "images/products/charms/charm2/angle2.jpg", "images/products/charms/charm2/angle3.jpg"]
+        },
+        {
+            "id": 19,
+            "name": "Silver Fish Charm",
+            "category": "charms",
+            "sku": "CH-SF-019",
+            "availability": "In Stock",
+            "price": 20.00,
+            "color": "silver",
+            "style": "minimalist",
+            "description": "A sleek, polished silver charm in the shape of a fish.",
+            "mainImage": "images/products/charms/charm3/main.jpg",
+            "angles": ["images/products/charms/charm3/angle1.jpg", "images/products/charms/charm3/angle2.jpg", "images/products/charms/charm3/angle3.jpg"]
+        },
+        {
+            "id": 20,
+            "name": "Ladybug Charm",
+            "category": "charms",
+            "sku": "CH-LB-020",
+            "availability": "In Stock",
+            "price": 22.00,
+            "color": "red",
+            "style": "nature",
+            "description": "A vibrant ladybug charm with red wings and black spots.",
+            "mainImage": "images/products/charms/charm4/main.jpg",
+            "angles": ["images/products/charms/charm4/angle1.jpg", "images/products/charms/charm4/angle2.jpg", "images/products/charms/charm4/angle3.jpg"]
+        },
+        {
+            "id": 21,
+            "name": "Heart Card Charm",
+            "category": "charms",
+            "sku": "CH-HC-021",
+            "availability": "Low Stock",
+            "price": 30.00,
+            "color": "multi",
+            "style": "vintage",
+            "description": "A playing card style charm featuring a man holding a gray object.",
+            "mainImage": "images/products/charms/charm5/main.jpg",
+            "angles": ["images/products/charms/charm5/angle1.jpg", "images/products/charms/charm5/angle2.jpg", "images/products/charms/charm5/angle3.jpg"]
+        },
+        {
+            "id": 22,
+            "name": "Puppy Charm",
+            "category": "charms",
+            "sku": "CH-DG-022",
+            "availability": "In Stock",
+            "price": 24.00,
+            "color": "silver",
+            "style": "animal",
+            "description": "A cute, detailed silver charm shaped like a small dog.",
+            "mainImage": "images/products/charms/charm6/main.jpg",
+            "angles": ["images/products/charms/charm6/angle1.jpg", "images/products/charms/charm6/angle2.jpg", "images/products/charms/charm6/angle3.jpg"]
+        },
+        {
+            "id": 23,
+            "name": "Pearl Scorpio Tail",
+            "category": "charms",
+            "sku": "CH-PS-023",
+            "availability": "In Stock",
+            "price": 35.00,
+            "color": "silver",
+            "style": "eccentric",
+            "description": "A unique mix of pearls transitioning into a shell-like scorpio tail.",
+            "mainImage": "images/products/charms/charm7/main.jpg",
+            "angles": ["images/products/charms/charm7/angle1.jpg", "images/products/charms/charm7/angle2.jpg", "images/products/charms/charm7/angle3.jpg"]
+        },
+        {
+            "id": 24,
+            "name": "Gold Heart Lock",
+            "category": "charms",
+            "sku": "CH-HL-024",
+            "availability": "In Stock",
+            "price": 26.00,
+            "color": "gold",
+            "style": "classic",
+            "description": "A classic, romantic heart-shaped padlock in polished gold.",
+            "mainImage": "images/products/charms/charm8/main.jpg",
+            "angles": ["images/products/charms/charm8/angle1.jpg", "images/products/charms/charm8/angle2.jpg", "images/products/charms/charm8/angle3.jpg"]
+        },
+        {
+            "id": 25,
+            "name": "Maple Leaf Charm",
+            "category": "charms",
+            "sku": "CH-ML-025",
+            "availability": "Low Stock",
+            "price": 20.00,
+            "color": "gold",
+            "style": "nature",
+            "description": "A gold-toned charm shaped like a Canadian maple leaf.",
+            "mainImage": "images/products/charms/charm9/main.jpg",
+            "angles": ["images/products/charms/charm9/angle1.jpg", "images/products/charms/charm9/angle2.jpg", "images/products/charms/charm9/angle3.jpg"]
+        },
+        {
+            "id": 26,
+            "name": "Pink Bubble Butterfly",
+            "category": "charms",
+            "sku": "CH-BB-026",
+            "availability": "In Stock",
+            "price": 32.00,
+            "color": "silver",
+            "style": "feminine",
+            "description": "Bubbly light pink wings with a silvery body containing pearl details.",
+            "mainImage": "images/products/charms/charm10/main.jpg",
+            "angles": ["images/products/charms/charm10/angle1.jpg", "images/products/charms/charm10/angle2.jpg", "images/products/charms/charm10/angle3.jpg"]
+        },
+        {
+            "id": 27,
+            "name": "Pearl Bouquet Oval",
+            "category": "charms",
+            "sku": "CH-PB-027",
+            "availability": "In Stock",
+            "price": 28.00,
+            "color": "gold",
+            "style": "vintage",
+            "description": "A gold oval charm featuring a 3D bouquet of pearls and leaves.",
+            "mainImage": "images/products/charms/charm11/main.jpg",
+            "angles": ["images/products/charms/charm11/angle1.jpg", "images/products/charms/charm11/angle2.jpg", "images/products/charms/charm11/angle3.jpg"]
+        },
+        {
+            "id": 28,
+            "name": "Golden Cherry Charm",
+            "category": "charms",
+            "sku": "CH-GC-028",
+            "availability": "In Stock",
+            "price": 22.00,
+            "color": "red",
+            "style": "nature",
+            "description": "Red cherries with a green leaf and a polished gold body.",
+            "mainImage": "images/products/charms/charm12/main.jpg",
+            "angles": ["images/products/charms/charm12/angle1.jpg", "images/products/charms/charm12/angle2.jpg", "images/products/charms/charm12/angle3.jpg"]
+        },
+        {
+            "id": 29,
+            "name": "3D Golden Umbrella",
+            "category": "charms",
+            "sku": "CH-GU-029",
+            "availability": "In Stock",
+            "price": 25.00,
+            "color": "gold",
+            "style": "whimsical",
+            "description": "A miniature three-dimensional umbrella crafted in gold.",
+            "mainImage": "images/products/charms/charm13/main.jpg",
+            "angles": ["images/products/charms/charm13/angle1.jpg", "images/products/charms/charm13/angle2.jpg", "images/products/charms/charm13/angle3.jpg"]
+        },
+        {
+            "id": 30,
+            "name": "Hello Telephone Charm",
+            "category": "charms",
+            "sku": "CH-HT-030",
+            "availability": "In Stock",
+            "price": 18.00,
+            "color": "white",
+            "style": "vintage",
+            "description": "A circular charm with a vintage phone and 'Just to say hello' text.",
+            "mainImage": "images/products/charms/charm14/main.jpg",
+            "angles": ["images/products/charms/charm14/angle1.jpg", "images/products/charms/charm14/angle2.jpg", "images/products/charms/charm14/angle3.jpg"]
+        },
+        {
+            "id": 31,
+            "name": "Vertical Rock Pick",
+            "category": "charms",
+            "sku": "CH-RP-031",
+            "availability": "Low Stock",
+            "price": 20.00,
+            "color": "gold",
+            "style": "minimalist",
+            "description": "A long, vertical gold charm shaped like a climbing rock pick.",
+            "mainImage": "images/products/charms/charm15/main.jpg",
+            "angles": ["images/products/charms/charm15/angle1.jpg", "images/products/charms/charm15/angle2.jpg", "images/products/charms/charm15/angle3.jpg"]
+        },
+        {
+            "id": 32,
+            "name": "Butterfly Wing Pearl",
+            "category": "charms",
+            "sku": "CH-BP-032",
+            "availability": "In Stock",
+            "price": 30.00,
+            "color": "pink",
+            "style": "feminine",
+            "description": "A large white pearl topped with delicate pink butterfly wings.",
+            "mainImage": "images/products/charms/charm16/main.jpg",
+            "angles": ["images/products/charms/charm16/angle1.jpg", "images/products/charms/charm16/angle2.jpg", "images/products/charms/charm16/angle3.jpg"]
+        },
+        {
+            "id": 33,
+            "name": "Gold Vase Charm",
+            "category": "charms",
+            "sku": "CH-GV-033",
+            "availability": "In Stock",
+            "price": 24.00,
+            "color": "gold",
+            "style": "classic",
+            "description": "A small, elegantly shaped classic vase in polished gold.",
+            "mainImage": "images/products/charms/charm17/main.jpg",
+            "angles": ["images/products/charms/charm17/angle1.jpg", "images/products/charms/charm17/angle2.jpg", "images/products/charms/charm17/angle3.jpg"]
+        },
+        {
+            "id": 34,
+            "name": "Heart and Anchor T",
+            "category": "charms",
+            "sku": "CH-HT-034",
+            "availability": "In Stock",
+            "price": 26.00,
+            "color": "gold",
+            "style": "romantic",
+            "description": "A gold heart charm with a unique 'T' shaped anchor attached below.",
+            "mainImage": "images/products/charms/charm18/main.jpg",
+            "angles": ["images/products/charms/charm18/angle1.jpg", "images/products/charms/charm18/angle2.jpg", "images/products/charms/charm18/angle3.jpg"]
+        },
+        {
+            "id": 35,
+            "name": "Blue Floral Cameo",
+            "category": "charms",
+            "sku": "CH-BF-035",
+            "availability": "In Stock",
+            "price": 28.00,
+            "color": "blue",
+            "style": "vintage",
+            "description": "A silver oval with a white flower set against a blue background.",
+            "mainImage": "images/products/charms/charm19/main.jpg",
+            "angles": ["images/products/charms/charm19/angle1.jpg", "images/products/charms/charm19/angle2.jpg", "images/products/charms/charm19/angle3.jpg"]
+        },
+        {
+            "id": 26,
+            "name": "Ancient Pointed Shoe",
+            "category": "charms",
+            "sku": "CH-AS-036",
+            "availability": "Low Stock",
+            "price": 25.00,
+            "color": "gold",
+            "style": "vintage",
+            "description": "A traditional gold shoe charm with a distinct upward-curving toe.",
+            "mainImage": "images/products/charms/charm20/main.jpg",
+            "angles": ["images/products/charms/charm20/angle1.jpg", "images/products/charms/charm20/angle2.jpg", "images/products/charms/charm20/angle3.jpg"]
+        },
+        {
+            "id": 37,
+            "name": "Pearl Leaf Strand",
+            "category": "charms",
+            "sku": "CH-PL-037",
+            "availability": "In Stock",
+            "price": 27.00,
+            "color": "gold",
+            "style": "feminine",
+            "description": "A white pearl hanging from a curved gold strand with leaf detail.",
+            "mainImage": "images/products/charms/charm21/main.jpg",
+            "angles": ["images/products/charms/charm21/angle1.jpg", "images/products/charms/charm21/angle2.jpg", "images/products/charms/charm21/angle3.jpg"]
+        },
+        {
+            "id": 38,
+            "name": "Horizontal Crescent",
+            "category": "charms",
+            "sku": "CH-HC-038",
+            "availability": "In Stock",
+            "price": 20.00,
+            "color": "gold",
+            "style": "minimalist",
+            "description": "A unique, horizontally oriented gold crescent moon charm.",
+            "mainImage": "images/products/charms/charm22/main.jpg",
+            "angles": ["images/products/charms/charm22/angle1.jpg", "images/products/charms/charm22/angle2.jpg", "images/products/charms/charm22/angle3.jpg"]
+        },
+        {
+            "id": 39,
+            "name": "Silver Box Chain with Square Pendant",
+            "category": "chains",
+            "sku": "CH-BX-039",
+            "availability": "In Stock",
+            "price": 55.00,
+            "color": "silver",
+            "style": "elegant",
+            "description": "A dainty silver box chain featuring a brilliant square halo pendant paved with small crystals.",
+            "mainImage": "images/products/chains/chain1/main.jpg",
+            "angles": [
+            "images/products/chains/chain1/angle1.jpg",
+            "images/products/chains/chain1/angle2.jpg",
+            "images/products/chains/chain1/angle3.jpg"
+            ]
+        },
+        {
+            "id": 40,
+            "name": "Layered Gold Coin Set",
+            "category": "chains",
+            "sku": "CH-LG-040",
+            "availability": "In Stock",
+            "price": 65.00,
+            "color": "gold",
+            "style": "boho",
+            "description": "A stylish triple-layered gold-tone necklace featuring varied link styles and a textured circular coin pendant.",
+            "mainImage": "images/products/chains/chain2/main.jpg",
+            "angles": [
+            "images/products/chains/chain2/angle1.jpg",
+            "images/products/chains/chain2/angle2.jpg",
+            "images/products/chains/chain2/angle3.jpg"
+            ]
+        },
+        {
+            "id": 41,
+            "name": "Golden Rope Chain with Crown",
+            "category": "chains",
+            "sku": "CH-RC-041",
+            "availability": "In Stock",
+            "price": 85.00,
+            "color": "gold",
+            "style": "regal",
+            "description": "A bold gold-toned rope chain paired with a detailed crown pendant featuring a ruby-red center and crystal detailing.",
+            "mainImage": "images/products/chains/chain3/main.jpg",
+            "angles": [
+            "images/products/chains/chain3/angle1.jpg",
+            "images/products/chains/chain3/angle2.jpg",
+            "images/products/chains/chain3/angle3.jpg"
+            ]
+        },
+        {
+            "id": 42,
+            "name": "Silver Ball Chain with Heart",
+            "category": "chains",
+            "sku": "CH-BC-042",
+            "availability": "In Stock",
+            "price": 48.00,
+            "color": "silver",
+            "style": "romantic",
+            "description": "A classic silver ball chain featuring a delicate open heart pendant encrusted with small, brilliant crystals.",
+            "mainImage": "images/products/chains/chain4/main.jpg",
+            "angles": [
+            "images/products/chains/chain4/angle1.jpg",
+            "images/products/chains/chain4/angle2.jpg",
+            "images/products/chains/chain4/angle3.jpg"
+            ]
+        },
+        {
+            "id": 43,
+            "name": "Silver Emerald Station Chain",
+            "category": "chains",
+            "sku": "CH-ES-043",
+            "availability": "In Stock",
+            "price": 52.00,
+            "color": "silver",
+            "style": "bohemian",
+            "description": "A refined silver-tone link chain decorated with seven dangling, bezel-set green stones for a vibrant station-style look.",
+            "mainImage": "images/products/chains/chain5/main.jpg",
+            "angles": [
+            "images/products/chains/chain5/angle1.jpg",
+            "images/products/chains/chain5/angle2.jpg",
+            "images/products/chains/chain5/angle3.jpg"
+            ]
+        },
+        {
+            "id": 44,
+            "name": "Silver Heart Station Chain",
+            "category": "chains",
+            "sku": "CH-HS-044",
+            "availability": "In Stock",
+            "price": 42.00,
+            "color": "silver",
+            "style": "romantic",
+            "description": "A charming silver-tone paperclip chain adorned with five dangling, solid heart charms for a sweet and modern look.",
+            "mainImage": "images/products/chains/chain6/main.jpg",
+            "angles": [
+            "images/products/chains/chain6/angle1.jpg",
+            "images/products/chains/chain6/angle2.jpg",
+            "images/products/chains/chain6/angle3.jpg"
+            ]
+        },
+        {
+            "id": 45,
+            "name": "Silver Orbital Star Chain",
+            "category": "chains",
+            "sku": "CH-OS-045",
+            "availability": "In Stock",
+            "price": 38.00,
+            "color": "silver",
+            "style": "minimalist",
+            "description": "A modern silver-toned cable chain featuring a striking celestial pendant of a four-pointed star with a surrounding orbital ring.",
+            "mainImage": "images/products/chains/chain7/main.jpg",
+            "angles": [
+            "images/products/chains/chain7/angle1.jpg",
+            "images/products/chains/chain7/angle2.jpg",
+            "images/products/chains/chain7/angle3.jpg"
+            ]
+        },
+        {
+            "id": 46,
+            "name": "Silver Celestial Charm Curb Chain",
+            "category": "chains",
+            "sku": "CH-CC-046",
+            "availability": "In Stock",
+            "price": 58.00,
+            "color": "silver",
+            "style": "edgy",
+            "description": "A statement curb chain featuring a complex celestial design with a moon and star centerpiece, accented by a black marquise stone and additional charms.",
+            "mainImage": "images/products/chains/chain8/main.jpg",
+            "angles": [
+            "images/products/chains/chain8/angle1.jpg",
+            "images/products/chains/chain8/angle2.jpg",
+            "images/products/chains/chain8/angle3.jpg"
+            ]
+        },
+        {
+            "id": 47,
+            "name": "Silver North Star Connector Chain",
+            "category": "chains",
+            "sku": "CH-NS-047",
+            "availability": "In Stock",
+            "price": 54.00,
+            "color": "silver",
+            "style": "edgy",
+            "description": "A bold silver curb chain featuring a unique 3D North Star connector link accented with a shimmering central crystal.",
+            "mainImage": "images/products/chains/chain9/main.jpg",
+            "angles": [
+            "images/products/chains/chain9/angle1.jpg",
+            "images/products/chains/chain9/angle2.jpg",
+            "images/products/chains/chain9/angle3.jpg"
+            ]
+        },
+        {
+            "id": 48,
+            "name": "Silver Spiral Sun Chain",
+            "category": "chains",
+            "sku": "CH-SS-048",
+            "availability": "In Stock",
+            "price": 44.00,
+            "color": "silver",
+            "style": "bohemian",
+            "description": "A beautiful silver-toned cable chain featuring a large, artistic sun pendant with a spiral center and wavy rays, accented by a single shimmering crystal.",
+            "mainImage": "images/products/chains/chain10/main.jpg",
+            "angles": [
+            "images/products/chains/chain10/angle1.jpg",
+            "images/products/chains/chain10/angle2.jpg",
+            "images/products/chains/chain10/angle3.jpg"
+            ]
+        },
+        {
+            "id": 49,
+            "name": "Teal Heart Silver Bracelet",
+            "category": "bracelets",
+            "sku": "BR-TH-049",
+            "availability": "In Stock",
+            "price": 35.00,
+            "color": "silver",
+            "style": "elegant",
+            "description": "A delicate silver link bracelet showcasing a vibrant teal heart-shaped stone centered between four shimmering clear crystals.",
+            "mainImage": "images/products/bracelets/bracelet1/main.jpg",
+            "angles": [
+            "images/products/bracelets/bracelet1/angle1.jpg",
+            "images/products/bracelets/bracelet1/angle2.jpg",
+            "images/products/bracelets/bracelet1/angle3.jpg"
+            ]
+        },
+        {
+            "id": 50,
+            "name": "Pink Heart Silver Station Bracelet",
+            "category": "bracelets",
+            "sku": "BR-PH-050",
+            "availability": "In Stock",
+            "price": 32.00,
+            "color": "silver",
+            "style": "playful",
+            "description": "A charming silver-tone station bracelet adorned with a central polished heart and two sparkling pink heart-shaped stones.",
+            "mainImage": "images/products/bracelets/bracelet2/main.jpg",
+            "angles": [
+            "images/products/bracelets/bracelet2/angle1.jpg",
+            "images/products/bracelets/bracelet2/angle2.jpg",
+            "images/products/bracelets/bracelet2/angle3.jpg"
+            ]
+        },
+        {
+            "id": 51,
+            "name": "Green Heart Silver Station Bracelet",
+            "category": "bracelets",
+            "sku": "BR-GH-051",
+            "availability": "In Stock",
+            "price": 32.00,
+            "color": "silver",
+            "style": "fresh",
+            "description": "A charming silver-tone station bracelet adorned with a central polished heart and two sparkling emerald-green heart stones.",
+            "mainImage": "images/products/bracelets/bracelet3/main.jpg",
+            "angles": [
+            "images/products/bracelets/bracelet3/angle1.jpg",
+            "images/products/bracelets/bracelet3/angle2.jpg",
+            "images/products/bracelets/bracelet3/angle3.jpg"
+            ]
+        },
+        {
+            "id": 52,
+            "name": "Rose Gold Vintage Pavé Band",
+            "category": "bracelets",
+            "sku": "BR-RG-052",
+            "availability": "In Stock",
+            "price": 45.00,
+            "color": "rose gold",
+            "style": "vintage",
+            "description": "An elegant rose gold-toned stackable bracelet featuring a sequence of round bezel-set crystals and vintage-inspired marquise pavé settings.",
+            "mainImage": "images/products/bracelets/bracelet4/main.jpg",
+            "angles": [
+            "images/products/bracelets/bracelet4/angle1.jpg",
+            "images/products/bracelets/bracelet4/angle2.jpg",
+            "images/products/bracelets/bracelet4/angle3.jpg"
+            ]
+        },
+        {
+            "id": 53,
+            "name": "Multi-Color Clover Gold Bracelet",
+            "category": "bracelets",
+            "sku": "BR-MC-053",
+            "availability": "In Stock",
+            "price": 52.00,
+            "color": "gold",
+            "style": "sophisticated",
+            "description": "A vibrant gold-toned station bracelet adorned with six unique clover charms in blue, black, red, white, orange, and pink, each finished with a delicate beaded edge.",
+            "mainImage": "images/products/bracelets/bracelet5/main.jpg",
+            "angles": [
+            "images/products/bracelets/bracelet5/angle1.jpg",
+            "images/products/bracelets/bracelet5/angle2.jpg",
+            "images/products/bracelets/bracelet5/angle3.jpg"
+            ]
+        },
+        {
+            "id": 54,
+            "name": "Pink Crystal & Open Heart Bracelet",
+            "category": "bracelets",
+            "sku": "BR-OH-054",
+            "availability": "In Stock",
+            "price": 30.00,
+            "color": "silver",
+            "style": "romantic",
+            "description": "A graceful silver-tone bracelet designed with alternating open heart motifs and vibrant pink bezel-set stones for a light, airy look.",
+            "mainImage": "images/products/bracelets/bracelet6/main.jpg",
+            "angles": [
+            "images/products/bracelets/bracelet6/angle1.jpg",
+            "images/products/bracelets/bracelet6/angle2.jpg",
+            "images/products/bracelets/bracelet6/angle3.jpg"
+            ]
+        },
+        {
+            "id": 55,
+            "name": "Classic Silver Tennis Bracelet",
+            "category": "bracelets",
+            "sku": "BR-CT-055",
+            "availability": "In Stock",
+            "price": 65.00,
+            "color": "silver",
+            "style": "glamorous",
+            "description": "A stunning, timeless tennis bracelet featuring a seamless row of brilliant round-cut crystals, secured with a professional box-and-tongue safety clasp.",
+            "mainImage": "images/products/bracelets/bracelet7/main.jpg",
+            "angles": [
+            "images/products/bracelets/bracelet7/angle1.jpg",
+            "images/products/bracelets/bracelet7/angle2.jpg",
+            "images/products/bracelets/bracelet7/angle3.jpg"
+            ]
+        },
+        {
+            "id": 56,
+            "name": "Golden Pavé Paisley Bangle",
+            "category": "bracelets",
+            "sku": "BR-PP-056",
+            "availability": "In Stock",
+            "price": 88.00,
+            "color": "gold",
+            "style": "luxurious",
+            "description": "An exquisite gold-finish statement bangle featuring a continuous paisley swirl pattern, meticulously detailed with hundreds of pavé-set crystals.",
+            "mainImage": "images/products/bracelets/bracelet8/main.jpg",
+            "angles": [
+            "images/products/bracelets/bracelet8/angle1.jpg",
+            "images/products/bracelets/bracelet8/angle2.jpg",
+            "images/products/bracelets/bracelet8/angle3.jpg"
+            ]
+        }
 ]
+
