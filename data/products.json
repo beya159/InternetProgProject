@@ -556,5 +556,175 @@
     "description": "A unique, horizontally oriented gold crescent moon charm.",
     "mainImage": "images/products/charms/charm22/main.jpg",
     "angles": ["images/products/charms/charm22/angle1.jpg", "images/products/charms/charm22/angle2.jpg", "images/products/charms/charm22/angle3.jpg"]
+  },
+  {
+    "id": 39,
+    "name": "Silver Box Chain with Square Pendant",
+    "category": "chains",
+    "sku": "CH-BX-039",
+    "availability": "In Stock",
+    "price": 55.00,
+    "color": "silver",
+    "style": "elegant",
+    "description": "A dainty silver box chain featuring a brilliant square halo pendant paved with small crystals.",
+    "mainImage": "images/products/chains/chain1/main.jpg",
+    "angles": [
+      "images/products/chains/chain1/angle1.jpg",
+      "images/products/chains/chain1/angle2.jpg",
+      "images/products/chains/chain1/angle3.jpg"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Layered Gold Coin Set",
+    "category": "chains",
+    "sku": "CH-LG-040",
+    "availability": "In Stock",
+    "price": 65.00,
+    "color": "gold",
+    "style": "boho",
+    "description": "A stylish triple-layered gold-tone necklace featuring varied link styles and a textured circular coin pendant.",
+    "mainImage": "images/products/chains/chain2/main.jpg",
+    "angles": [
+      "images/products/chains/chain2/angle1.jpg",
+      "images/products/chains/chain2/angle2.jpg",
+      "images/products/chains/chain2/angle3.jpg"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Golden Rope Chain with Crown",
+    "category": "chains",
+    "sku": "CH-RC-041",
+    "availability": "In Stock",
+    "price": 85.00,
+    "color": "gold",
+    "style": "regal",
+    "description": "A bold gold-toned rope chain paired with a detailed crown pendant featuring a ruby-red center and crystal detailing.",
+    "mainImage": "images/products/chains/chain3/main.jpg",
+    "angles": [
+      "images/products/chains/chain3/angle1.jpg",
+      "images/products/chains/chain3/angle2.jpg",
+      "images/products/chains/chain3/angle3.jpg"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Silver Ball Chain with Heart",
+    "category": "chains",
+    "sku": "CH-BC-042",
+    "availability": "In Stock",
+    "price": 48.00,
+    "color": "silver",
+    "style": "romantic",
+    "description": "A classic silver ball chain featuring a delicate open heart pendant encrusted with small, brilliant crystals.",
+    "mainImage": "images/products/chains/chain4/main.jpg",
+    "angles": [
+      "images/products/chains/chain4/angle1.jpg",
+      "images/products/chains/chain4/angle2.jpg",
+      "images/products/chains/chain4/angle3.jpg"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Silver Emerald Station Chain",
+    "category": "chains",
+    "sku": "CH-ES-043",
+    "availability": "In Stock",
+    "price": 52.00,
+    "color": "silver",
+    "style": "bohemian",
+    "description": "A refined silver-tone link chain decorated with seven dangling, bezel-set green stones for a vibrant station-style look.",
+    "mainImage": "images/products/chains/chain5/main.jpg",
+    "angles": [
+      "images/products/chains/chain5/angle1.jpg",
+      "images/products/chains/chain5/angle2.jpg",
+      "images/products/chains/chain5/angle3.jpg"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Silver Heart Station Chain",
+    "category": "chains",
+    "sku": "CH-HS-044",
+    "availability": "In Stock",
+    "price": 42.00,
+    "color": "silver",
+    "style": "romantic",
+    "description": "A charming silver-tone paperclip chain adorned with five dangling, solid heart charms for a sweet and modern look.",
+    "mainImage": "images/products/chains/chain6/main.jpg",
+    "angles": [
+      "images/products/chains/chain6/angle1.jpg",
+      "images/products/chains/chain6/angle2.jpg",
+      "images/products/chains/chain6/angle3.jpg"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Silver Orbital Star Chain",
+    "category": "chains",
+    "sku": "CH-OS-045",
+    "availability": "In Stock",
+    "price": 38.00,
+    "color": "silver",
+    "style": "minimalist",
+    "description": "A modern silver-toned cable chain featuring a striking celestial pendant of a four-pointed star with a surrounding orbital ring.",
+    "mainImage": "images/products/chains/chain7/main.jpg",
+    "angles": [
+      "images/products/chains/chain7/angle1.jpg",
+      "images/products/chains/chain7/angle2.jpg",
+      "images/products/chains/chain7/angle3.jpg"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Silver Celestial Charm Curb Chain",
+    "category": "chains",
+    "sku": "CH-CC-046",
+    "availability": "In Stock",
+    "price": 58.00,
+    "color": "silver",
+    "style": "edgy",
+    "description": "A statement curb chain featuring a complex celestial design with a moon and star centerpiece, accented by a black marquise stone and additional charms.",
+    "mainImage": "images/products/chains/chain8/main.jpg",
+    "angles": [
+      "images/products/chains/chain8/angle1.jpg",
+      "images/products/chains/chain8/angle2.jpg",
+      "images/products/chains/chain8/angle3.jpg"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Silver North Star Connector Chain",
+    "category": "chains",
+    "sku": "CH-NS-047",
+    "availability": "In Stock",
+    "price": 54.00,
+    "color": "silver",
+    "style": "edgy",
+    "description": "A bold silver curb chain featuring a unique 3D North Star connector link accented with a shimmering central crystal.",
+    "mainImage": "images/products/chains/chain9/main.jpg",
+    "angles": [
+      "images/products/chains/chain9/angle1.jpg",
+      "images/products/chains/chain9/angle2.jpg",
+      "images/products/chains/chain9/angle3.jpg"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Silver Spiral Sun Chain",
+    "category": "chains",
+    "sku": "CH-SS-048",
+    "availability": "In Stock",
+    "price": 44.00,
+    "color": "silver",
+    "style": "bohemian",
+    "description": "A beautiful silver-toned cable chain featuring a large, artistic sun pendant with a spiral center and wavy rays, accented by a single shimmering crystal.",
+    "mainImage": "images/products/chains/chain10/main.jpg",
+    "angles": [
+      "images/products/chains/chain10/angle1.jpg",
+      "images/products/chains/chain10/angle2.jpg",
+      "images/products/chains/chain10/angle3.jpg"
+    ]
   }
 ]
