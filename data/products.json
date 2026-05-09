@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Pearl Gold Ring",
+    "category": "rings",
+    "price": 45.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "A slim gold band with a single white pearl.",
+    "mainImage": "images/products/rings/ring1/main.jpg",
+    "angles": [
+      "images/products/rings/ring1/angle1.jpg",
+      "images/products/rings/ring1/angle2.jpg",
+      "images/products/rings/ring1/angle3.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Twist Gold Ring",
+    "category": "rings",
+    "price": 35.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "A simple gold band with a twisted rope design.",
+    "mainImage": "images/products/rings/ring2/main.jpg",
+    "angles": [
+      "images/products/rings/ring2/angle1.jpg",
+      "images/products/rings/ring2/angle2.jpg",
+      "images/products/rings/ring2/angle3.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Plain Gold Band",
+    "category": "rings",
+    "price": 30.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "A classic, smooth polished gold band.",
+    "mainImage": "images/products/rings/ring3/main.jpg",
+    "angles": [
+      "images/products/rings/ring3/angle1.jpg",
+      "images/products/rings/ring3/angle2.jpg",
+      "images/products/rings/ring3/angle3.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Crystal Gold Ring",
+    "category": "rings",
+    "price": 50.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "A gold ring with a single round clear crystal.",
+    "mainImage": "images/products/rings/ring4/main.jpg",
+    "angles": [
+      "images/products/rings/ring4/angle1.jpg",
+      "images/products/rings/ring4/angle2.jpg",
+      "images/products/rings/ring4/angle3.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sparkle Stack Ring",
+    "category": "rings",
+    "price": 40.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "A thin gold band lined with tiny crystals.",
+    "mainImage": "images/products/rings/ring5/main.jpg",
+    "angles": [
+      "images/products/rings/ring5/angle1.jpg",
+      "images/products/rings/ring5/angle2.jpg",
+      "images/products/rings/ring5/angle3.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Wide Gold Ring",
+    "category": "rings",
+    "price": 55.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "A thick, solid gold statement band.",
+    "mainImage": "images/products/rings/ring6/main.jpg",
+    "angles": [
+      "images/products/rings/ring6/angle1.jpg",
+      "images/products/rings/ring6/angle2.jpg",
+      "images/products/rings/ring6/angle3.jpg"
+    ]
+  }
+]
