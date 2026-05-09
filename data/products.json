@@ -726,5 +726,141 @@
       "images/products/chains/chain10/angle2.jpg",
       "images/products/chains/chain10/angle3.jpg"
     ]
+  },
+  {
+    "id": 49,
+    "name": "Teal Heart Silver Bracelet",
+    "category": "bracelets",
+    "sku": "BR-TH-049",
+    "availability": "In Stock",
+    "price": 35.00,
+    "color": "silver",
+    "style": "elegant",
+    "description": "A delicate silver link bracelet showcasing a vibrant teal heart-shaped stone centered between four shimmering clear crystals.",
+    "mainImage": "images/products/bracelets/bracelet1/main.jpg",
+    "angles": [
+      "images/products/bracelets/bracelet1/angle1.jpg",
+      "images/products/bracelets/bracelet1/angle2.jpg",
+      "images/products/bracelets/bracelet1/angle3.jpg"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Pink Heart Silver Station Bracelet",
+    "category": "bracelets",
+    "sku": "BR-PH-050",
+    "availability": "In Stock",
+    "price": 32.00,
+    "color": "silver",
+    "style": "playful",
+    "description": "A charming silver-tone station bracelet adorned with a central polished heart and two sparkling pink heart-shaped stones.",
+    "mainImage": "images/products/bracelets/bracelet2/main.jpg",
+    "angles": [
+      "images/products/bracelets/bracelet2/angle1.jpg",
+      "images/products/bracelets/bracelet2/angle2.jpg",
+      "images/products/bracelets/bracelet2/angle3.jpg"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Green Heart Silver Station Bracelet",
+    "category": "bracelets",
+    "sku": "BR-GH-051",
+    "availability": "In Stock",
+    "price": 32.00,
+    "color": "silver",
+    "style": "fresh",
+    "description": "A charming silver-tone station bracelet adorned with a central polished heart and two sparkling emerald-green heart stones.",
+    "mainImage": "images/products/bracelets/bracelet3/main.jpg",
+    "angles": [
+      "images/products/bracelets/bracelet3/angle1.jpg",
+      "images/products/bracelets/bracelet3/angle2.jpg",
+      "images/products/bracelets/bracelet3/angle3.jpg"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Rose Gold Vintage Pavé Band",
+    "category": "bracelets",
+    "sku": "BR-RG-052",
+    "availability": "In Stock",
+    "price": 45.00,
+    "color": "rose gold",
+    "style": "vintage",
+    "description": "An elegant rose gold-toned stackable bracelet featuring a sequence of round bezel-set crystals and vintage-inspired marquise pavé settings.",
+    "mainImage": "images/products/bracelets/bracelet4/main.jpg",
+    "angles": [
+      "images/products/bracelets/bracelet4/angle1.jpg",
+      "images/products/bracelets/bracelet4/angle2.jpg",
+      "images/products/bracelets/bracelet4/angle3.jpg"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Multi-Color Clover Gold Bracelet",
+    "category": "bracelets",
+    "sku": "BR-MC-053",
+    "availability": "In Stock",
+    "price": 52.00,
+    "color": "gold",
+    "style": "sophisticated",
+    "description": "A vibrant gold-toned station bracelet adorned with six unique clover charms in blue, black, red, white, orange, and pink, each finished with a delicate beaded edge.",
+    "mainImage": "images/products/bracelets/bracelet5/main.jpg",
+    "angles": [
+      "images/products/bracelets/bracelet5/angle1.jpg",
+      "images/products/bracelets/bracelet5/angle2.jpg",
+      "images/products/bracelets/bracelet5/angle3.jpg"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Pink Crystal & Open Heart Bracelet",
+    "category": "bracelets",
+    "sku": "BR-OH-054",
+    "availability": "In Stock",
+    "price": 30.00,
+    "color": "silver",
+    "style": "romantic",
+    "description": "A graceful silver-tone bracelet designed with alternating open heart motifs and vibrant pink bezel-set stones for a light, airy look.",
+    "mainImage": "images/products/bracelets/bracelet6/main.jpg",
+    "angles": [
+      "images/products/bracelets/bracelet6/angle1.jpg",
+      "images/products/bracelets/bracelet6/angle2.jpg",
+      "images/products/bracelets/bracelet6/angle3.jpg"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Classic Silver Tennis Bracelet",
+    "category": "bracelets",
+    "sku": "BR-CT-055",
+    "availability": "In Stock",
+    "price": 65.00,
+    "color": "silver",
+    "style": "glamorous",
+    "description": "A stunning, timeless tennis bracelet featuring a seamless row of brilliant round-cut crystals, secured with a professional box-and-tongue safety clasp.",
+    "mainImage": "images/products/bracelets/bracelet7/main.jpg",
+    "angles": [
+      "images/products/bracelets/bracelet7/angle1.jpg",
+      "images/products/bracelets/bracelet7/angle2.jpg",
+      "images/products/bracelets/bracelet7/angle3.jpg"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Golden Pavé Paisley Bangle",
+    "category": "bracelets",
+    "sku": "BR-PP-056",
+    "availability": "In Stock",
+    "price": 88.00,
+    "color": "gold",
+    "style": "luxurious",
+    "description": "An exquisite gold-finish statement bangle featuring a continuous paisley swirl pattern, meticulously detailed with hundreds of pavé-set crystals.",
+    "mainImage": "images/products/bracelets/bracelet8/main.jpg",
+    "angles": [
+      "images/products/bracelets/bracelet8/angle1.jpg",
+      "images/products/bracelets/bracelet8/angle2.jpg",
+      "images/products/bracelets/bracelet8/angle3.jpg"
+    ]
   }
 ]
