@@ -100,5 +100,175 @@
       "images/products/rings/ring6/angle2.jpg",
       "images/products/rings/ring6/angle3.jpg"
     ]
+  },
+  {
+    "id": 7,
+    "name": "Small Gold Hoops",
+    "category": "earrings",
+    "sku": "ER-SH-007",
+    "availability": "In Stock",
+    "price": 25.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "Small, classic smooth gold hoop earrings.",
+    "mainImage": "images/products/earrings/earrings1/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings1/angle1.jpg",
+      "images/products/earrings/earrings1/angle2.jpg",
+      "images/products/earrings/earrings1/angle3.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Gold Flower Studs",
+    "category": "earrings",
+    "sku": "ER-FS-008",
+    "availability": "In Stock",
+    "price": 30.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "Gold studs shaped like delicate flowers.",
+    "mainImage": "images/products/earrings/earrings2/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings2/angle1.jpg",
+      "images/products/earrings/earrings2/angle2.jpg",
+      "images/products/earrings/earrings2/angle3.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Silver Twist Hoops",
+    "category": "earrings",
+    "sku": "ER-TH-009",
+    "availability": "Low Stock",
+    "price": 28.00,
+    "color": "silver",
+    "style": "feminine",
+    "description": "Textured silver hoops with a twist design.",
+    "mainImage": "images/products/earrings/earrings3/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings3/angle1.jpg",
+      "images/products/earrings/earrings3/angle2.jpg",
+      "images/products/earrings/earrings3/angle3.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Gold Drop Earrings",
+    "category": "earrings",
+    "sku": "ER-DE-010",
+    "availability": "In Stock",
+    "price": 35.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "Elegant gold earrings with a smooth drop shape.",
+    "mainImage": "images/products/earrings/earrings4/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings4/angle1.jpg",
+      "images/products/earrings/earrings4/angle2.jpg",
+      "images/products/earrings/earrings4/angle3.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Pearl Drop Earrings",
+    "category": "earrings",
+    "sku": "ER-PD-011",
+    "availability": "In Stock",
+    "price": 40.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "Gold hooks featuring a single hanging pearl.",
+    "mainImage": "images/products/earrings/earrings5/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings5/angle1.jpg",
+      "images/products/earrings/earrings5/angle2.jpg",
+      "images/products/earrings/earrings5/angle3.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Chunky Gold Hoops",
+    "category": "earrings",
+    "sku": "ER-CH-012",
+    "availability": "In Stock",
+    "price": 32.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "Thick, hollow gold hoops for a bold look.",
+    "mainImage": "images/products/earrings/earrings6/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings6/angle1.jpg",
+      "images/products/earrings/earrings6/angle2.jpg",
+      "images/products/earrings/earrings6/angle3.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Silver Star Studs",
+    "category": "earrings",
+    "sku": "ER-SS-013",
+    "availability": "In Stock",
+    "price": 22.00,
+    "color": "silver",
+    "style": "feminine",
+    "description": "Tiny, polished silver stars with post backs.",
+    "mainImage": "images/products/earrings/earrings7/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings7/angle1.jpg",
+      "images/products/earrings/earrings7/angle2.jpg",
+      "images/products/earrings/earrings7/angle3.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Gold Link Drops",
+    "category": "earrings",
+    "sku": "ER-LD-014",
+    "availability": "In Stock",
+    "price": 38.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "Two interlocking gold circles hanging vertically.",
+    "mainImage": "images/products/earrings/earrings8/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings8/angle1.jpg",
+      "images/products/earrings/earrings8/angle2.jpg",
+      "images/products/earrings/earrings8/angle3.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Textured Gold Studs",
+    "category": "earrings",
+    "sku": "ER-TS-015",
+    "availability": "Low Stock",
+    "price": 25.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "Round gold studs with a hammered metal finish.",
+    "mainImage": "images/products/earrings/earrings9/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings9/angle1.jpg",
+      "images/products/earrings/earrings9/angle2.jpg",
+      "images/products/earrings/earrings9/angle3.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Gold Leaf Drops",
+    "category": "earrings",
+    "sku": "ER-LF-016",
+    "availability": "In Stock",
+    "price": 35.00,
+    "color": "gold",
+    "style": "feminine",
+    "description": "Detailed gold earrings shaped like small leaves.",
+    "mainImage": "images/products/earrings/earrings10/main.jpg",
+    "angles": [
+      "images/products/earrings/earrings10/angle1.jpg",
+      "images/products/earrings/earrings10/angle2.jpg",
+      "images/products/earrings/earrings10/angle3.jpg"
+    ]
   }
 ]
