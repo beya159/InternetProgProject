@@ -43,12 +43,32 @@
         <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
     </div>
 </header>
-<main>
-        <div class="hero">
-            <h1>Elegance in Every Detail</h1>
-            <p>Discover our latest handcrafted arrivals.</p>
+<section class="carousel-container">
+    <div class="carousel-slide">
+        <div class="slide fade">
+            <img src="images/carousel/carousel1.jpg" alt="Summer Collection">
+            <div class="caption">Elegance in Every Detail</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/carousel/carousel2.jpg" alt="Handcrafted Gold">
+            <div class="caption">Handcrafted Gold Pieces</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/carousel/carousel3.jpg" alt="New Arrivals">
+            <div class="caption">Discover New Arrivals</div>
         </div>
 
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
+
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</section>
+<main>
         <h2 id="category-title">OUR COLLECTION</h2>
         <div id="product-grid" class="product-grid"></div>
     </main>

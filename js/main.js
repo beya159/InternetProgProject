@@ -60,4 +60,54 @@ function filterByCategory(categoryName) {
     }
 }
 
+var slideIndex = 1;
+var timer;
+
+//to be present initially
+showSlides(slideIndex);
+startTimer();
+
+// next/prev mouvement
+function moveSlide(n) {
+    clearInterval(timer); // auto-slide stops when user clicks
+    showSlides(slideIndex += n);
+    startTimer(); // restart
+}
+
+// pagination dots
+function currentSlide(n) {
+    clearInterval(timer);
+    showSlides(slideIndex = n);
+    startTimer();
+}
+
+function showSlides(n) {
+    var slides = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("dot");
+    
+    if (n > slides.length) {
+        slideIndex = 1
+    }    
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}
+
+function startTimer() {
+    timer = setInterval(function() {
+        slideIndex++;
+        showSlides(slideIndex);
+    }, 5000); // every 5 seconds
+}
+
 loadProducts();
