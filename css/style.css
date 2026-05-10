@@ -384,3 +384,182 @@ body {
     background-color: transparent; 
 }
 
+.category-header { padding: 40px 5%; }
+.header-top { display: flex; justify-content: space-between; align-items: baseline; }
+.header-top h1 { font-size: 3rem; text-transform: uppercase; margin: 0; }
+
+.plp-container {
+    display: flex; /* Sidebar on left, products on right */
+    padding: 0 5%;
+    gap: 40px;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    border-right: 1.5px solid #000;
+    padding-right: 20px;
+}
+
+.sidebar h3 { font-size: 1.2rem; margin-top: 30px; letter-spacing: 2px; }
+
+.content-area { flex-grow: 1; }
+
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.sort-dropdown {
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* container for the whole categories view */
+.categories-main {
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* The 2-Column Layout like our wireframe */
+.category-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px; /* Space between the big boxes */
+}
+
+/* the card styling */
+.category-card {
+    border: 1.5px solid #000; /* Bold black border like your drawing */
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-card:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.category-card h2 {
+    font-size: 2.2rem;
+    margin: 0;
+    letter-spacing: 4px;
+    font-family: serif;
+}
+
+.category-card p {
+    font-style: italic;
+    color: #555;
+    margin: 10px 0 30px 0;
+    font-size: 1rem;
+}
+
+/* image Wrapper to keep things in the centr */
+.card-image-wrapper {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-image-wrapper img {
+    max-height: 100%;
+    max-width: 80%;
+    object-fit: contain;
+}
+
+/* for paagination Dots at the bottom of the cards */
+.pagination-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.p-dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.p-dot.active {
+    background-color: transparent; 
+}
+
+.category-header { 
+    padding: 40px 5%;
+ }
+.header-top { 
+    display: flex; 
+    justify-content: 
+    space-between; 
+    align-items: 
+    baseline; 
+}
+.header-top h1 { 
+    font-size: 3rem; 
+    text-transform: 
+    uppercase; 
+    margin: 0; 
+}
+
+.list-container {
+    display: flex; /* sidebar on left, products on right */
+    padding: 0 5%;
+    gap: 40px;
+}S
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    border-right: 1.5px solid #000;
+    padding-right: 20px;
+}
+
+.sidebar h3 { 
+    font-size: 1.2rem; 
+    margin-top: 30px; 
+    letter-spacing: 2px; 
+}
+
+.content-area { 
+    flex-grow: 1; 
+}
+
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.sort-dropdown {
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
