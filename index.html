@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewelry Website -- Jewelry Deliverable</title>
-     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header class="main-header">
-    <nav class="nav-left">
-    <ul class="menu">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="shop.html">SHOP</a></li>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jewelry Website -- Jewelry Deliverable</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="nav-left">
+                <ul class="menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+            
+                    <li class="dropdown">
+                        <a href="categories.html" class="dropbtn">CATEGORIES <span class="arrow">▼</span></a>
         
-        <li class="dropdown">
-            <a href="#" class="dropbtn">CATEGORIES <span class="arrow">▼</span></a>
-    
-            <ul class="dropdown-content">
-                <li><a href="#" onclick="filterByCategory('chains')">CHAINS</a></li>
-                <li><a href="#" onclick="filterByCategory('bracelets')">BRACELETS</a></li>
-                <li><a href="#" onclick="filterByCategory('rings')">RINGS</a></li>
-                <li><a href="#" onclick="filterByCategory('earrings')">EARRINGS</a></li>
-                <li><a href="#" onclick="filterByCategory('charms')">CHARMS BAR</a></li>
-            </ul>
-</li>
+                        <ul class="dropdown-content">
+                            <li><a href="#" onclick="filterByCategory('chains')">CHAINS</a></li>
+                            <li><a href="#" onclick="filterByCategory('bracelets')">BRACELETS</a></li>
+                            <li><a href="#" onclick="filterByCategory('rings')">RINGS</a></li>
+                            <li><a href="#" onclick="filterByCategory('earrings')">EARRINGS</a></li>
+                            <li><a href="#" onclick="filterByCategory('charms')">CHARMS BAR</a></li>
+                        </ul>
+                    </li>
 
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="contact.html">CONTACT US</a></li>
-    </ul>
-</nav>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
 
-    <div class="nav-center">
-        <div class="search-container">
-            <input type="text" id="global-search" placeholder="Search...">
-            <button type="submit" class="search-btn">🔍</button>
-        </div>
-    </div>
+            <div class="nav-center">
+                <div class="search-container">
+                    <input type="text" id="global-search" placeholder="Search...">
+                    <button type="submit" class="search-btn">🔍</button>
+                </div>
+            </div>
 
-    <div class="nav-right">
-        <a href="#" class="icon wishlist-btn">♡</a>
-        <a href="login.html" class="icon account-btn">👤</a>
-        <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
-    </div>
-</header>
-<section class="carousel-container">
-    <div class="carousel-slide">
-        <div class="slide fade">
-            <img src="images/carousel/carousel1.jpg" alt="Summer Collection">
-            <div class="caption">Elegance in Every Detail</div>
-        </div>
-        <div class="slide fade">
-            <img src="images/carousel/carousel2.jpg" alt="Handcrafted Gold">
-            <div class="caption">Handcrafted Gold Pieces</div>
-        </div>
-        <div class="slide fade">
-            <img src="images/carousel/carousel3.jpg" alt="New Arrivals">
-            <div class="caption">Discover New Arrivals</div>
-        </div>
+            <div class="nav-right">
+                <a href="#" class="icon wishlist-btn">♡</a>
+                <a href="login.html" class="icon account-btn">👤</a>
+                <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
+            </div>
+        </header>
+        <section class="carousel-container">
+            <div class="carousel-slide">
+                <div class="slide fade">
+                    <img src="images/carousel/carousel1.jpg" alt="Summer Collection">
+                    <div class="caption">Elegance in Every Detail</div>
+                </div>
+                <div class="slide fade">
+                    <img src="images/carousel/carousel2.jpg" alt="Handcrafted Gold">
+                    <div class="caption">Handcrafted Gold Pieces</div>
+                </div>
+                <div class="slide fade">
+                    <img src="images/carousel/carousel3.jpg" alt="New Arrivals">
+                    <div class="caption">Discover New Arrivals</div>
+                </div>
 
-        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-        <a class="next" onclick="moveSlide(1)">&#10095;</a>
-    </div>
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
 
-    <div class="dot-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-</section>
-<main>
-        <h2 id="category-title">OUR COLLECTION</h2>
-        <div id="product-grid" class="product-grid"></div>
-    </main>
-<script src="js/main.js"></script>
-</body>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+        <main>
+            <h2 id="category-title">OUR COLLECTION</h2>
+            <div id="product-grid" class="product-grid"></div>
+        </main>
+    <script src="js/main.js"></script>
+    </body>
 </html>

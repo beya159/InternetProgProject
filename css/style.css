@@ -23,7 +23,7 @@ body {
 }
 
 .nav-center {
-    flex-grow: 1; /* Allows the center area to take up available space */
+    flex-grow: 1; /* allows the center to take up available space */
     display: flex;
     justify-content: center;
 }
@@ -102,12 +102,12 @@ body {
     background-color: var(--brand-purple-dark);
 }
 
-/* 4. Use purple for the Search Bar focus */
+/* use purple for the search bar focus */
 .search-container:focus-within {
     border: 2px solid var(--brand-purple);
 }
 
-/* 5. Heart icon hover (Wishlist) */
+/*Heart icon hover (Wishlist) */
 .wishlist-btn:hover {
     color: var(--brand-purple);
 }
@@ -200,7 +200,7 @@ body {
     transition: transform 0.2s;
 }
 
-/* The Image Container */
+/* image Container */
 .product-card img {
     width: 100%;       /* Fills the card width */
     aspect-ratio: 1/1; /* Keeps them perfectly square like the wireframe */
@@ -210,7 +210,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Product Info Styling */
+/* product info styling */
 .product-card h3 {
     font-size: 0.9rem;
     margin: 5px 0;
@@ -231,16 +231,16 @@ body {
 }
 
 .slide {
-    display: none; /* Hidden by default */
+    display: none; /* hidden by default */
 }
 
 .slide img {
     width: 100%;
-    height: 450px; /* Adjust height based on your images */
+    height: 450px; /* adjust height based on wtv images */
     object-fit: cover;
 }
 
-/* Arrows */
+/* arrows */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -266,7 +266,7 @@ body {
     background-color: var(--brand-purple);
 }
 
-/* Pagination Dots */
+/* pagination Dots */
 .dot-container {
     text-align: center;
     position: absolute;
@@ -289,9 +289,98 @@ body {
     background-color: var(--brand-purple);
 }
 
-/* Fade animation */
+/* dade animation for the carousel in index */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
+}
+
+/* container for the whole categories view */
+.categories-main {
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* The 2-Column Layout like our wireframe */
+.category-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px; /* Space between the big boxes */
+}
+
+/* the card styling */
+.category-card {
+    border: 1.5px solid #000; /* Bold black border like your drawing */
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-card:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.category-card h2 {
+    font-size: 2.2rem;
+    margin: 0;
+    letter-spacing: 4px;
+    font-family: serif;
+}
+
+.category-card p {
+    font-style: italic;
+    color: #555;
+    margin: 10px 0 30px 0;
+    font-size: 1rem;
+}
+
+/* image Wrapper to keep things in the centr */
+.card-image-wrapper {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-image-wrapper img {
+    max-height: 100%;
+    max-width: 80%;
+    object-fit: contain;
+}
+
+/* for paagination dots at the bottom of the cards */
+.pagination-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.p-dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.p-dot.active {
+    background-color: transparent; 
 }
 
