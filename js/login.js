@@ -1,5 +1,5 @@
 
-// jQuery + AJAX-based login handler (moved into login.js)
+// jQuery + AJAX-based login handler using reqres.in (demo API)
 $(function(){
 	function qs(name){ var params = new URLSearchParams(window.location.search); return params.get(name); }
 	var message = qs('message');
@@ -25,24 +25,24 @@ $(function(){
 		e.preventDefault();
 		var u = $('#username').val().trim();
 		var p = $('#password').val();
-		if (!u) { $status.text('Please enter username'); return; }
+		if (!u) { $status.text('Please enter email'); return; }
 
-		// AJAX to fetch users and validate credentials (demo only)
-		$.getJSON('data/users.json')
-			.done(function(data){
-				var users = data && data.users ? data.users : [];
-				var found = users.find(function(x){ return x.username === u && x.password === p; });
-				if (found) {
-					localStorage.setItem('currentUser', JSON.stringify({ username: u }));
-					// Always return to home after login
-					window.location.href = 'index.html';
-				} else {
-					$status.text('Invalid username or password');
+		$.ajax({
+			url: 'https://reqres.in/api/login',
+			method: 'POST',
+			data: { email: u, password: p },
+			success: function(response){
+				localStorage.setItem('currentUser', JSON.stringify({ username: u, token: response.token || '' }));
+				window.location.replace('index.html');
+			},
+			error: function(xhr){
+				var errorMessage = 'Login failed: server error';
+				if (xhr.responseJSON && xhr.responseJSON.error) {
+					errorMessage = xhr.responseJSON.error;
 				}
-			})
-			.fail(function(){
-				$status.text('Login failed: server error');
-			});
+				$status.text(errorMessage);
+			}
+		});
 	});
 
 	$logout.on('click', function(){
