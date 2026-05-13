@@ -29,14 +29,47 @@ function displayProducts(productsToDisplay) {
     
     productsToDisplay.forEach(product => {
         var productCard = `
-            <div class="product-card">
+            <div class="product-card" data-id="${product.id}">
                 <img src="${product.mainImage}" alt="${product.name}" style="width:100%">
                 <h3>${product.name}</h3>
                 <p>$${product.price}</p>
+                <div class="product-actions">
+                    <button class="purchase-btn" data-id="${product.id}">Purchase</button>
+                </div>
             </div>
         `;
         grid.innerHTML += productCard;
     });
+
+    // attach event delegation for lock/purchase
+    grid.removeEventListener('click', productGridClickHandler);
+    grid.addEventListener('click', productGridClickHandler);
+}
+
+function productGridClickHandler(e) {
+    var target = e.target;
+    var id = target.getAttribute && target.getAttribute('data-id');
+    if (!id) return;
+    if (target.classList.contains('purchase-btn')) {
+        handlePurchase(id);
+    }
+}
+function handlePurchase(id) {
+    // require login
+    if (!isUserLoggedIn()) {
+        // redirect to login page
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // proceed with purchase flow (demo)
+    alert('Purchase successful for product id: ' + id + ' (demo)');
+}
+
+function isUserLoggedIn() {
+    try {
+        return !!localStorage.getItem('currentUser');
+    } catch (e) { return false; }
 }
 
 function filterByCategory(categoryName) {
