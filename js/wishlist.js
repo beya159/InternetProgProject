@@ -33,6 +33,7 @@ function displayWishlist() {
 
 function removeFromWishlist(id) {
     let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
+<<<<<<< HEAD
 
     wishlist = wishlist.filter(item => item.id != id);
     
@@ -40,6 +41,16 @@ function removeFromWishlist(id) {
     localStorage.setItem('userWishlist', JSON.stringify(wishlist));
     
     // rerun it without having to refresh page
+=======
+    
+    // Filter out ONLY the item with the matching ID
+    const updatedWishlist = wishlist.filter(item => item.id != id);
+    
+    // Save back to local storage
+    localStorage.setItem('userWishlist', JSON.stringify(updatedWishlist));
+    
+    // Immediately redraw the UI
+>>>>>>> 094efec161880d25dc3c6e05808088a754c30669
     displayWishlist(); 
 }
 
