@@ -84,26 +84,16 @@ function filterByCategory(categoryName) {
 let tempQuickProduct = null;
 
 function openQuickShop(id) {
-    // reset modal validation elements
-    selectedQuickColor = "";
-    var errorBox = document.getElementById('quick-error-msg');
-    if(errorBox) errorBox.style.display = "none";
-    
-    var lenDropdown = document.getElementById('quick-length');
-    if(lenDropdown) lenDropdown.value = "";
-
-    var buttons = document.querySelectorAll('.q-color-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-
-    // gt product w id
+    // 1. Find product
     tempQuickProduct = allProducts.find(p => p.id == id);
     if (!tempQuickProduct) return;
-    
+
+    // 2. Fill info (Make sure these IDs are in your HTML!)
     document.getElementById('quick-name').innerText = tempQuickProduct.name;
     document.getElementById('quick-price').innerText = "$" + tempQuickProduct.price.toFixed(2);
     document.getElementById('quick-img').src = tempQuickProduct.mainImage;
-    
-    // toggle element transparency context layers
+
+    // 3. Show it
     document.getElementById('quick-shop-modal').style.display = "block";
 }
 
