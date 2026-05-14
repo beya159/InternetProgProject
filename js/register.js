@@ -77,7 +77,8 @@
             fetch('https://reqres.in/api/register', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'x-api-key': 'pro_587d68e4bda8cd4aa3a17cfa11f10a1981478f266e2e043a'
                 },
                 body: JSON.stringify({
                     email: email,
