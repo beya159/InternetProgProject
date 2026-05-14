@@ -5,8 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function displayWishlist() {
     let grid = document.getElementById('wishlist-grid');
     let emptyMsg = document.getElementById('empty-msg');
+    
+    // Always fetch the freshest data from localStorage
     const wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
-    grid.innerHTML = "";
+    
+    // Clear the grid to prevent duplication
+    if (grid) grid.innerHTML = "";
 
     if (wishlist.length === 0) {
         if (emptyMsg) emptyMsg.style.display = "block";
@@ -22,41 +26,25 @@ function displayWishlist() {
                 <h3>${item.name}</h3>
                 <p class="price">$${item.price.toFixed(2)}</p>
                 <div class="wishlist-btn-group">
-                    <button class="add-to-bag-btn" onclick="window.location.href='product-detail.html?id=${item.id}'">VIEW ITEM</button>
+                    <button class="add-to-bag-btn" onclick="quickBag(${item.id})">VIEW ITEM</button>
                     <button class="remove-wish-btn" onclick="removeFromWishlist(${item.id})">Remove</button>
                 </div>
             </div>
         `;
-        grid.innerHTML += itemHtml;
+        if (grid) grid.innerHTML += itemHtml;
     });
 }
 
 function removeFromWishlist(id) {
     let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> de8581bca04f9cfb2e64f8cc1a39e671445bf032
 
-    wishlist = wishlist.filter(item => item.id != id);
-    
-    // save back tout de suite
-    localStorage.setItem('userWishlist', JSON.stringify(wishlist));
-    
-    // rerun it without having to refresh page
-<<<<<<< HEAD
-=======
-=======
-    
-    // Filter out ONLY the item with the matching ID
+    // Use != instead of !== to handle string vs number comparison
     const updatedWishlist = wishlist.filter(item => item.id != id);
     
-    // Save back to local storage
+    // Save the updated list back to localStorage
     localStorage.setItem('userWishlist', JSON.stringify(updatedWishlist));
     
-    // Immediately redraw the UI
->>>>>>> 094efec161880d25dc3c6e05808088a754c30669
->>>>>>> de8581bca04f9cfb2e64f8cc1a39e671445bf032
+    // Redraw the UI immediately without a page refresh
     displayWishlist(); 
 }
 
