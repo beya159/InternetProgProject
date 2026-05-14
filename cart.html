@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Shopping Cart</title>
+    <link rel="stylesheet" href="css/cart.css">
+    </head>
+<body>
+    <main class="cart-container">
+        <h1>YOUR SHOPPING BAG</h1>
+        
+        <div id="cart-wrapper">
+            <div id="cart-items-list" class="items-column">
+                </div>
+
+            <div class="cart-summary">
+                <h3>ORDER SUMMARY</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal-amount">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                <hr>
+                <div class="summary-row total">
+                    <span>TOTAL</span>
+                    <span id="final-total">$0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="proceedToCheckout()">CHECKOUT</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>

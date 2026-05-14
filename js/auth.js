@@ -15,6 +15,17 @@
         localStorage.removeItem('currentUser');
     }
 
+    function handleLogout() {
+    // clear the user
+    localStorage.removeItem('currentUser');
+
+    // 2clear the cart so the next person doesn't see it
+    localStorage.removeItem('shoppingCart');
+
+    // redirect to home
+    window.location.href = 'index.html';
+}
+
     function getCurrentUser() {
         try { return JSON.parse(localStorage.getItem('currentUser')); } catch(e){ return null; }
     }
