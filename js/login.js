@@ -26,6 +26,40 @@
         return email.toLowerCase() === 'eve.holt@reqres.in' && password === 'cityslicka';
     }
 
+    function loginWithReqres(email, password, onSuccess, onError) {
+        var request = new XMLHttpRequest();
+
+        request.open('POST', 'https://reqres.in/api/login', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.setRequestHeader('x-api-key', 'pro_587d68e4bda8cd4aa3a17cfa11f10a1981478f266e2e043a');
+
+        request.onreadystatechange = function () {
+            if (request.readyState !== 4) {
+                return;
+            }
+
+            var data = {};
+
+            try {
+                data = JSON.parse(request.responseText || '{}');
+            } catch (error) {
+                data = {};
+            }
+
+            if (request.status >= 200 && request.status < 300) {
+                onSuccess(data);
+                return;
+            }
+
+            onError(data && data.error ? data.error : 'Login failed.');
+        };
+
+        request.send(JSON.stringify({
+            email: email,
+            password: password
+        }));
+    }
+
     function ensureRegisterCta() {
         if (document.querySelector('.register-banner, .register-cta, .register-fallback-cta')) {
             return;
@@ -139,44 +173,20 @@
 
                 setMessage('Signing in...', 'info');
 
-                fetch('https://reqres.in/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'x-api-key': 'pro_587d68e4bda8cd4aa3a17cfa11f10a1981478f266e2e043a'
-                    },
-                    body: JSON.stringify({
+                loginWithReqres(email, password, function (data) {
+                    Auth.setUser({
                         email: email,
-                        password: password
-                    })
-                })
-                    .then(function (response) {
-                        return response.json().then(function (data) {
-                            return {
-                                ok: response.ok,
-                                data: data
-                            };
-                        });
-                    })
-                    .then(function (result) {
-                        if (!result.ok) {
-                            throw new Error(result.data && result.data.error ? result.data.error : 'Login failed.');
-                        }
-
-                        Auth.setUser({
-                            email: email,
-                            displayName: email.split('@')[0],
-                            token: result.data.token
-                        });
-
-                        setMessage('Login successful. Redirecting...', 'success');
-                        window.setTimeout(function () {
-                            window.location.href = 'profile.html';
-                        }, 500);
-                    })
-                    .catch(function (error) {
-                        setMessage(error.message, 'error');
+                        displayName: email.split('@')[0],
+                        token: data.token
                     });
+
+                    setMessage('Login successful. Redirecting...', 'success');
+                    window.setTimeout(function () {
+                        window.location.href = 'profile.html';
+                    }, 500);
+                }, function (message) {
+                    setMessage(message, 'error');
+                });
             });
         }
 

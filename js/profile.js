@@ -35,6 +35,36 @@
         document.getElementById('city').value = savedProfile.city || '';
     }
 
+    function loadReqresProfile(onSuccess, onError) {
+        var request = new XMLHttpRequest();
+
+        request.open('GET', 'https://reqres.in/api/users/2', true);
+        request.setRequestHeader('x-api-key', 'pro_587d68e4bda8cd4aa3a17cfa11f10a1981478f266e2e043a');
+
+        request.onreadystatechange = function () {
+            if (request.readyState !== 4) {
+                return;
+            }
+
+            var data = {};
+
+            try {
+                data = JSON.parse(request.responseText || '{}');
+            } catch (error) {
+                data = {};
+            }
+
+            if (request.status >= 200 && request.status < 300) {
+                onSuccess(data);
+                return;
+            }
+
+            onError();
+        };
+
+        request.send();
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         if (!ensureLoggedIn()) {
             return;
@@ -52,16 +82,13 @@
             });
         }
 
-        fetch('https://reqres.in/api/users/2')
-            .then(function (response) { return response.json(); })
-            .then(function (payload) {
-                populateProfileCard(payload.data);
-                populateForm();
-                setMessage('Profile loaded from ReqRes.', 'success');
-            })
-            .catch(function () {
-                setMessage('Could not load profile data.', 'error');
-            });
+        loadReqresProfile(function (payload) {
+            populateProfileCard(payload.data);
+            populateForm();
+            setMessage('Profile loaded from ReqRes.', 'success');
+        }, function () {
+            setMessage('Could not load profile data.', 'error');
+        });
 
         if (form) {
             form.addEventListener('submit', function (event) {
