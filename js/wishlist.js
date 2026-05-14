@@ -34,12 +34,17 @@ function displayWishlist() {
 
 function removeFromWishlist(id) {
     let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
-    wishlist = wishlist.filter(item => item.id != id);
-    localStorage.setItem('userWishlist', JSON.stringify(wishlist));
-    displayWishlist(); // Refresh the grid
+    
+    // Filter out ONLY the item with the matching ID
+    const updatedWishlist = wishlist.filter(item => item.id != id);
+    
+    // Save back to local storage
+    localStorage.setItem('userWishlist', JSON.stringify(updatedWishlist));
+    
+    // Immediately redraw the UI
+    displayWishlist(); 
 }
 
 function quickBag(id) {
-    // This just sends them back to the shop page with the ID to look at it
-    window.location.href = `index.html?id=${id}`;
+    window.location.href = `product-detail.html?id=${id}`;
 }
