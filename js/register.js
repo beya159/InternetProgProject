@@ -114,23 +114,26 @@
 
             setMessage('Creating account...', 'info');
 
+            // Store account locally first so the user can sign in even if ReqRes doesn't accept the credentials
+            var users = JSON.parse(localStorage.getItem('jewelry_users') || '{}');
+
+            if (users[email.toLowerCase()]) {
+                setMessage('Email is already registered.', 'error');
+                return;
+            }
+
+            users[email.toLowerCase()] = password;
+            localStorage.setItem('jewelry_users', JSON.stringify(users));
+
+            // Call ReqRes register; if it returns a token, use it, otherwise fall back to a local token
             registerWithReqres(email, password, function (data) {
-                // Store account in localStorage regardless of ReqRes response
-                var users = JSON.parse(localStorage.getItem('jewelry_users') || '{}');
-
-                if (users[email.toLowerCase()]) {
-                    setMessage('Email is already registered.', 'error');
-                    return;
-                }
-
-                users[email.toLowerCase()] = password;
-                localStorage.setItem('jewelry_users', JSON.stringify(users));
+                var token = (data && data.token) ? data.token : 'local_token_' + Math.random().toString(36).substr(2, 9);
 
                 Auth.setUser({
                     name: name,
                     email: email,
                     displayName: name,
-                    token: data.token || 'local_token_' + Math.random().toString(36).substr(2, 9)
+                    token: token
                 });
 
                 setMessage('Registration successful. Redirecting to your profile...', 'success');
@@ -139,17 +142,7 @@
                     window.location.href = 'profile.html';
                 }, 1200);
             }, function () {
-                // Even if ReqRes fails, still register locally
-                var users = JSON.parse(localStorage.getItem('jewelry_users') || '{}');
-
-                if (users[email.toLowerCase()]) {
-                    setMessage('Email is already registered.', 'error');
-                    return;
-                }
-
-                users[email.toLowerCase()] = password;
-                localStorage.setItem('jewelry_users', JSON.stringify(users));
-
+                // ReqRes failed - we've already saved locally, use a local token
                 Auth.setUser({
                     name: name,
                     email: email,
@@ -157,8 +150,8 @@
                     token: 'local_token_' + Math.random().toString(36).substr(2, 9)
                 });
 
-                setMessage('Registration successful. Redirecting to your profile...', 'success');
-                showSuccess('<p>Your account is ready.</p><p><a href="profile.html">Go to profile</a></p>');
+                setMessage('Registration saved locally (ReqRes unavailable). Redirecting...', 'success');
+                showSuccess('<p>Your account is ready (local).</p><p><a href="profile.html">Go to profile</a></p>');
                 window.setTimeout(function () {
                     window.location.href = 'profile.html';
                 }, 1200);

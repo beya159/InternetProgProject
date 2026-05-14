@@ -22,10 +22,6 @@
         return users[email.toLowerCase()] || '';
     }
 
-    function isReqresCredential(email, password) {
-        return email.toLowerCase() === 'eve.holt@reqres.in' && password === 'cityslicka';
-    }
-
     function loginWithReqres(email, password, onSuccess, onError) {
         var request = new XMLHttpRequest();
 
@@ -149,6 +145,7 @@
                     return;
                 }
 
+                // Check localStorage for registered users first
                 var registeredPassword = getRegisteredPassword(email);
 
                 if (registeredPassword && registeredPassword === password) {
@@ -158,20 +155,14 @@
                         token: 'local_token_' + Math.random().toString(36).substr(2, 9)
                     });
 
-                    setMessage('Login successful. Redirecting...', 'success');
+                    setMessage('Login successful (local). Redirecting...', 'success');
                     window.setTimeout(function () {
                         window.location.href = 'profile.html';
                     }, 500);
-
                     return;
                 }
 
-                if (!isReqresCredential(email, password)) {
-                    setMessage('Invalid email or password. Use eve.holt@reqres.in / cityslicka or a registered account.', 'error');
-                    return;
-                }
-
-                setMessage('Signing in...', 'info');
+                setMessage('Signing in with ReqRes...', 'info');
 
                 loginWithReqres(email, password, function (data) {
                     Auth.setUser({

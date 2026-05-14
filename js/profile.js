@@ -19,7 +19,6 @@
     }
 
     function populateProfileCard(apiData) {
-        document.getElementById('profile-avatar').src = apiData.avatar;
         document.getElementById('api-name').textContent = apiData.first_name + ' ' + apiData.last_name;
         document.getElementById('api-email').textContent = apiData.email;
         document.getElementById('api-company').textContent = 'User ID: ' + apiData.id;
