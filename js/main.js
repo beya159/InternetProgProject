@@ -220,17 +220,19 @@ function startTimer() {
 }
 
 function addToWishlist(id) {
-    //get product data
-    const product = allProducts.find(p => p.id == id);
-    
-    // get current wishlist or empty array
-    let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
+    //Check Login (Using danush's Auth gate)
+    if (!window.Auth || !Auth.isLoggedIn()) {
+        alert("Please log in to save items to your wishlist! ♡");
+        window.location.href = 'login.html';
+        return;
+    }
 
-    // check if already there
+    const product = allProducts.find(p => p.id == id);
+    let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
     const exists = wishlist.some(item => item.id == id);
 
     if (exists) {
-        alert("This item is already in your wishlist! ♡");
+        alert("This item is already in your wishlist!");
     } else {
         wishlist.push(product);
         localStorage.setItem('userWishlist', JSON.stringify(wishlist));
