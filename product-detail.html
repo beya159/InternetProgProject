@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="detail-container">
+        <div class="gallery-wrapper">
+            <div id="thumb-column" class="thumbnail-column">
+                </div>
+            <div class="main-display">
+                <img id="primary-image" src="" alt="Product Detail">
+            </div>
+        </div>
+
+        <div class="info-wrapper">
+            <h1 id="p-name">Loading...</h1>
+            <div class="rating">★★★★★ (12 Reviews)</div>
+            <h2 id="p-price"></h2>
+
+            <div class="custom-options">
+                <h3>COLORS CHOICE</h3>
+                <div class="color-bubbles">
+                    <span class="dot gold" onclick="selectColor('Gold')"></span>
+                    <span class="dot silver" onclick="selectColor('Silver')"></span>
+                    <span class="dot rose" onclick="selectColor('Rose Gold')"></span>
+                </div>
+
+                <h3>CHAIN LENGTH</h3>
+                <select id="size-dropdown">
+                    <option value="">Select Length</option>
+                    <option value="16">16 inches</option>
+                    <option value="18">18 inches</option>
+                    <option value="20">20 inches</option>
+                </select>
+            </div>
+
+            <div class="desc-box">
+                <h3>DESCRIPTION</h3>
+                <p id="p-desc"></p>
+            </div>
+
+            <div class="buy-actions">
+                <button class="add-cart-btn" onclick="handleAddToCart()">ADD TO CART *</button>
+                <div class="qty-stepper">
+                    <button onclick="changeQty(-1)">-</button>
+                    <span id="qty-count">1</span>
+                    <button onclick="changeQty(1)">+</button>
+                </div>
+                <button class="wish-btn">♡</button>
+            </div>
+            <p id="error-msg" class="error-text">* PLEASE SELECT COLOR AND LENGTH BEFORE ADDING.</p>
+        </div>
+    </main>
+
+    <script src="js/product-detail.js"></script>
+</body>
+</html>

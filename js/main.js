@@ -21,18 +21,20 @@ function loadProducts() {
 
 function displayProducts(productsToDisplay) {
     var grid = document.getElementById('product-grid'); 
-    if (!grid) {
-        return; 
-    } 
+    if (!grid) return; 
 
     grid.innerHTML = ""; 
     
     productsToDisplay.forEach(product => {
         var productCard = `
             <div class="product-card" data-id="${product.id}">
-                <img src="${product.mainImage}" alt="${product.name}" style="width:100%">
-                <h3>${product.name}</h3>
-                <p>$${product.price}</p>
+                <div class="product-clickable-area" onclick="goToProduct(${product.id})" style="cursor: pointer;">
+                    <img src="${product.mainImage}" alt="${product.name}" style="width:100%">
+                    <h3>${product.name}</h3>
+                </div>
+                
+                <p>$${product.price.toFixed(2)}</p>
+                
                 <div class="product-actions">
                     <button class="purchase-btn" data-id="${product.id}">Purchase</button>
                 </div>
@@ -41,19 +43,26 @@ function displayProducts(productsToDisplay) {
         grid.innerHTML += productCard;
     });
 
-    // attach event delegation for lock/purchase
+    // Event delegation for the Purchase button
     grid.removeEventListener('click', productGridClickHandler);
     grid.addEventListener('click', productGridClickHandler);
 }
 
+// Ensure this function is defined globally in main.js
+function goToProduct(productId) {
+    window.location.href = `product-detail.html?id=${productId}`;
+}
+
 function productGridClickHandler(e) {
     var target = e.target;
-    var id = target.getAttribute && target.getAttribute('data-id');
-    if (!id) return;
+    // Only trigger if the actual Purchase button was clicked
     if (target.classList.contains('purchase-btn')) {
+        var id = target.getAttribute('data-id');
         handlePurchase(id);
     }
 }
+
+
 function handlePurchase(id) {
     // require login
     if (!isUserLoggedIn()) {

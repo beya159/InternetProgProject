@@ -563,3 +563,59 @@ body {
     font-weight: bold;
     text-transform: uppercase;
 }
+.detail-container {
+    display: flex;
+    gap: 40px;
+    padding: 50px 5%;
+}
+
+.gallery-wrapper {
+    display: flex;
+    gap: 20px;
+    flex: 1.5;
+}
+
+.thumbnail-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumb-item {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.main-display img {
+    width: 100%;
+    max-width: 500px;
+    border: 1.5px solid #000;
+}
+
+.info-wrapper { flex: 1; }
+
+.color-bubbles { display: flex; gap: 10px; margin-bottom: 20px; }
+.dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+.gold { background: #EBCB8B; }
+.silver { background: #D8DEE9; }
+.rose { background: #E5989B; }
+
+.error-text { color: red; font-size: 0.8rem; display: none; margin-top: 10px; }
+
+.buy-actions { display: flex; gap: 15px; align-items: center; margin-top: 30px; }
+.add-cart-btn {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 10px 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
