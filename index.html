@@ -74,5 +74,40 @@
         <script src="js/site-auth.js"></script>
         <script src="js/index.js"></script>
         <script src="js/main.js"></script>
+        <div id="quick-shop-modal" class="quick-modal" style="display: none;">
+            <div class="quick-modal-content">
+                <span class="quick-close" onclick="closeQuickShop()">&times;</span>
+                
+                <div class="quick-modal-body">
+                    <div class="quick-modal-left">
+                        <img id="quick-img" src="" alt="Product Image">
+                    </div>
+                    
+                    <div class="quick-modal-right">
+                        <h2 id="quick-name"></h2>
+                        <p id="quick-price" class="quick-item-price"></p>
+                        
+                        <label class="quick-label">Select Color:</label>
+                        <div class="quick-color-options">
+                            <button type="button" class="q-color-btn" onclick="selectQuickColor('Silver')">Silver</button>
+                            <button type="button" class="q-color-btn" onclick="selectQuickColor('Gold')">Gold</button>
+                            <button type="button" class="q-color-btn" onclick="selectQuickColor('Rose Gold')">Rose Gold</button>
+                        </div>
+
+                        <label class="quick-label" for="quick-length">Select Chain Length:</label>
+                        <select id="quick-length">
+                            <option value="" disabled selected>Choose length...</option>
+                            <option value="16">16 inches</option>
+                            <option value="18">18 inches</option>
+                            <option value="20">20 inches</option>
+                        </select>
+
+                        <div id="quick-error-msg" class="status-message error" style="display: none;"></div>
+
+                        <button class="quick-add-btn" onclick="addQuickToCart()">ADD TO BAG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

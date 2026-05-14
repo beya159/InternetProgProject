@@ -71,7 +71,9 @@ function handleAddToCart() {
     const length = document.getElementById('size-dropdown').value;
     const errorMsg = document.getElementById('error-msg');
 
-    const user = window.Auth ? Auth.currentUser() : null;
+    // check login
+    //check later another way than "localStorage"
+    const user = localStorage.getItem('currentUser');
     if (!user) {
         alert("You must be logged in to add items to your cart.");
         window.location.href = 'login.html'; 
@@ -83,8 +85,37 @@ function handleAddToCart() {
         errorMsg.innerText = "* PLEASE SELECT COLOR AND LENGTH BEFORE ADDING.";
         return;
     }
+//temporary until having an actual cart page to save on
+    const cartItem = {
+        id: currentProduct.id,
+        name: currentProduct.name,
+        price: currentProduct.price,
+        image: currentProduct.mainImage,
+        color: selectedColor,
+        length: length,
+        quantity: currentQty
+    };
 
-    alert(`Purchase successful! ${currentQty} ${currentProduct.name}(s) have been added to your order.`);
+    // Get existing cart or empty array
+    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    
+    // just add to quantity if an item w the exam safe info exists
+    const existingIndex = cart.findIndex(item => 
+        item.id === cartItem.id && 
+        item.color === cartItem.color && 
+        item.length === cartItem.length
+    );
+
+    if (existingIndex > -1) {
+        cart[existingIndex].quantity += currentQty;
+    } else {
+        cart.push(cartItem);
+    }
+
+    // save back to storage
+    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    
+    alert(`Success! ${currentQty} ${currentProduct.name}(s) added to cart.`);
     errorMsg.style.display = "none";
 }
 

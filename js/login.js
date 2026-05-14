@@ -8,7 +8,6 @@
         if (!status) {
             return;
         }
-
         status.textContent = text;
         status.className = type ? 'status-message ' + type : 'status-message';
     }

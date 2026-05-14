@@ -1,16 +1,16 @@
-var allProducts = []; // to store products
+//starting point for the whole index.html
+
+var allProducts = []; // Stores the product inventory array
+var selectedQuickColor = ""; // Captures the modal color picker choice
 
 function loadProducts() {
     var request = new XMLHttpRequest();
-
     request.open('GET', 'data/products.json', true);
 
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
-            allProducts = JSON.parse(request.responseText); //txt string to json
-            
-            console.log("Products loaded via request:", allProducts); //test
-
+            allProducts = JSON.parse(request.responseText); // text string to JSON array
+            console.log("Products loaded via request:", allProducts); 
             displayProducts(allProducts);
         } else if (request.readyState == 4 && request.status != 200) {
             console.error("Error: Could not load JSON file.");
@@ -19,6 +19,7 @@ function loadProducts() {
     request.send();
 }
 
+// produc grid layiut
 function displayProducts(productsToDisplay) {
     var grid = document.getElementById('product-grid'); 
     if (!grid) return; 
@@ -34,7 +35,7 @@ function displayProducts(productsToDisplay) {
                     </div>
                     
                     <div class="product-overlay-actions">
-                        <button class="icon-btn purchase-btn" data-id="${product.id}" title="Add to Cart">
+                        <button class="shop-btn" onclick="openQuickShop(${product.id})" title="Quick Shop">
                             🛒
                         </button>
                         <button class="icon-btn wishlist-btn" title="Add to Wishlist">
@@ -51,41 +52,11 @@ function displayProducts(productsToDisplay) {
         `;
         grid.innerHTML += productCard;
     });
-
-    grid.removeEventListener('click', productGridClickHandler);
-    grid.addEventListener('click', productGridClickHandler);
 }
 
-// Ensure this function is defined globally in main.js
+
 function goToProduct(productId) {
     window.location.href = `product-detail.html?id=${productId}`;
-}
-
-function productGridClickHandler(e) {
-    var target = e.target;
-    // Only trigger if the actual Purchase button was clicked
-    if (target.classList.contains('purchase-btn')) {
-        var id = target.getAttribute('data-id');
-        handlePurchase(id);
-    }
-}
-
-
-function handlePurchase(id) {
-    // require login
-    if (!isUserLoggedIn()) {
-        // redirect to login page
-        window.location.href = 'login.html';
-        return;
-    }
-
-    alert('Purchase successful for product id: ' + id + '.');
-}
-
-function isUserLoggedIn() {
-    try {
-        return window.Auth ? Auth.isLoggedIn() : false;
-    } catch (e) { return false; }
 }
 
 function filterByCategory(categoryName) {
@@ -109,21 +80,119 @@ function filterByCategory(categoryName) {
     }
 }
 
+// 3. for quick shop btn
+let tempQuickProduct = null;
+
+function openQuickShop(id) {
+    // reset modal validation elements
+    selectedQuickColor = "";
+    var errorBox = document.getElementById('quick-error-msg');
+    if(errorBox) errorBox.style.display = "none";
+    
+    var lenDropdown = document.getElementById('quick-length');
+    if(lenDropdown) lenDropdown.value = "";
+
+    var buttons = document.querySelectorAll('.q-color-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // gt product w id
+    tempQuickProduct = allProducts.find(p => p.id == id);
+    if (!tempQuickProduct) return;
+    
+    document.getElementById('quick-name').innerText = tempQuickProduct.name;
+    document.getElementById('quick-price').innerText = "$" + tempQuickProduct.price.toFixed(2);
+    document.getElementById('quick-img').src = tempQuickProduct.mainImage;
+    
+    // toggle element transparency context layers
+    document.getElementById('quick-shop-modal').style.display = "block";
+}
+
+function closeQuickShop() {
+    document.getElementById('quick-shop-modal').style.display = "none";
+}
+
+function selectQuickColor(color) {
+    selectedQuickColor = color;
+    var errorBox = document.getElementById('quick-error-msg');
+    if(errorBox) errorBox.style.display = "none";
+    
+    var buttons = document.querySelectorAll('.q-color-btn');
+    buttons.forEach(btn => {
+        if(btn.innerText == color) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+function addQuickToCart() {
+    const lengthDropdown = document.getElementById('quick-length');
+    const length = lengthDropdown ? lengthDropdown.value : "";
+    const errorMsg = document.getElementById('quick-error-msg');
+
+    // 1. dannush's cookie session integration gate
+    if (!window.Auth || !Auth.isLoggedIn()) {
+        alert("Please log in first to access your shopping cart!");
+        window.location.href = 'login.html';
+        return;
+    }
+
+    if (!selectedQuickColor || !length) {
+        if (errorMsg) {
+            errorMsg.style.display = "block";
+            errorMsg.innerText = "* Please specify both your preferred color and chain length selection.";
+        } else {
+            alert("Please pick a color and length option first!");
+        }
+        return;
+    }
+
+    // localStorage 
+    const cartItem = {
+        id: tempQuickProduct.id,
+        name: tempQuickProduct.name,
+        price: tempQuickProduct.price,
+        image: tempQuickProduct.mainImage,
+        color: selectedQuickColor,
+        length: length,
+        quantity: 1 
+    };
+
+    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    
+    const existingIndex = cart.findIndex(item => 
+        item.id == cartItem.id && 
+        item.color == cartItem.color && 
+        item.length == cartItem.length
+    );
+
+    if (existingIndex > -1) {
+        cart[existingIndex].quantity += 1;
+    } else {
+        cart.push(cartItem);
+    }
+
+    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    
+    alert(`Success! 1 ${tempQuickProduct.name} (${selectedQuickColor}, ${length}") added to your shopping bag.`);
+    closeQuickShop();
+}
+
+// caroussel
 var slideIndex = 1;
 var timer;
 
-//to be present initially
+// Initial carousel startup procedures
 showSlides(slideIndex);
 startTimer();
 
-// next/prev mouvement
 function moveSlide(n) {
-    clearInterval(timer); // auto-slide stops when user clicks
+    clearInterval(timer); // auto-slide stops when user interacts
     showSlides(slideIndex += n);
-    startTimer(); // restart
+    startTimer(); // tracking timeline resets
 }
 
-// pagination dots
 function currentSlide(n) {
     clearInterval(timer);
     showSlides(slideIndex = n);
@@ -134,12 +203,10 @@ function showSlides(n) {
     var slides = document.getElementsByClassName("slide");
     var dots = document.getElementsByClassName("dot");
     
-    if (n > slides.length) {
-        slideIndex = 1
-    }    
-    if (n < 1) {
-        slideIndex = slides.length
-    }
+    if (slides.length == 0) return; // prevent crashes if page lacks carousel structures
+    
+    if (n > slides.length) { slideIndex = 1; }    
+    if (n < 1) { slideIndex = slides.length; }
     
     for (var i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
@@ -148,15 +215,18 @@ function showSlides(n) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
+    if (slides[slideIndex-1]) slides[slideIndex-1].style.display = "block";  
+    if (dots[slideIndex-1]) dots[slideIndex-1].className += " active";
 }
 
 function startTimer() {
+    var slides = document.getElementsByClassName("slide");
+    if (slides.length == 0) return;
+
     timer = setInterval(function() {
         slideIndex++;
         showSlides(slideIndex);
-    }, 5000); // every 5 seconds
+    }, 5000); // 5 second intervals
 }
 
 loadProducts();
