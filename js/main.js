@@ -27,23 +27,31 @@ function displayProducts(productsToDisplay) {
     
     productsToDisplay.forEach(product => {
         var productCard = `
-            <div class="product-card" data-id="${product.id}">
-                <div class="product-clickable-area" onclick="goToProduct(${product.id})" style="cursor: pointer;">
-                    <img src="${product.mainImage}" alt="${product.name}" style="width:100%">
-                    <h3>${product.name}</h3>
+            <div class="product-card">
+                <div class="image-container">
+                    <div onclick="goToProduct(${product.id})" class="img-wrapper">
+                        <img src="${product.mainImage}" alt="${product.name}">
+                    </div>
+                    
+                    <div class="product-overlay-actions">
+                        <button class="icon-btn purchase-btn" data-id="${product.id}" title="Add to Cart">
+                            🛒
+                        </button>
+                        <button class="icon-btn wishlist-btn" title="Add to Wishlist">
+                            ♡
+                        </button>
+                    </div>
                 </div>
-                
-                <p>$${product.price.toFixed(2)}</p>
-                
-                <div class="product-actions">
-                    <button class="purchase-btn" data-id="${product.id}">Purchase</button>
+
+                <div class="product-info" onclick="goToProduct(${product.id})">
+                    <h3>${product.name}</h3>
+                    <p class="price">$${product.price.toFixed(2)}</p>
                 </div>
             </div>
         `;
         grid.innerHTML += productCard;
     });
 
-    // Event delegation for the Purchase button
     grid.removeEventListener('click', productGridClickHandler);
     grid.addEventListener('click', productGridClickHandler);
 }
