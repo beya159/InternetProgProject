@@ -17,7 +17,12 @@
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 
-    function isValidReqresCredential(email, password) {
+    function getRegisteredPassword(email) {
+        var users = JSON.parse(localStorage.getItem('jewelry_users') || '{}');
+        return users[email.toLowerCase()] || '';
+    }
+
+    function isReqresCredential(email, password) {
         return email.toLowerCase() === 'eve.holt@reqres.in' && password === 'cityslicka';
     }
 
@@ -110,8 +115,25 @@
                     return;
                 }
 
-                if (!isValidReqresCredential(email, password)) {
-                    setMessage('Invalid email or password. Use eve.holt@reqres.in / cityslicka.', 'error');
+                var registeredPassword = getRegisteredPassword(email);
+
+                if (registeredPassword && registeredPassword === password) {
+                    Auth.setUser({
+                        email: email,
+                        displayName: email.split('@')[0],
+                        token: 'local_token_' + Math.random().toString(36).substr(2, 9)
+                    });
+
+                    setMessage('Login successful. Redirecting...', 'success');
+                    window.setTimeout(function () {
+                        window.location.href = 'profile.html';
+                    }, 500);
+
+                    return;
+                }
+
+                if (!isReqresCredential(email, password)) {
+                    setMessage('Invalid email or password. Use eve.holt@reqres.in / cityslicka or a registered account.', 'error');
                     return;
                 }
 

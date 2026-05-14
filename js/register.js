@@ -10,7 +10,13 @@
     }
 
     function isValidEmail(value) {
+        // Email regex: standard email format
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function isValidPassword(value) {
+        // Password regex: At least 6 characters, at least 1 uppercase, 1 lowercase, 1 number
+        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(value);
     }
 
     function showSuccess(message) {
@@ -62,8 +68,8 @@
                 return;
             }
 
-            if (password.length < 6) {
-                setMessage('Password must be at least 6 characters.', 'error');
+            if (!isValidPassword(password)) {
+                setMessage('Password must be at least 6 characters with at least 1 uppercase letter, 1 lowercase letter, and 1 number.', 'error');
                 return;
             }
 
@@ -94,16 +100,24 @@
                     });
                 })
                 .then(function (result) {
-                    if (!result.ok) {
-                        throw new Error(result.data && result.data.error ? result.data.error : 'Registration failed.');
+                    // Store account in localStorage regardless of ReqRes response
+                    var users = JSON.parse(localStorage.getItem('jewelry_users') || '{}');
+                    
+                    if (users[email.toLowerCase()]) {
+                        setMessage('Email is already registered.', 'error');
+                        return;
                     }
+
+                    users[email.toLowerCase()] = password;
+                    localStorage.setItem('jewelry_users', JSON.stringify(users));
 
                     Auth.setUser({
                         name: name,
                         email: email,
                         displayName: name,
-                        token: result.data.token
+                        token: result.data && result.data.token ? result.data.token : 'local_token_' + Math.random().toString(36).substr(2, 9)
                     });
+                    
                     setMessage('Registration successful. Redirecting to your profile...', 'success');
                     showSuccess('<p>Your account is ready.</p><p><a href="profile.html">Go to profile</a></p>');
                     window.setTimeout(function () {
@@ -111,7 +125,29 @@
                     }, 1200);
                 })
                 .catch(function (error) {
-                    setMessage(error.message, 'error');
+                    // Even if ReqRes fails, still register locally
+                    var users = JSON.parse(localStorage.getItem('jewelry_users') || '{}');
+                    
+                    if (users[email.toLowerCase()]) {
+                        setMessage('Email is already registered.', 'error');
+                        return;
+                    }
+
+                    users[email.toLowerCase()] = password;
+                    localStorage.setItem('jewelry_users', JSON.stringify(users));
+
+                    Auth.setUser({
+                        name: name,
+                        email: email,
+                        displayName: name,
+                        token: 'local_token_' + Math.random().toString(36).substr(2, 9)
+                    });
+                    
+                    setMessage('Registration successful. Redirecting to your profile...', 'success');
+                    showSuccess('<p>Your account is ready.</p><p><a href="profile.html">Go to profile</a></p>');
+                    window.setTimeout(function () {
+                        window.location.href = 'profile.html';
+                    }, 1200);
                 });
         });
     });
