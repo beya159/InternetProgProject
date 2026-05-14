@@ -37,11 +37,12 @@
             </div>
 
             <div class="nav-right">
-                <a href="#" class="icon wishlist-btn">♡</a>
+                <a href="wishlist.html" class="icon wishlist-btn">♡</a>
                 <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
                 <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
             </div>
         </header>
+
         <section class="carousel-container">
             <div class="carousel-slide">
                 <div class="slide fade">
@@ -67,13 +68,16 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </section>
+
         <main>
             <h2 id="category-title">OUR COLLECTION</h2>
             <div id="product-grid" class="product-grid"></div>
         </main>
+
         <script src="js/site-auth.js"></script>
         <script src="js/index.js"></script>
         <script src="js/main.js"></script>
+
         <div id="quick-shop-modal" class="quick-modal" style="display: none;">
             <div class="quick-modal-content">
                 <span class="quick-close" onclick="closeQuickShop()">&times;</span>
@@ -102,7 +106,7 @@
                             <option value="20">20 inches</option>
                         </select>
 
-                        <div id="quick-error-msg" class="status-message error" style="display: none;"></div>
+                        <div id="quick-error-msg" class="status-message error" style="display: none; color: red; margin: 10px 0;"></div>
 
                         <button class="quick-add-btn" onclick="addQuickToCart()">ADD TO BAG</button>
                     </div>

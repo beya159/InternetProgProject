@@ -619,3 +619,44 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
+/*for quick show buttons */
+/* The main container */
+.quick-modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* This perfectly centers the box */
+    width: 700px;
+    height: 400px;
+    background: white;
+    border: 2px solid #000;
+    z-index: 1000; /* Keeps it on top of everything */
+    box-shadow: 10px 10px 0px #000; /* Simple "pop" shadow */
+}
+
+/* Side-by-side layout */
+.quick-modal-body {
+    display: flex;
+    height: 100%;
+}
+
+.quick-modal-left, .quick-modal-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.quick-modal-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the jewelry looking right */
+}
+
+.quick-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}

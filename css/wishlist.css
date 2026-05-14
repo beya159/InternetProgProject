@@ -1,0 +1,118 @@
+body {
+    background-color: #fffafb; /* Soft blush tint */
+    font-family: 'Arial', sans-serif;
+}
+
+.wishlist-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.wishlist-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.wishlist-header h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: #333;
+}
+
+/* Grid Layout */
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Card */
+.wishlist-item {
+    background: #fff;
+    border-radius: 15px; /* Cuter rounded corners */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.wishlist-item:hover {
+    transform: translateY(-5px);
+}
+
+.wishlist-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.wishlist-item h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.wishlist-item .price {
+    color: #b18e72; /* Subtle gold/tan color */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Actions inside card */
+.wishlist-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-to-bag-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.remove-wish-btn {
+    background: none;
+    border: 1px solid #ddd;
+    color: #888;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.75rem;
+}
+
+.remove-wish-btn:hover {
+    background: #fff5f5;
+    color: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+.continue-shopping {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+/* Make the heart pop on hover */
+.wishlist-btn:hover {
+    color: #ffb6c1; /* Light pink */
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+}
+
+/* Optional: if you want it to look "filled" when active */
+.wishlist-btn.active {
+    color: #ff4d4d;
+}
