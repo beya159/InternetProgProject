@@ -1,10 +1,7 @@
-// --- js/cart.js ---
-
 function loadCart() {
-    const user = localStorage.getItem('currentUser');
+    const user = window.Auth ? Auth.currentUser() : null;
     
     if (!user) {
-        // if not logged in, hide the cart and show a message
         const container = document.querySelector('.cart-container');
         container.innerHTML = `
             <div style="text-align:center; padding:50px;">
@@ -14,21 +11,15 @@ function loadCart() {
         `;
         return; 
     }
-    console.log("1. loadCart function started");
-
     const cartWrapper = document.getElementById('cart-items-list');
-    console.log("2. Looking for 'cart-items-list':", cartWrapper);
 
     if (!cartWrapper) {
-        alert("CRITICAL ERROR: Could not find the div with id 'cart-items-list' in your HTML!");
         return;
     }
 
     const rawData = localStorage.getItem('shoppingCart');
-    console.log("3. Raw data from LocalStorage:", rawData);
 
     const cartData = JSON.parse(rawData) || [];
-    console.log("4. Parsed Cart Array:", cartData);
 
     if (cartData.length === 0) {
         cartWrapper.innerHTML = "<h2>Your cart is empty.</h2>";
@@ -41,7 +32,6 @@ function loadCart() {
 
     for (let i = 0; i < cartData.length; i++) {
         let item = cartData[i];
-        console.log("5. Processing item:", item.name);
         
         let itemTotal = item.price * item.quantity;
         subtotal += itemTotal;
@@ -60,7 +50,6 @@ function loadCart() {
 
     cartWrapper.innerHTML = htmlContent;
     updateTotals(subtotal);
-    console.log("6. Finished drawing the cart!");
 }
 
 function updateTotals(subtotal) {
@@ -76,6 +65,21 @@ function removeItem(index) {
     cartData.splice(index, 1);
     localStorage.setItem('shoppingCart', JSON.stringify(cartData));
     loadCart();
+}
+
+function proceedToCheckout() {
+    if (!window.Auth || !Auth.isLoggedIn()) {
+        window.location.href = 'login.html?message=' + encodeURIComponent('Please log in to checkout.');
+        return;
+    }
+
+    const cartData = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    if (cartData.length === 0) {
+        alert('Your cart is empty.');
+        return;
+    }
+
+    window.location.href = 'checkout.html';
 }
 
 // Start the process

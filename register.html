@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <main class="auth-main">
+        <h1>Create Account</h1>
+        <p class="page-lead">Register with ReqRes, then continue straight into your profile.</p>
+        <div id="status" class="status-message"></div>
+
+        <form id="register-form" novalidate>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="new-password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p class="page-footer-link">Already have an account? <a href="login.html">Log in</a></p>
+        <div id="success-panel" class="success-panel" style="display:none;"></div>
+    </main>
+
+    <script src="js/site-auth.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

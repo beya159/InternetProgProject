@@ -79,13 +79,12 @@ function handlePurchase(id) {
         return;
     }
 
-    // proceed with purchase flow (demo)
-    alert('Purchase successful for product id: ' + id + ' (demo)');
+    alert('Purchase successful for product id: ' + id + '.');
 }
 
 function isUserLoggedIn() {
     try {
-        return !!localStorage.getItem('currentUser');
+        return window.Auth ? Auth.isLoggedIn() : false;
     } catch (e) { return false; }
 }
 
