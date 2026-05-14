@@ -3,18 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function displayWishlist() {
-    const grid = document.getElementById('wishlist-grid');
-    const emptyMsg = document.getElementById('empty-msg');
+    let grid = document.getElementById('wishlist-grid');
+    let emptyMsg = document.getElementById('empty-msg');
     const wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
-
     grid.innerHTML = "";
 
     if (wishlist.length === 0) {
-        emptyMsg.style.display = "block";
+        if (emptyMsg) emptyMsg.style.display = "block";
         return;
     }
 
-    emptyMsg.style.display = "none";
+    if (emptyMsg) emptyMsg.style.display = "none";
 
     wishlist.forEach(item => {
         const itemHtml = `
@@ -23,7 +22,7 @@ function displayWishlist() {
                 <h3>${item.name}</h3>
                 <p class="price">$${item.price.toFixed(2)}</p>
                 <div class="wishlist-btn-group">
-                    <button class="add-to-bag-btn" onclick="quickBag(${item.id})">VIEW ITEM</button>
+                    <button class="add-to-bag-btn" onclick="window.location.href='product-detail.html?id=${item.id}'">VIEW ITEM</button>
                     <button class="remove-wish-btn" onclick="removeFromWishlist(${item.id})">Remove</button>
                 </div>
             </div>
@@ -34,12 +33,16 @@ function displayWishlist() {
 
 function removeFromWishlist(id) {
     let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
+
     wishlist = wishlist.filter(item => item.id != id);
+    
+    // save back tout de suite
     localStorage.setItem('userWishlist', JSON.stringify(wishlist));
-    displayWishlist(); // Refresh the grid
+    
+    // rerun it without having to refresh page
+    displayWishlist(); 
 }
 
 function quickBag(id) {
-    // This just sends them back to the shop page with the ID to look at it
-    window.location.href = `index.html?id=${id}`;
+    window.location.href = `product-detail.html?id=${id}`;
 }
