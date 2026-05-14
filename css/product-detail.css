@@ -1,0 +1,57 @@
+/*for the whole page */
+.detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* gallery takes more space than info */
+    gap: 40px;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.gallery-wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.thumbnail-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumb-item {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000; 
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.main-display {
+    flex-grow: 1;
+    position: relative;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.main-display img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 2px solid #000;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
