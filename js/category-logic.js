@@ -19,13 +19,17 @@ function loadCategoryData(category) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'data/products.json', true);
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
             var allData = JSON.parse(xhr.responseText);
             
-            // Initial filter by category
-            categoryProducts = allData.filter(p => 
-                p.category.toLowerCase() === category.toLowerCase()
-            );
+            if (category.toLowerCase() == 'all') {
+                categoryProducts = allData;
+                document.getElementById('cat-name-display').innerText = "ALL COLLECTIONS";
+            } else {
+                categoryProducts = allData.filter(p => 
+                    p.category.toLowerCase() == category.toLowerCase()
+                );
+            }
 
             renderGrid(categoryProducts);
         }
@@ -71,6 +75,29 @@ function renderGrid(products) {
                 </div>
             </div>`;
     });
+}
+
+function applyFilters() {
+    const selectedColor = document.querySelector('input[name="color"]:checked')?.value;
+    const selectedStyle = document.querySelector('input[name="style"]:checked')?.value;
+
+    let filtered = categoryProducts;
+
+    // Filter by color ONLY if it's not "all"
+    if (selectedColor && selectedColor !== 'all') {
+        filtered = filtered.filter(p => 
+            p.color && p.color.toLowerCase().includes(selectedColor.toLowerCase())
+        );
+    }
+
+    // Filter by style ONLY if it's not "all"
+    if (selectedStyle && selectedStyle !== 'all') {
+        filtered = filtered.filter(p => 
+            p.style && p.style.toLowerCase() == selectedStyle.toLowerCase()
+        );
+    }
+
+    renderGrid(filtered);
 }
 
 initCategoryPage();
