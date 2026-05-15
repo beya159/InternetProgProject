@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     displayWishlist();
     
-    // Keeps your name and cart count visible on the wishlist page
+    // check if name is there: if so, u logged in. if not, debug
     if (window.Auth && typeof Auth.updateHeaderUI == 'function') {
         Auth.updateHeaderUI();
     }
@@ -11,10 +11,10 @@ function displayWishlist() {
     let grid = document.getElementById('wishlist-grid');
     let emptyMsg = document.getElementById('empty-msg');
     
-    // Always fetch the freshest data from localStorage
+    // fetch the latest data from localStorage
     const wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
     
-    // Clear the grid to prevent duplication
+    // clear the grid to prevent duplication
     if (grid) grid.innerHTML = "";
 
     if (wishlist.length === 0) {
@@ -43,13 +43,12 @@ function displayWishlist() {
 function removeFromWishlist(id) {
     let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
 
-    // Use != instead of !== to handle string vs number comparison
     const updatedWishlist = wishlist.filter(item => item.id != id);
     
-    // Save the updated list back to localStorage
+    // save the updated list back to localStorage
     localStorage.setItem('userWishlist', JSON.stringify(updatedWishlist));
     
-    // Redraw the UI immediately without a page refresh
+    // redraw the UI without page refresh
     displayWishlist(); 
 }
 

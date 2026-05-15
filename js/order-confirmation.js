@@ -1,12 +1,12 @@
 (function () {
     function ensureLoggedIn() {
-        if (!Auth.isLoggedIn()) {
-            window.location.href = 'login.html?message=' + encodeURIComponent('Please log in to view your order.');
-            return false;
-        }
-
-        return true;
+    if (!Auth.isLoggedIn()) {
+        window.location.href = 'login.html?message=Please log in to view your order.';
+        return false;
     }
+
+    return true;
+}
 
     function renderOrder(order) {
         var container = document.getElementById('confirmation-details');

@@ -2,7 +2,7 @@ var selectedEditColor = "";
 var editingIndex = -1;
 
 function loadCart() {
-    // Check for getUser OR currentUser just in case
+    // just in case
     var user = null;
     if (window.Auth) {
         if (typeof Auth.getUser == 'function') {

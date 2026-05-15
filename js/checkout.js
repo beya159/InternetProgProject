@@ -11,7 +11,8 @@
 
     function ensureLoggedIn() {
         if (!Auth.isLoggedIn()) {
-            window.location.href = 'login.html?message=' + encodeURIComponent('Please log in to checkout.');
+            // Removed encodeURIComponent here
+            window.location.href = 'login.html?message=Please log in to checkout.';
             return false;
         }
 
@@ -36,7 +37,19 @@
         orderItems.innerHTML = cartItems.map(function (item) {
             var itemTotal = item.price * item.quantity;
             subtotal += itemTotal;
-            return '<div class="order-item"><img src="' + item.image + '" alt="' + item.name + '"><div><h3>' + item.name + '</h3><p>' + item.color + ' | ' + item.length + ' inches</p><p>Quantity: ' + item.quantity + '</p></div><strong>$' + itemTotal.toFixed(2) + '</strong></div>';
+            
+            // Logic check: if length is empty (like for rings/earrings), show nothing instead of "undefined"
+            var sizeText = item.length ? ' | ' + item.length + ' inches' : '';
+            
+            return '<div class="order-item">' +
+                        '<img src="' + item.image + '" alt="' + item.name + '">' +
+                        '<div>' +
+                            '<h3>' + item.name + '</h3>' +
+                            '<p>' + item.color + sizeText + '</p>' +
+                            '<p>Quantity: ' + item.quantity + '</p>' +
+                        '</div>' +
+                        '<strong>$' + itemTotal.toFixed(2) + '</strong>' +
+                    '</div>';
         }).join('');
 
         document.getElementById('subtotal-amount').textContent = '$' + subtotal.toFixed(2);

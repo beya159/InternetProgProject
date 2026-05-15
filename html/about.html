@@ -6,51 +6,81 @@
     <title>About Us</title>
      <link rel="stylesheet" href="../css/style.css">
      <link rel="stylesheet" href="../css/about.css">
+    <title>About Us -- Jewelry Deliverable</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-        <header class="main-header">
-            <nav class="nav-left">
-                <ul class="menu">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="shop.html">SHOP</a></li>
-            
-                    <li class="dropdown">
-                        <a href="categories.html">CATEGORIES</a>
-                        <ul class="dropdown-content">
-                            <li><a href="category-view.html?type=all">SHOP ALL</a></li> 
-                            <hr>
-                            <li><a href="category-view.html?type=rings">RINGS</a></li>
-                            <li><a href="category-view.html?type=chains">CHAINS</a></li>
-                            <li><a href="category-view.html?type=bracelets">BRACELETS</a></li>
-                            <li><a href="category-view.html?type=earrings">EARRINGS</a></li>
-                            <li><a href="category-view.html?type=charms">CHARMS BAR</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-center">
-                <div class="search-container">
-                    <input type="text" id="global-search" placeholder="Search...">
-                    <button type="submit" class="search-btn">🔍</button>
-                </div>
+    <header class="main-header">
+        <nav class="nav-left">
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li class="dropdown">
+                    <a href="categories.html">CATEGORIES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="category-view.html?type=all">SHOP ALL</a></li> 
+                        <hr>
+                        <li><a href="category-view.html?type=rings">RINGS</a></li>
+                        <li><a href="category-view.html?type=chains">CHAINS</a></li>
+                        <li><a href="category-view.html?type=bracelets">BRACELETS</a></li>
+                        <li><a href="category-view.html?type=earrings">EARRINGS</a></li>
+                        <li><a href="category-view.html?type=charms">CHARMS BAR</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+        <div class="nav-center">
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search...">
+                <button type="submit" class="search-btn">🔍</button>
             </div>
-
-            <div class="nav-right">
-                <a href="wishlist.html" class="icon wishlist-btn">♡</a>
-                <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
-                <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
-            </div>
-        </header>
-    <header class="about-header">
-        <h1>About Our Jewelry Deliverable</h1>
+        </div>
+        <div class="nav-right">
+            <a href="wishlist.html" class="icon wishlist-btn">♡</a>
+            <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
+            <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
+        </div>
     </header>
-    <main class="about-content">
-        <p>Welcome to our jewelry store! We specialize in creating beautiful, high-quality pieces that celebrate the unique beauty of each individual.</p>
-        <p>Our journey began with a simple passion for craftsmanship and a desire to create pieces that would be treasured for generations.</p>
+
+    <section class="about-hero">
+        <div class="hero-overlay">
+            <h1>Crafting Timeless Moments</h1>
+            <p>ESTABLISHED 2026</p>
+        </div>
+    </section>
+
+    <main class="about-container">
+        <section class="about-section">
+            <div class="text-block">
+                <h2>Our Story</h2>
+                <p>What started as a small passion for hand-selected gemstones in a home studio has grown into a destination for those seeking elegance with a personal touch. We believe jewelry isn't just an accessory—it's a storyteller.</p>
+                <p>Every piece in our collection is curated to celebrate the unique beauty of the individual who wears it, blending modern trends with classic craftsmanship.</p>
+            </div>
+        </section>
+
+        <section class="values-grid">
+            <div class="value-card">
+                <h3>Quality</h3>
+                <p>We use high-grade metals and ethically sourced stones designed to last a lifetime.</p>
+            </div>
+            <div class="value-card">
+                <h3>Craft</h3>
+                <p>Attention to detail is our signature. From the first sketch to the final polish.</p>
+            </div>
+            <div class="value-card">
+                <h3>Ethics</h3>
+                <p>Responsible sourcing and sustainable practices are at the heart of our brand.</p>
+            </div>
+        </section>
     </main>
+
+    <footer class="about-footer">
+        <p>2026 Jewelry Deliverable. Please be merciful sir :)</p>
+    </footer>
+
+    <script src="js/site-auth.js"></script>
 </body>
 </html>

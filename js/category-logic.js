@@ -4,16 +4,20 @@ function initCategoryPage() {
     var params = new URLSearchParams(window.location.search);
     var selectedCat = params.get('type');
 
-    if (!selectedCat) return;
+    if (!selectedCat) {
+        return;
+    }
 
     var displayElem = document.getElementById('cat-name-display');
-    if (displayElem) displayElem.innerText = selectedCat.toUpperCase();
+    if (displayElem){
+        displayElem.innerText = selectedCat.toUpperCase();
+    } 
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'data/products.json', true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var allData = JSON.parse(xhr.responseText);
+    var request = new XMLHttpRequest();
+    request.open('GET', 'data/products.json', true);
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            var allData = JSON.parse(request.responseText);
             
             if (selectedCat.toLowerCase() == "all") {
                 categoryProducts = allData;
@@ -25,7 +29,7 @@ function initCategoryPage() {
             applyFilters();
         }
     };
-    xhr.send();
+    request.send();
 
     document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
         radio.addEventListener('change', applyFilters);
@@ -65,7 +69,7 @@ function applyFilters() {
     }
 
     if (sortOrder == "low-high") {
-        filtered.sort((a, b) => a.price - b.price);
+        filtered.sort((a, b) => a.price - b.price); //like javaa
     } else if (sortOrder == "high-low") {
         filtered.sort((a, b) => b.price - a.price);
     }
@@ -77,8 +81,12 @@ function renderGrid(products) {
     var grid = document.getElementById('product-grid');
     var countDisplay = document.getElementById('item-count');
     
-    if (countDisplay) countDisplay.innerText = products.length + " ITEMS";
-    if (!grid) return;
+    if (countDisplay){
+        countDisplay.innerText = products.length + " ITEMS";
+    } 
+    if (!grid) {
+        return;
+    }
 
     grid.innerHTML = "";
 

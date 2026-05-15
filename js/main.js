@@ -1,6 +1,6 @@
 var allProducts = []; 
 var selectedQuickColor = ""; 
-var currentQuickProduct = null; // Track which product is in the modal
+var currentQuickProduct = null; // totrack which product is in the modal
 
 function loadProducts() {
     var request = new XMLHttpRequest();
@@ -16,7 +16,9 @@ function loadProducts() {
 
 function displayProducts(productsToDisplay) {
     var grid = document.getElementById('product-grid'); 
-    if (!grid) return; 
+    if (!grid) {
+        return; 
+    }
     grid.innerHTML = ""; 
     productsToDisplay.forEach(product => {
         grid.innerHTML += `
@@ -42,23 +44,25 @@ function goToProduct(productId) {
     window.location.href = `product-detail.html?id=${productId}`;
 }
 
-// --- QUICK SHOP FUNCTIONS (The missing pieces!) ---
+// quick shop
 function openQuickShop(productId) {
-    // Find product in whichever list is active
+    // to find product in whichever list is active
     currentQuickProduct = allProducts.find(p => p.id == productId);
     
-    if (!currentQuickProduct) return;
+    if (!currentQuickProduct) {
+        return;
+    }
 
-    // Fill modal data
+    // fill modal data
     document.getElementById('quick-name').innerText = currentQuickProduct.name;
     document.getElementById('quick-price').innerText = `$${currentQuickProduct.price.toFixed(2)}`;
     document.getElementById('quick-img').src = currentQuickProduct.mainImage;
     
-    // Reset selection and errors
+    // reset selection and errors
     selectedQuickColor = "";
     document.getElementById('quick-error-msg').style.display = "none";
     
-    // Show modal
+    // show modal
     document.getElementById('quick-shop-modal').style.display = "block";
 }
 
@@ -72,23 +76,25 @@ function selectQuickColor(color) {
     console.log("Quick color selected: " + color);
 }
 
-// --- WISHLIST LOGIC ---
+// wishlist
 function addToWishlist(productId) {
-    // 1. Check Login
+    // check if logged in
     if (!window.Auth || !Auth.isLoggedIn()) {
         alert("Please log in to save items to your wishlist!");
         window.location.href = 'login.html';
         return;
     }
 
-    // 2. Find the product details from our loaded list
+    // find the details from the list we created to load in products
     const product = allProducts.find(p => p.id == productId);
-    if (!product) return;
+    if (!product) {
+        return;
+    }
 
-    // 3. Get current wishlist or empty array
+    // get current wishlist (empty array if nothing in it)
     let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
 
-    // 4. Check if it's already there so we don't double up
+    // check if it's already there so we don't double up hehe so smart
     const exists = wishlist.some(item => item.id == productId);
 
     if (!exists) {
@@ -100,7 +106,7 @@ function addToWishlist(productId) {
     }
 }
 
-// --- CAROUSEL CODE ---
+// carousel
 var slideIndex = 1;
 var timer;
 
@@ -113,25 +119,41 @@ function moveSlide(n) {
 function showSlides(n) {
     var slides = document.getElementsByClassName("slide");
     var dots = document.getElementsByClassName("dot");
-    if (slides.length == 0) return;
-    if (n > slides.length) { slideIndex = 1; }    
-    if (n < 1) { slideIndex = slides.length; }
-    for (var i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-    for (var i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
-    if (slides[slideIndex-1]) slides[slideIndex-1].style.display = "block";  
-    if (dots[slideIndex-1]) dots[slideIndex-1].className += " active";
+    if (slides.length == 0) {
+        return;
+    }
+    if (n > slides.length) { 
+        slideIndex = 1;
+     }    
+    if (n < 1) { 
+        slideIndex = slides.length; 
+    }
+    for (var i = 0; i < slides.length; i++) { 
+        slides[i].style.display = "none"; 
+    }
+    for (var i = 0; i < dots.length; i++) { 
+        dots[i].className = dots[i].className.replace(" active", ""); 
+    }
+    if (slides[slideIndex-1]) {
+        slides[slideIndex-1].style.display = "block";  
+    }
+    if (dots[slideIndex-1]) {
+        dots[slideIndex-1].className += " active";
+    }
 }
 
 function startTimer() {
     var slides = document.getElementsByClassName("slide");
-    if (slides.length == 0) return;
+    if (slides.length == 0) {
+        return;
+    }
     timer = setInterval(function() {
         slideIndex++;
         showSlides(slideIndex);
     }, 5000);
 }
 
-// --- CART LOGIC ---
+// cart
 function addQuickToCart() {
     if (!window.Auth || !Auth.isLoggedIn()) {
         alert("Please log in first!");
@@ -166,7 +188,7 @@ function addQuickToCart() {
     closeQuickShop();
 }
 
-// Initialize
+// initialize
 document.addEventListener('DOMContentLoaded', function() {
     loadProducts();
     showSlides(slideIndex);
