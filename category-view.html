@@ -90,8 +90,9 @@
             </main>
         </section>
 
-        <script src="js/category-logic.js"></script>
+        <script src="js/site-auth.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/category-logic.js"></script>
 
         <div id="quick-shop-modal" class="quick-modal" style="display: none;">
             <div class="quick-modal-content">
@@ -101,6 +102,19 @@
                     <div class="quick-modal-right">
                         <h2 id="quick-name"></h2>
                         <p id="quick-price"></p>
+                        
+                        <select id="quick-length" style="margin-bottom: 10px; display: block;">
+                            <option value="16">16 inches</option>
+                            <option value="18" selected>18 inches</option>
+                            <option value="20">20 inches</option>
+                        </select>
+
+                        <div class="quick-colors" style="margin-bottom: 10px;">
+                            <button class="q-color-btn" onclick="selectQuickColor('Gold')">Gold</button>
+                            <button class="q-color-btn" onclick="selectQuickColor('Silver')">Silver</button>
+                        </div>
+                        
+                        <p id="quick-error-msg" style="color: red; display: none; font-size: 12px;"></p>
                         <button class="quick-add-btn" onclick="addQuickToCart()">ADD TO BAG</button>
                     </div>
                 </div>

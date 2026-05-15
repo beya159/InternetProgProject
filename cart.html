@@ -5,52 +5,45 @@
     <title>Your Shopping Cart</title>
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/style.css">
-    </head>
+</head>
 <body>
     <header class="main-header">
-            <nav class="nav-left">
-                <ul class="menu">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="shop.html">SHOP</a></li>
-            
-                    <li class="dropdown">
-                        <a href="categories.html">CATEGORIES</a>
-                        <ul class="dropdown-content">
-                            <li><a href="category-view.html?type=all">SHOP ALL</a></li> 
-                            <hr>
-                            <li><a href="category-view.html?type=rings">RINGS</a></li>
-                            <li><a href="category-view.html?type=chains">CHAINS</a></li>
-                            <li><a href="category-view.html?type=bracelets">BRACELETS</a></li>
-                            <li><a href="category-view.html?type=earrings">EARRINGS</a></li>
-                            <li><a href="category-view.html?type=charms">CHARMS BAR</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-center">
-                <div class="search-container">
-                    <input type="text" id="global-search" placeholder="Search...">
-                    <button type="submit" class="search-btn">🔍</button>
-                </div>
+        <nav class="nav-left">
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li class="dropdown">
+                    <a href="categories.html">CATEGORIES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="category-view.html?type=all">SHOP ALL</a></li> 
+                        <hr>
+                        <li><a href="category-view.html?type=rings">RINGS</a></li>
+                        <li><a href="category-view.html?type=chains">CHAINS</a></li>
+                        <li><a href="category-view.html?type=bracelets">BRACELETS</a></li>
+                        <li><a href="category-view.html?type=earrings">EARRINGS</a></li>
+                        <li><a href="category-view.html?type=charms">CHARMS BAR</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+        <div class="nav-center">
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search...">
+                <button type="submit" class="search-btn">🔍</button>
             </div>
-
-            <div class="nav-right">
-                <a href="wishlist.html" class="icon wishlist-btn">♡</a>
-                <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
-                <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
-            </div>
-        </header>
+        </div>
+        <div class="nav-right">
+            <a href="wishlist.html" class="icon wishlist-btn">♡</a>
+            <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
+            <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
+        </div>
+    </header>
     <main class="cart-container">
         <h1>YOUR SHOPPING BAG</h1>
-        
         <div id="cart-wrapper">
-            <div id="cart-items-list" class="items-column">
-                </div>
-
+            <div id="cart-items-list" class="items-column"></div>
             <div class="cart-summary">
                 <h3>ORDER SUMMARY</h3>
                 <div class="summary-row">
@@ -70,6 +63,35 @@
             </div>
         </div>
     </main>
+
+    <div id="edit-modal" class="quick-modal" style="display: none;">
+        <div class="quick-modal-content">
+            <span class="quick-close" onclick="closeEditModal()">&times;</span>
+            <div class="quick-modal-body">
+                <div class="quick-modal-left">
+                    <img id="edit-img" src="" width="200">
+                </div>
+                <div class="quick-modal-right">
+                    <h2 id="edit-name"></h2>
+                    <label>Color:</label>
+                    <div class="quick-color-options">
+                        <button type="button" class="q-color-btn" onclick="selectEditColor('Silver')">Silver</button>
+                        <button type="button" class="q-color-btn" onclick="selectEditColor('Gold')">Gold</button>
+                        <button type="button" class="q-color-btn" onclick="selectEditColor('Rose Gold')">Rose Gold</button>
+                    </div>
+                    <label>Length:</label>
+                    <select id="edit-length">
+                        <option value="16">16 inches</option>
+                        <option value="18">18 inches</option>
+                        <option value="20">20 inches</option>
+                    </select>
+                    <label>Quantity:</label>
+                    <input type="number" id="edit-quantity" min="1" style="width: 50px;">
+                    <button class="quick-add-btn" onclick="saveCartEdit()" style="margin-top:20px;">UPDATE ITEM</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/site-auth.js"></script>
     <script src="js/cart.js"></script>
