@@ -1,13 +1,49 @@
 .about-header {
-    font-size: 2.5em;
+    padding: 100px 20px;
+    background-color: #f9f9f9;
     text-align: center;
-    margin-top: 20px;
-    color: #333;
+    border-bottom: 1px solid #eee;
 }
+
+.about-header h1 {
+    font-size: 2.8em;
+    font-family: "Playfair Display", serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #222;
+    margin: 0;
+}
+
 .about-content {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #555;
+    max-width: 750px; 
+    margin: 60px auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.about-values {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 20px;
+    background: #fff;
+    flex-wrap: wrap;
+}
+
+.value-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.value-item h3 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #d4af37; /* gold */
 }
