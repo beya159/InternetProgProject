@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Category View</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/category-view.css">
     </head>
     <body>
         <header class="main-header">
@@ -87,5 +88,20 @@
         </section>
 
         <script src="js/category-logic.js"></script>
+        <script src="js/main.js"></script>
+
+        <div id="quick-shop-modal" class="quick-modal" style="display: none;">
+            <div class="quick-modal-content">
+                <span class="quick-close" onclick="closeQuickShop()">&times;</span>
+                <div class="quick-modal-body">
+                    <div class="quick-modal-left"><img id="quick-img" src=""></div>
+                    <div class="quick-modal-right">
+                        <h2 id="quick-name"></h2>
+                        <p id="quick-price"></p>
+                        <button class="quick-add-btn" onclick="addQuickToCart()">ADD TO BAG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
