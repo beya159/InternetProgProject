@@ -2,25 +2,21 @@
     function readCookie(name) {
         var cookieName = encodeURIComponent(name) + '=';
         var cookies = document.cookie ? document.cookie.split('; ') : [];
-
         for (var i = 0; i < cookies.length; i++) {
-            if (cookies[i].indexOf(cookieName) === 0) {
+            if (cookies[i].indexOf(cookieName) == 0) {
                 return decodeURIComponent(cookies[i].slice(cookieName.length));
             }
         }
-
         return '';
     }
 
     function writeCookie(name, value, days) {
         var cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value) + '; path=/';
-
         if (days) {
             var expires = new Date();
             expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
             cookie += '; expires=' + expires.toUTCString();
         }
-
         document.cookie = cookie;
     }
 
@@ -29,15 +25,8 @@
     }
 
     function safeParse(value) {
-        if (!value) {
-            return null;
-        }
-
-        try {
-            return JSON.parse(value);
-        } catch (error) {
-            return null;
-        }
+        if (!value) return null;
+        try { return JSON.parse(value); } catch (e) { return null; }
     }
 
     function getAuthUser() {
@@ -54,8 +43,7 @@
     function logout() {
         deleteCookie('jewelry_auth_user');
         deleteCookie('jewelry_auth_token');
-        deleteCookie('jewelry_profile_data');
-        deleteCookie('jewelry_last_order');
+        window.location.href = 'index.html';
     }
 
     function isLoggedIn() {
@@ -63,32 +51,16 @@
         return !!(user && user.token);
     }
 
-    function getProfileData() {
-        return safeParse(readCookie('jewelry_profile_data')) || {};
-    }
-
-    function setProfileData(profileData) {
-        writeCookie('jewelry_profile_data', JSON.stringify(profileData), 30);
-    }
-
-    function getLastOrder() {
-        return safeParse(readCookie('jewelry_last_order'));
-    }
-
-    function setLastOrder(orderData) {
-        writeCookie('jewelry_last_order', JSON.stringify(orderData), 7);
-    }
-
-    function clearLastOrder() {
-        deleteCookie('jewelry_last_order');
-    }
-
-    function getDisplayName(user) {
-        if (!user) {
-            return '';
+    function updateHeaderUI() {
+        var user = getAuthUser();
+        var nameSpan = document.getElementById('account-name');
+        if (nameSpan) {
+            if (user && isLoggedIn()) {
+                nameSpan.innerText = user.displayName || user.name || "User";
+            } else {
+                nameSpan.innerText = "";
+            }
         }
-
-        return user.displayName || user.name || user.email || '';
     }
 
     window.Auth = {
@@ -96,24 +68,8 @@
         setUser: setAuthUser,
         logout: logout,
         isLoggedIn: isLoggedIn,
-        getProfileData: getProfileData,
-        setProfileData: setProfileData,
-        getLastOrder: getLastOrder,
-        setLastOrder: setLastOrder,
-        clearLastOrder: clearLastOrder,
-        getDisplayName: getDisplayName
+        updateHeaderUI: updateHeaderUI
     };
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var cartLinks = document.querySelectorAll('.cart-btn');
-
-        for (var i = 0; i < cartLinks.length; i++) {
-            cartLinks[i].addEventListener('click', function (event) {
-                if (!isLoggedIn()) {
-                    event.preventDefault();
-                    window.location.href = 'login.html?message=' + encodeURIComponent('Please log in to access your cart.');
-                }
-            });
-        }
-    });
+    document.addEventListener('DOMContentLoaded', updateHeaderUI);
 })();

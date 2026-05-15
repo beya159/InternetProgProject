@@ -12,7 +12,6 @@ function loadProduct() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var products = JSON.parse(xhr.responseText);
-            // find specific item using the ID from the URL
             currentProduct = products.find(function(p) {
                 return p.id == productId;
             });
@@ -20,7 +19,8 @@ function loadProduct() {
             if (currentProduct) {
                 renderProduct(currentProduct);
             } else {
-                document.querySelector('.detail-container').innerHTML = "<h1>Product not found</h1>";
+                var container = document.querySelector('.detail-container');
+                if (container) container.innerHTML = "<h1>Product not found</h1>";
             }
         }
     };
@@ -34,58 +34,58 @@ function renderProduct(item) {
     document.getElementById('primary-image').src = item.mainImage;
 
     const thumbDiv = document.getElementById('thumb-column');
-    thumbDiv.innerHTML = ""; // just in case lol
-    
-    const allImages = [item.mainImage, ...item.angles];
+    if (thumbDiv) {
+        thumbDiv.innerHTML = ""; 
+        const allImages = [item.mainImage, ...item.angles];
 
-    allImages.forEach(imgSrc => {
-        const img = document.createElement('img');
-        img.src = imgSrc;
-        img.className = "thumb-item";
-        img.onclick = function() {
-            document.getElementById('primary-image').src = imgSrc;
-        };
-        thumbDiv.appendChild(img);
-    });
+        allImages.forEach(imgSrc => {
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.className = "thumb-item";
+            img.onclick = function() {
+                document.getElementById('primary-image').src = imgSrc;
+            };
+            thumbDiv.appendChild(img);
+        });
+    }
 }
 
 function changeQty(amount) {
     currentQty += amount;
-    
-    // 1 min.
     if (currentQty < 1) {
         currentQty = 1;
     }
-    
     document.getElementById('qty-count').innerText = currentQty;
 }
 
 function selectColor(color) {
     selectedColor = color;
-    console.log("Selected color:", color);
-    // hide error once choice made
-    document.getElementById('error-msg').style.display = "none";
+    var errorMsg = document.getElementById('error-msg');
+    if (errorMsg) errorMsg.style.display = "none";
+    
+    console.log("Color selected: " + selectedColor);
 }
 
 function handleAddToCart() {
-    const length = document.getElementById('size-dropdown').value;
+    const lengthDropdown = document.getElementById('size-dropdown');
+    const length = lengthDropdown ? lengthDropdown.value : "";
     const errorMsg = document.getElementById('error-msg');
 
-    // check login
-    //check later another way than "localStorage"
-    const user = localStorage.getItem('currentUser');
-    if (!user) {
+    // SECURITY CHECK: This uses the Auth object from site-auth.js
+    if (!window.Auth || !Auth.isLoggedIn()) {
         alert("You must be logged in to add items to your cart.");
         window.location.href = 'login.html'; 
         return;
     }
-//forces user to pick a colour b4 adding item
+
     if (!selectedColor || !length) {
-        errorMsg.style.display = "block";
-        errorMsg.innerText = "* PLEASE SELECT COLOR AND LENGTH BEFORE ADDING.";
+        if (errorMsg) {
+            errorMsg.style.display = "block";
+            errorMsg.innerText = "* PLEASE SELECT COLOR AND LENGTH BEFORE ADDING.";
+        }
         return;
     }
-//temporary until having an actual cart page to save on
+
     const cartItem = {
         id: currentProduct.id,
         name: currentProduct.name,
@@ -96,14 +96,13 @@ function handleAddToCart() {
         quantity: currentQty
     };
 
-    // Get existing cart or empty array
+    // Save to shopping cart
     let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
     
-    // just add to quantity if an item w the exam safe info exists
     const existingIndex = cart.findIndex(item => 
-        item.id === cartItem.id && 
-        item.color === cartItem.color && 
-        item.length === cartItem.length
+        item.id == cartItem.id && 
+        item.color == cartItem.color && 
+        item.length == cartItem.length
     );
 
     if (existingIndex > -1) {
@@ -112,11 +111,19 @@ function handleAddToCart() {
         cart.push(cartItem);
     }
 
-    // save back to storage
     localStorage.setItem('shoppingCart', JSON.stringify(cart));
     
     alert(`Success! ${currentQty} ${currentProduct.name}(s) added to cart.`);
-    errorMsg.style.display = "none";
+    if (errorMsg) errorMsg.style.display = "none";
+    
+    // Optional: update cart badge in header if you have that logic
+    if (typeof updateCartBadge === 'function') updateCartBadge();
 }
 
-loadProduct();
+// Kick off loading and UI updates
+document.addEventListener('DOMContentLoaded', function() {
+    loadProduct();
+    if (window.Auth && typeof Auth.updateHeaderUI == 'function') {
+        Auth.updateHeaderUI();
+    }
+});

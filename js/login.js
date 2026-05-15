@@ -5,9 +5,7 @@
 
     function setMessage(text, type) {
         var status = document.getElementById('status');
-        if (!status) {
-            return;
-        }
+        if (!status) return;
         status.textContent = text;
         status.className = type ? 'status-message ' + type : 'status-message';
     }
@@ -23,165 +21,86 @@
 
     function loginWithReqres(email, password, onSuccess, onError) {
         var request = new XMLHttpRequest();
-
         request.open('POST', 'https://reqres.in/api/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.setRequestHeader('x-api-key', 'pro_587d68e4bda8cd4aa3a17cfa11f10a1981478f266e2e043a');
-
         request.onreadystatechange = function () {
-            if (request.readyState !== 4) {
-                return;
+            if (request.readyState == 4) {
+                var data = {};
+                try { data = JSON.parse(request.responseText || '{}'); } catch (e) { data = {}; }
+                if (request.status >= 200 && request.status < 300) {
+                    onSuccess(data);
+                } else {
+                    onError(data.error || 'Login failed.');
+                }
             }
-
-            var data = {};
-
-            try {
-                data = JSON.parse(request.responseText || '{}');
-            } catch (error) {
-                data = {};
-            }
-
-            if (request.status >= 200 && request.status < 300) {
-                onSuccess(data);
-                return;
-            }
-
-            onError(data && data.error ? data.error : 'Login failed.');
         };
-
-        request.send(JSON.stringify({
-            email: email,
-            password: password
-        }));
-    }
-
-    function ensureRegisterCta() {
-        if (document.querySelector('.register-banner, .register-cta, .register-fallback-cta')) {
-            return;
-        }
-
-        var form = document.getElementById('login-form');
-        if (!form || !form.parentNode) {
-            return;
-        }
-
-        var wrapper = document.createElement('div');
-        wrapper.className = 'register-fallback-cta';
-
-        var link = document.createElement('a');
-        link.href = 'register.html';
-        link.className = 'secondary-link';
-        link.textContent = 'Create account';
-
-        wrapper.appendChild(link);
-        form.parentNode.insertBefore(wrapper, form.nextSibling);
+        request.send(JSON.stringify({ email: email, password: password }));
     }
 
     function renderState() {
+        if (!window.Auth) return;
         var user = Auth.currentUser();
         var form = document.getElementById('login-form');
-        var logout = document.getElementById('logout-btn');
-        var loggedInCta = document.getElementById('logged-in-cta');
+        var logoutBtn = document.getElementById('logout-btn');
 
-        if (user) {
-            setMessage('Signed in as ' + Auth.getDisplayName(user), 'success');
-
-            if (form) {
-                form.style.display = 'none';
-            }
-
-            if (logout) {
-                logout.style.display = 'inline-flex';
-            }
-
-            if (loggedInCta) {
-                loggedInCta.style.display = 'flex';
-            }
-
-            return;
+        if (user && user.token) {
+            setMessage('Signed in as ' + (user.displayName || user.email), 'success');
+            if (form) form.style.display = 'none';
+            if (logoutBtn) logoutBtn.style.display = 'inline-flex';
+        } else {
+            if (form) form.style.display = 'grid';
+            if (logoutBtn) logoutBtn.style.display = 'none';
+            var msg = getQueryParam('message');
+            if (msg) setMessage(decodeURIComponent(msg), 'info');
         }
-
-        if (form) {
-            form.style.display = 'grid';
-        }
-
-        if (logout) {
-            logout.style.display = 'none';
-        }
-
-        if (loggedInCta) {
-            loggedInCta.style.display = 'none';
-        }
-
-        setMessage(getQueryParam('message') ? decodeURIComponent(getQueryParam('message')) : '', 'info');
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        ensureRegisterCta();
-
         var form = document.getElementById('login-form');
-        var logout = document.getElementById('logout-btn');
+        var logoutBtn = document.getElementById('logout-btn');
 
         if (form) {
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
-
                 var email = document.getElementById('email').value.trim();
                 var password = document.getElementById('password').value;
 
-                if (!email) {
-                    setMessage('Email is required.', 'error');
+                if (!email || !password) {
+                    setMessage('All fields are required.', 'error');
                     return;
                 }
 
-                if (!isValidEmail(email)) {
-                    setMessage('Enter a valid email address.', 'error');
-                    return;
-                }
-
-                if (!password) {
-                    setMessage('Password is required.', 'error');
-                    return;
-                }
-
-                // Check localStorage for registered users first
+                // Try Local Storage First
                 var registeredPassword = getRegisteredPassword(email);
-
-                if (registeredPassword && registeredPassword === password) {
+                if (registeredPassword && registeredPassword == password) {
                     Auth.setUser({
                         email: email,
                         displayName: email.split('@')[0],
-                        token: 'local_token_' + Math.random().toString(36).substr(2, 9)
+                        token: 'local_' + Date.now()
                     });
-
-                    setMessage('Login successful (local). Redirecting...', 'success');
-                    window.setTimeout(function () {
-                        window.location.href = 'profile.html';
-                    }, 500);
+                    setMessage('Redirecting...', 'success');
+                    setTimeout(function() { window.location.href = 'index.html'; }, 800);
                     return;
                 }
 
-                setMessage('Signing in with ReqRes...', 'info');
-
+                // Try ReqRes
+                setMessage('Checking credentials...', 'info');
                 loginWithReqres(email, password, function (data) {
                     Auth.setUser({
                         email: email,
                         displayName: email.split('@')[0],
                         token: data.token
                     });
-
-                    setMessage('Login successful. Redirecting...', 'success');
-                    window.setTimeout(function () {
-                        window.location.href = 'profile.html';
-                    }, 500);
-                }, function (message) {
-                    setMessage(message, 'error');
+                    setMessage('Success! Redirecting...', 'success');
+                    setTimeout(function() { window.location.href = 'index.html'; }, 800);
+                }, function (err) {
+                    setMessage(err, 'error');
                 });
             });
         }
 
-        if (logout) {
-            logout.addEventListener('click', function () {
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function () {
                 Auth.logout();
                 renderState();
             });

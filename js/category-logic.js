@@ -6,74 +6,67 @@ function initCategoryPage() {
 
     if (!selectedCat) return;
 
-    document.getElementById('cat-name-display').innerText = selectedCat.toUpperCase();
+    var displayElem = document.getElementById('cat-name-display');
+    if (displayElem) displayElem.innerText = selectedCat.toUpperCase();
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'data/products.json', true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var allData = JSON.parse(xhr.responseText);
-            
-            categoryProducts = allData.filter(function(p) {
-                return p.category.toLowerCase() === selectedCat.toLowerCase();
-            });
-
-            applyFilters(); // Use applyFilters instead of renderGrid to catch default sorts
-        }
-    };
-    xhr.send();
-
-    // Listen for Radio changes (Color/Style)
-    document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
-        radio.addEventListener('change', applyFilters);
-    });
-
-    // NEW: Listen for Sort changes
-    document.getElementById('sort-price').addEventListener('change', applyFilters);
-}
-
-function loadCategoryData(category) {
-                applyFilters(); 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'data/products.json', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var allData = JSON.parse(xhr.responseText);
-
-            // filter for the category first (e.g., just Rings)
-            categoryProducts = allData.filter(p => 
-                p.category.toLowerCase() == category.toLowerCase()
-            );
-
-            // call the filter logic immediately after data arrives
-            applyFilters(); 
+            
+            if (selectedCat.toLowerCase() == "all") {
+                categoryProducts = allData;
+            } else {
+                categoryProducts = allData.filter(function(p) {
+                    return p.category.toLowerCase() == selectedCat.toLowerCase();
+                });
+            }
+            applyFilters();
         }
     };
     xhr.send();
+
+    document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+        radio.addEventListener('change', applyFilters);
+    });
+
+    var sortElem = document.getElementById('sort-price');
+    if (sortElem) {
+        sortElem.addEventListener('change', applyFilters);
+    }
+
+    if (window.Auth && typeof Auth.updateHeaderUI == 'function') {
+        Auth.updateHeaderUI();
+    }
 }
 
 function applyFilters() {
-    var selectedColor = document.querySelector('input[name="color"]:checked').value;
-    var selectedStyle = document.querySelector('input[name="style"]:checked').value;
-    var sortOrder = document.getElementById('sort-price').value; // Get the sort value
+    var colorRadio = document.querySelector('input[name="color"]:checked');
+    var styleRadio = document.querySelector('input[name="style"]:checked');
+    var sortElem = document.getElementById('sort-price');
+
+    var selectedColor = colorRadio ? colorRadio.value : 'all';
+    var selectedStyle = styleRadio ? styleRadio.value : 'all';
+    var sortOrder = sortElem ? sortElem.value : 'default';
 
     var filtered = categoryProducts;
 
-    if (selectedColor !== 'all') {
+    if (selectedColor != 'all') {
         filtered = filtered.filter(function(p) {
-            return p.color && p.color.toLowerCase() === selectedColor.toLowerCase();
+            return p.color && p.color.toLowerCase() == selectedColor.toLowerCase();
         });
     }
 
-    if (selectedStyle !== 'all') {
+    if (selectedStyle != 'all') {
         filtered = filtered.filter(function(p) {
-            return p.style && p.style.toLowerCase() === selectedStyle.toLowerCase();
+            return p.style && p.style.toLowerCase() == selectedStyle.toLowerCase();
         });
     }
 
-    if (sortOrder === "low-high") {
+    if (sortOrder == "low-high") {
         filtered.sort((a, b) => a.price - b.price);
-    } else if (sortOrder === "high-low") {
+    } else if (sortOrder == "high-low") {
         filtered.sort((a, b) => b.price - a.price);
     }
 
@@ -107,5 +100,15 @@ function renderGrid(products) {
     });
 }
 
-// Start the engine
-initCategoryPage();
+// Ensure category products are shared with the global allProducts if needed
+document.addEventListener('DOMContentLoaded', function() {
+    initCategoryPage();
+    
+    // This bridges the gap so openQuickShop in main.js can find the data
+    var checkData = setInterval(function() {
+        if (categoryProducts.length > 0) {
+            window.allProducts = categoryProducts; 
+            clearInterval(checkData);
+        }
+    }, 100);
+});
