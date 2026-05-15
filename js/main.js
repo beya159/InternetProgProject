@@ -72,6 +72,34 @@ function selectQuickColor(color) {
     console.log("Quick color selected: " + color);
 }
 
+// --- WISHLIST LOGIC ---
+function addToWishlist(productId) {
+    // 1. Check Login
+    if (!window.Auth || !Auth.isLoggedIn()) {
+        alert("Please log in to save items to your wishlist!");
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // 2. Find the product details from our loaded list
+    const product = allProducts.find(p => p.id == productId);
+    if (!product) return;
+
+    // 3. Get current wishlist or empty array
+    let wishlist = JSON.parse(localStorage.getItem('userWishlist')) || [];
+
+    // 4. Check if it's already there so we don't double up
+    const exists = wishlist.some(item => item.id == productId);
+
+    if (!exists) {
+        wishlist.push(product);
+        localStorage.setItem('userWishlist', JSON.stringify(wishlist));
+        alert(`${product.name} added to your wishlist! ♡`);
+    } else {
+        alert("This item is already in your wishlist.");
+    }
+}
+
 // --- CAROUSEL CODE ---
 var slideIndex = 1;
 var timer;

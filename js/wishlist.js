@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     displayWishlist();
+    
+    // Keeps your name and cart count visible on the wishlist page
+    if (window.Auth && typeof Auth.updateHeaderUI == 'function') {
+        Auth.updateHeaderUI();
+    }
 });
 
 function displayWishlist() {
