@@ -20,7 +20,9 @@ function loadProduct() {
                 renderProduct(currentProduct);
             } else {
                 var container = document.querySelector('.detail-container');
-                if (container) container.innerHTML = "<h1>Product not found</h1>";
+                if (container) {
+                    container.innerHTML = "<h1>Product not found</h1>";
+                }
             }
         }
     };
@@ -71,7 +73,7 @@ function handleAddToCart() {
     const length = lengthDropdown ? lengthDropdown.value : "";
     const errorMsg = document.getElementById('error-msg');
 
-    // SECURITY CHECK: This uses the Auth object from site-auth.js
+    // uses the auth object from site-auth.js from danush
     if (!window.Auth || !Auth.isLoggedIn()) {
         alert("You must be logged in to add items to your cart.");
         window.location.href = 'login.html'; 
@@ -96,7 +98,7 @@ function handleAddToCart() {
         quantity: currentQty
     };
 
-    // Save to shopping cart
+    // save to shopping cart
     let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
     
     const existingIndex = cart.findIndex(item => 
@@ -116,11 +118,13 @@ function handleAddToCart() {
     alert(`Success! ${currentQty} ${currentProduct.name}(s) added to cart.`);
     if (errorMsg) errorMsg.style.display = "none";
     
-    // Optional: update cart badge in header if you have that logic
-    if (typeof updateCartBadge === 'function') updateCartBadge();
+    //update cart badge in header if you have that logic
+    if (typeof updateCartBadge == 'function') {
+        updateCartBadge();
+    }
 }
 
-// Kick off loading and UI updates
+// ui updater
 document.addEventListener('DOMContentLoaded', function() {
     loadProduct();
     if (window.Auth && typeof Auth.updateHeaderUI == 'function') {
