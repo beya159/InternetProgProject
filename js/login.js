@@ -18,7 +18,7 @@
 
     function loginWithReqres(email, password, onSuccess, onError) {
         var request = new XMLHttpRequest();
-        request.open('POST', 'https://reqres.in/api/login', true);
+        request.open('POST', 'https://https://reqres.in/api/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.onreadystatechange = function () {
             if (request.readyState == 4) {
@@ -74,10 +74,19 @@
     document.addEventListener('DOMContentLoaded', function () {
         var form = document.getElementById('login-form');
         var logoutBtn = document.getElementById('logout-btn');
+        
+        // Safety lock flag to prevent infinite submit loops
+        var isSubmitting = false; 
 
         if (form) {
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
+                
+                // If a request is already processing, ignore duplicate submits
+                if (isSubmitting) {
+                    return; 
+                }
+
                 var email = document.getElementById('email').value.trim();
                 var password = document.getElementById('password').value;
 
@@ -100,8 +109,10 @@
                     expiryDays = rememberDaysInput ? parseInt(rememberDaysInput.value) || 7 : 7;
                 }
 
-                // straight to the remote database API (Reqres)
+                // Lock the form before calling the API
+                isSubmitting = true; 
                 setMessage('Checking credentials...', 'info');
+                
                 loginWithReqres(email, password, function (data) {
                     Auth.setUser({
                         email: email,
@@ -113,6 +124,9 @@
                     setTimeout(function() { window.location.href = 'index.html'; }, 800);
                 }, function (err) {
                     setMessage(err, 'error');
+                    
+                    // Unlock the form ONLY after the failure returns completely
+                    isSubmitting = false; 
                 });
             });
         }
