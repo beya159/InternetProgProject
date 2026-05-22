@@ -1,143 +1,150 @@
 (function () {
-    function getQueryParam(name) {
-        return new URLSearchParams(window.location.search).get(name);
-    }
-
     function setMessage(text, type) {
         var status = document.getElementById('status');
         if (!status) {
             return;
         }
+
         status.textContent = text;
         status.className = type ? 'status-message ' + type : 'status-message';
     }
 
     function isValidEmail(value) {
+        // email regex
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 
-    function loginWithReqres(email, password, onSuccess, onError) {
-        var request = new XMLHttpRequest();
-        request.open('POST', 'https://https://reqres.in/api/login', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.onreadystatechange = function () {
-            if (request.readyState == 4) {
-                var data = {};
-                try { data = JSON.parse(request.responseText || '{}'); } catch (e) { data = {}; }
-                if (request.status >= 200 && request.status < 300) {
-                    onSuccess(data);
-                } else {
-                    onError(data.error || 'Login failed.');
-                }
-            }
-        };
-        request.send(JSON.stringify({ email: email, password: password }));
+    function isValidPassword(value) {
+        // password regex: At least 6 characters, at least 1 uppercase, 1 lowercase, 1 number
+        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(value);
     }
 
-    function renderState() {
-        if (!window.Auth) return;
-        
-        var user = Auth.currentUser(); 
-        var form = document.getElementById('login-form');
-        var logoutBtn = document.getElementById('logout-btn');
-        var loggedInCta = document.getElementById('logged-in-cta');
+    function registerWithReqres(email, password, onSuccess, onError) {
+        var request = new XMLHttpRequest();
 
-        if (user && user.token) {
-            setMessage('Signed in as ' + (user.displayName || user.email), 'success');
-            if (form) {
-                form.style.display = 'none';
+        request.open('POST', 'https://reqres.in/api/register', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+
+        request.onreadystatechange = function () {
+            if (request.readyState !== 4) {
+                return;
             }
-            if (logoutBtn) {
-                logoutBtn.style.display = 'inline-flex';
+
+            var data = {};
+
+            try {
+                data = JSON.parse(request.responseText || '{}');
+            } catch (error) {
+                data = {};
             }
-            if (loggedInCta) {
-                loggedInCta.style.display = 'block'; 
+
+            if (request.status >= 200 && request.status < 300) {
+                onSuccess(data);
+                return;
             }
-        } else {
-            if (form) {
-                form.style.display = 'grid';
-            }
-            if (logoutBtn) {
-                logoutBtn.style.display = 'none';
-            }
-            if (loggedInCta) {
-                loggedInCta.style.display = 'none'; 
-            }
-            
-            var msg = getQueryParam('message');
-            if (msg) {
-                setMessage(msg, 'info');
-            }
+
+            onError(data && data.error ? data.error : 'Registration failed.');
+        };
+
+        request.send(JSON.stringify({
+            email: email,
+            password: password
+        }));
+    }
+
+    function showSuccess(message) {
+        var successPanel = document.getElementById('success-panel');
+        var form = document.getElementById('register-form');
+
+        if (form) {
+            form.style.display = 'none';
+        }
+
+        if (successPanel) {
+            successPanel.style.display = 'block';
+            successPanel.innerHTML = message;
         }
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        var form = document.getElementById('login-form');
-        var logoutBtn = document.getElementById('logout-btn');
+        var form = document.getElementById('register-form');
         
-        // Safety lock flag to prevent infinite submit loops
-        var isSubmitting = false; 
+        // Safety lock flag to prevent infinite submit loops on registration
+        var isSubmitting = false;
 
-        if (form) {
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-                
-                // If a request is already processing, ignore duplicate submits
-                if (isSubmitting) {
-                    return; 
-                }
-
-                var email = document.getElementById('email').value.trim();
-                var password = document.getElementById('password').value;
-
-                if (!email || !password) {
-                    setMessage('All fields are required.', 'error');
-                    return;
-                }
-
-                if (!isValidEmail(email)) {
-                    setMessage('Please enter a valid email address.', 'error');
-                    return;
-                }
-
-                // Gather Remember Me settings
-                var rememberMeBox = document.getElementById('remember-me');
-                var rememberDaysInput = document.getElementById('remember-days');
-                var expiryDays = 1; // default to 1 day session fallback if unchecked
-
-                if (rememberMeBox && rememberMeBox.checked) {
-                    expiryDays = rememberDaysInput ? parseInt(rememberDaysInput.value) || 7 : 7;
-                }
-
-                // Lock the form before calling the API
-                isSubmitting = true; 
-                setMessage('Checking credentials...', 'info');
-                
-                loginWithReqres(email, password, function (data) {
-                    Auth.setUser({
-                        email: email,
-                        displayName: email.split('@')[0],
-                        token: data.token
-                    }, expiryDays); 
-                    
-                    setMessage('Success! Redirecting...', 'success');
-                    setTimeout(function() { window.location.href = 'index.html'; }, 800);
-                }, function (err) {
-                    setMessage(err, 'error');
-                    
-                    // Unlock the form ONLY after the failure returns completely
-                    isSubmitting = false; 
-                });
-            });
+        if (!form) {
+            return;
         }
 
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', function () {
-                Auth.logout();
-                renderState();
-            });
-        }
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        renderState();
+            // If a registration request is already processing, block duplicates
+            if (isSubmitting) {
+                return;
+            }
+
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            // 1. Frontend Validation Checks
+            if (!name) {
+                setMessage('Name is required.', 'error');
+                return;
+            }
+
+            if (!email) {
+                setMessage('Email is required.', 'error');
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                setMessage('Enter a valid email address.', 'error');
+                return;
+            }
+
+            if (!password) {
+                setMessage('Password is required.', 'error');
+                return;
+            }
+
+            if (!isValidPassword(password)) {
+                setMessage('Password must be at least 6 characters with at least 1 uppercase letter, 1 lowercase letter, and 1 number.', 'error');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                setMessage('Passwords do not match.', 'error');
+                return;
+            }
+
+            // Lock the gate before starting the AJAX network request
+            isSubmitting = true;
+            setMessage('Creating account...', 'info');
+
+            // 2. Pure API Registration Pipeline
+            registerWithReqres(email, password, function (data) {
+                Auth.setUser({
+                    name: name,
+                    email: email,
+                    displayName: name,
+                    token: data.token
+                }, 1);
+
+                setMessage('Registration successful. Redirecting to your profile...', 'success');
+                showSuccess('<p>Your account is ready.</p><p><a href="profile.html">Go to profile</a></p>');
+                window.setTimeout(function () {
+                    window.location.href = 'profile.html';
+                }, 1200);
+            }, function (errorMessage) {
+                // Server rejected or failed
+                setMessage(errorMessage, 'error');
+                
+                // Unlock the gate ONLY after the server fully finishes with an error
+                isSubmitting = false;
+            });
+        });
     });
 })();
