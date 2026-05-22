@@ -1,0 +1,23 @@
+[
+  {
+    "productId": 1,
+    "username": "Sarah M.",
+    "rating": 5,
+    "comment": "Absolutely beautiful finish! The clasp feels very secure.",
+    "date": "2026-04-12"
+  },
+  {
+    "productId": 1,
+    "username": "Julian R.",
+    "rating": 4,
+    "comment": "Gorgeous piece. Shines beautifully under sunlight.",
+    "date": "2026-05-02"
+  },
+  {
+    "productId": 2,
+    "username": "Emma K.",
+    "rating": 5,
+    "comment": "Highly recommend! Shipping to Montreal was incredibly fast.",
+    "date": "2026-05-19"
+  }
+]

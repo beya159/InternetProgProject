@@ -10,9 +10,8 @@
         <header class="main-header">
             <nav class="nav-left">
                 <ul class="menu">
+                    <img src="../images/logo/logo.png" alt="Jewelry Deliverable Logo" class="logo-img">
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="shop.html">SHOP</a></li>
-            
                     <li class="dropdown">
                         <a href="categories.html">CATEGORIES</a>
                         <ul class="dropdown-content">
@@ -33,8 +32,11 @@
 
             <div class="nav-center">
                 <div class="search-container">
-                    <input type="text" id="global-search" placeholder="Search...">
+                    <input type="text" id="global-search" placeholder="Search..." onkeyup="auto_complete_products(this)">
                     <button type="submit" class="search-btn">🔍</button>
+                    <div id="autocomplete" class="hidden">
+                        <ul></ul>
+                    </div>
                 </div>
             </div>
 
@@ -117,12 +119,55 @@
             </div>
         </main>
 
+        <script src="../js/site-auth.js"></script>
+        <script src="../js/main.js"></script>
+
         <script>
-            // Special function for THIS page only
             function goToCategory(category) {
-                // Instead of index.html, go to our new detailed view
                 window.location.href = "category-view.html?type=" + category;
             }
         </script>
+                <footer class="global-footer">
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <h3>Shop Collections</h3>
+                <ul>
+                    <li><a href="categories.html?category=chains">Chains</a></li>
+                    <li><a href="categories.html?category=rings">Rings</a></li>
+                    <li><a href="categories.html?category=bracelets">Bracelets</a></li>
+                    <li><a href="categories.html?category=new">New Arrivals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Customer Support Available 24/7</p>
+                <p>Email: support@jewelrydeliverable.com</p>
+                <p>Phone: +1 (514) 676-2121</p>
+                <p>Location: 821 Sainte Croix Ave <br> Saint-Laurent, H4L 3X9 <br> Montreal, QC, Canada</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">📸</a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
+                <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">📌</a>
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok">🎵</a>
+            </div>
+            <p class="copyright"> 2026 Jewelry Deliverable. All front-end rights reserved.</p>
+        </div>
+    </footer>
     </body>
 </html>

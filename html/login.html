@@ -29,7 +29,22 @@
             
             <label for="password">Password</label>
             <input type="password" id="password" name="password" autocomplete="current-password" required>
-            
+                <div class="remember-me-container" style="margin: 15px 0; text-align: left; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="checkbox" id="remember-me"> Remember me
+                    </label>
+                    <span id="days-wrapper" style="display: none; align-items: center; gap: 5px;">
+                        for 
+                        <input type="number" id="remember-days" value="7" min="1" max="365" style="width: 50px; padding: 2px 5px; border: 1px solid #000; text-align: center;"> 
+                        days
+                    </span>
+                </div>
+
+<script>
+    document.getElementById('remember-me').addEventListener('change', function() {
+        document.getElementById('days-wrapper').style.display = this.checked ? 'inline-flex' : 'none';
+    });
+</script>
             <button type="submit">Log in</button>
         </form>
 
@@ -39,10 +54,9 @@
         </div>
         
         <button id="logout-btn" style="display:none;">Log out</button>
-        <p class="page-footer-link">Need an account? <a href="register.html">Register here</a></p>
     </main>
 
-    <script src="js/site-auth.js"></script>
-    <script src="js/login.js"></script>
+    <script src="../js/site-auth.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 </html>

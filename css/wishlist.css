@@ -1,9 +1,9 @@
 body {
-    background-color: #fffafb; /* Soft blush tint */
+    background-color: #fffafb; 
     font-family: 'Arial', sans-serif;
 }
 
-/* 1. LAYOUT & CONTAINER */
+/* 1. layout + container */
 .main-header {
     display: flex;
     justify-content: space-between; /* Pushes Nav, Search, and Icons apart */
@@ -16,9 +16,9 @@ body {
     z-index: 1000;
 }
 
-/* 2. NAVIGATION LINKS (The "Menu") */
+/* kinda redundant iknow */
 .menu {
-    display: flex;                 /* This keeps Home, Shop, etc. in a line */
+    display: flex;                 
     align-items: center;
     gap: 20px; 
     list-style: none;
@@ -31,7 +31,7 @@ body {
     color: #000;
     font-weight: bold;
     font-size: 0.9rem;
-    white-space: nowrap;           /* Prevents text from wrapping */
+    white-space: nowrap;           /* stop text from wrapping */
     background: none;
     border: none;
     cursor: pointer;
@@ -57,7 +57,7 @@ body {
     width: 100%;
 }
 
-/* 4. RIGHT SIDE ICONS */
+/* redundant */
 .nav-right {
     display: flex;
     gap: 15px;
@@ -71,14 +71,14 @@ body {
     position: relative; /* Needed for the cart badge positioning */
 }
 
-/* 5. DROPDOWN LOGIC */
+/* dropdown*/
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
 .dropdown-content {
-    display: none;                 /* Hidden until hover */
+    display: none;                 /* hidden until hover */
     position: absolute;
     background-color: #ffffff;
     min-width: 160px;
@@ -99,7 +99,7 @@ body {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;                /* Shows the menu on hover */
+    display: block;                /* shows the menu on hover */
 }
 
 .wishlist-container {
@@ -119,17 +119,17 @@ body {
     color: #333;
 }
 
-/* Grid Layout */
+/* grid layout */
 .wishlist-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* Individual Card */
+/* individual card */
 .wishlist-item {
     background: #fff;
-    border-radius: 15px; /* Cuter rounded corners */
+    border-radius: 15px; /* cuter rounded corners */
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -156,12 +156,12 @@ body {
 }
 
 .wishlist-item .price {
-    color: #b18e72; /* Subtle gold/tan color */
+    color: #b18e72; 
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-/* Actions inside card */
+/* actions inside card */
 .wishlist-btn-group {
     display: flex;
     flex-direction: column;
@@ -204,14 +204,14 @@ body {
     font-size: 0.9rem;
 }
 
-/* Make the heart pop on hover */
+/* make the little heart pop on hover */
 .wishlist-btn:hover {
     color: #ffb6c1; /* Light pink */
     transform: scale(1.2);
     transition: 0.2s ease-in-out;
 }
 
-/* Optional: if you want it to look "filled" when active */
+/* fills up*/
 .wishlist-btn.active {
     color: #ff4d4d;
 }

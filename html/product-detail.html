@@ -2,52 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Detail</title>
-    <link rel="stylesheet" href="../css/product-detail.css">
-    <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/product-detail.css">
 </head>
 <body>
     <header class="main-header">
-            <nav class="nav-left">
-                <ul class="menu">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="shop.html">SHOP</a></li>
-            
-                    <li class="dropdown">
-                        <a href="categories.html">CATEGORIES</a>
-                        <ul class="dropdown-content">
-                            <li><a href="category-view.html?type=all">SHOP ALL</a></li> 
-                            <hr>
-                            <li><a href="category-view.html?type=rings">RINGS</a></li>
-                            <li><a href="category-view.html?type=chains">CHAINS</a></li>
-                            <li><a href="category-view.html?type=bracelets">BRACELETS</a></li>
-                            <li><a href="category-view.html?type=earrings">EARRINGS</a></li>
-                            <li><a href="category-view.html?type=charms">CHARMS BAR</a></li>
-                        </ul>
-                    </li>
+        <nav class="nav-left">
+            <ul class="menu">
+                <img src="../images/logo/logo.png" alt="Jewelry Deliverable Logo" class="logo-img">
+                <li><a href="index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="categories.html">CATEGORIES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="category-view.html?type=all">SHOP ALL</a></li> 
+                        <hr>
+                        <li><a href="category-view.html?type=rings">RINGS</a></li>
+                        <li><a href="category-view.html?type=chains">CHAINS</a></li>
+                        <li><a href="category-view.html?type=bracelets">BRACELETS</a></li>
+                        <li><a href="category-view.html?type=earrings">EARRINGS</a></li>
+                        <li><a href="category-view.html?type=charms">CHARMS BAR</a></li>
+                    </ul>
+                </li>
 
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                </ul>
-            </nav>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
 
-            <div class="nav-center">
-                <div class="search-container">
-                    <input type="text" id="global-search" placeholder="Search...">
-                    <button type="submit" class="search-btn">🔍</button>
+        <div class="nav-center">
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search..." onkeyup="auto_complete_products(this)">
+                <button type="submit" class="search-btn">🔍</button>
+                <div id="autocomplete" class="hidden">
+                    <ul></ul>
                 </div>
             </div>
+        </div>
 
-            <div class="nav-right">
-                <a href="wishlist.html" class="icon wishlist-btn">♡</a>
-                <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
-                <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
-            </div>
-        </header>
+        <div class="nav-right">
+            <a href="wishlist.html" class="icon wishlist-btn">♡</a>
+            <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
+            <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
+        </div>
+    </header>
+
     <main class="detail-container">
         <div class="gallery-wrapper">
-            <div id="thumb-column" class="thumbnail-column">
-                </div>
+            <div id="thumb-column" class="thumbnail-column"></div>
             <div class="main-display">
                 <img id="primary-image" src="" alt="Product Detail">
             </div>
@@ -55,15 +58,20 @@
 
         <div class="info-wrapper">
             <h1 id="p-name">Loading...</h1>
-            <div class="rating">★★★★★ (temporary hardcorded review)</div> 
+            <div class="rating" id="p-rating-summary">★★★★★ (0 Reviews)</div> 
             <h2 id="p-price"></h2>
+
+            <div class="meta-box" style="margin: 15px 0; font-size: 0.9rem; color: #555;">
+                <p>SKU: <span id="p-sku" style="font-weight: bold; color: #000;"></span></p>
+                <p>Availability: <span id="p-availability" style="font-weight: bold;"></span></p>
+            </div>
 
             <div class="desc-box">
                 <h3>DESCRIPTION</h3>
                 <p id="p-desc"></p>
             </div>
 
-            <div class="color-selection">
+            <div id="color-section-wrapper" class="color-selection" style="display: none;">
                 <h3>CHOOSE YOUR COLOR</h3>
                 <div class="radio-group">
                     <label class="color-option">
@@ -86,6 +94,7 @@
                 </div>
             </div>
 
+            <div id="length-section-wrapper">
                 <h3>CHAIN LENGTH</h3>
                 <select id="size-dropdown">
                     <option value="">Select Length</option>
@@ -96,19 +105,32 @@
             </div>
 
             <div class="buy-actions">
-                <button class="add-cart-btn" onclick="handleAddToCart()">PURCHASE ITEM *</button>
+                <button class="add-cart-btn" id="p-submit-btn" onclick="handleAddToCart()">PURCHASE ITEM *</button>
                 <div class="qty-stepper">
                     <button onclick="changeQty(-1)">-</button>
                     <span id="qty-count">1</span>
                     <button onclick="changeQty(1)">+</button>
                 </div>
-                <button class="wish-btn">♡</button>
+                <button class="wish-btn" id="detail-wishlist-btn">♡</button>
             </div>
-            <p id="error-msg" class="error-text">* PLEASE SELECT COLOR AND LENGTH BEFORE ADDING.</p>
+            
+            <p id="error-msg" class="error-text" style="display: none; color: red; font-weight: bold; margin-top: 10px;"></p>
         </div>
     </main>
 
-    <script src="js/site-auth.js"></script>
-    <script src="js/product-detail.js"></script>
+    <section class="related-products-section" style="padding: 40px 5%; max-width: 1200px; margin: 0 auto;">
+        <h2 style="letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">You May Also Like</h2>
+        <div id="related-grid" class="product-grid"></div>
+    </section>
+
+    <section class="reviews-section" style="padding: 40px 5%; max-width: 1200px; margin: 0 auto; border-top: 1px solid #eee;">
+        <h2 style="letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Customer Reviews</h2>
+        <div id="reviews-container">
+            <p>Loading customer thoughts...</p>
+        </div>
+    </section>
+
+    <script src="../js/site-auth.js"></script>
+    <script src="../js/main.js"></script> <script src="../js/product-detail.js"></script>
 </body>
 </html>

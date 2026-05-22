@@ -1,122 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jewelry Website -- Jewelry Deliverable</title>
-        <link rel="stylesheet" href="../css/style.css">
-    </head>
-    <body>
-        <header class="main-header">
-            <nav class="nav-left">
-                <ul class="menu">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="shop.html">SHOP</a></li>
-            
-                    <li class="dropdown">
-                        <a href="categories.html">CATEGORIES</a>
-                        <ul class="dropdown-content">
-                            <li><a href="category-view.html?type=all">SHOP ALL</a></li> 
-                            <hr>
-                            <li><a href="category-view.html?type=rings">RINGS</a></li>
-                            <li><a href="category-view.html?type=chains">CHAINS</a></li>
-                            <li><a href="category-view.html?type=bracelets">BRACELETS</a></li>
-                            <li><a href="category-view.html?type=earrings">EARRINGS</a></li>
-                            <li><a href="category-view.html?type=charms">CHARMS BAR</a></li>
-                        </ul>
-                    </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Website -- Jewelry Deliverable</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-left">
+            <ul class="menu">
+                <img src="../images/logo/logo.png" alt="Jewelry Deliverable Logo" class="logo-img">
+                <li><a href="index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="categories.html">CATEGORIES</a>
+                    <ul class="dropdown-content">
+                        <li><a href="category-view.html?type=all">SHOP ALL</a></li> 
+                        <hr>
+                        <li><a href="category-view.html?type=rings">RINGS</a></li>
+                        <li><a href="category-view.html?type=chains">CHAINS</a></li>
+                        <li><a href="category-view.html?type=bracelets">BRACELETS</a></li>
+                        <li><a href="category-view.html?type=earrings">EARRINGS</a></li>
+                        <li><a href="category-view.html?type=charms">CHARMS BAR</a></li>
+                    </ul>
+                </li>
 
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                </ul>
-            </nav>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </nav>
 
-            <div class="nav-center">
-                <div class="search-container">
-                    <input type="text" id="global-search" placeholder="Search...">
-                    <button type="submit" class="search-btn">🔍</button>
-                    <div id="autocomplete" class="hidden">
-                        <ul></ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="nav-right">
-                <a href="wishlist.html" class="icon wishlist-btn">♡</a>
-                <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
-                <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
-            </div>
-        </header>
-
-        <section class="carousel-container">
-            <div class="carousel-slide">
-                <div class="slide fade">
-                    <img src="images/carousel/carousel1.jpg" alt="Summer Collection">
-                    <div class="caption">Elegance in Every Detail</div>
-                </div>
-                <div class="slide fade">
-                    <img src="images/carousel/carousel2.jpg" alt="Handcrafted Gold">
-                    <div class="caption">Handcrafted Gold Pieces</div>
-                </div>
-                <div class="slide fade">
-                    <img src="images/carousel/carousel3.jpg" alt="New Arrivals">
-                    <div class="caption">Discover New Arrivals</div>
-                </div>
-
-                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-                <a class="next" onclick="moveSlide(1)">&#10095;</a>
-            </div>
-
-            <div class="dot-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-        </section>
-
-        <main>
-            <h2 id="category-title">OUR COLLECTION</h2>
-            <div id="product-grid" class="product-grid"></div>
-        </main>
-
-        <script src="js/site-auth.js"></script>
-        <script src="js/index.js"></script>
-        <script src="js/main.js"></script>
-
-        <div id="quick-shop-modal" class="quick-modal" style="display: none;">
-            <div class="quick-modal-content">
-                <span class="quick-close" onclick="closeQuickShop()">&times;</span>
-                
-                <div class="quick-modal-body">
-                    <div class="quick-modal-left">
-                        <img id="quick-img" src="" alt="Product Image">
-                    </div>
-                    
-                    <div class="quick-modal-right">
-                        <h2 id="quick-name"></h2>
-                        <p id="quick-price" class="quick-item-price"></p>
-                        
-                        <label class="quick-label">Select Color:</label>
-                        <div class="quick-color-options">
-                            <button type="button" class="q-color-btn" onclick="selectQuickColor('Silver')">Silver</button>
-                            <button type="button" class="q-color-btn" onclick="selectQuickColor('Gold')">Gold</button>
-                            <button type="button" class="q-color-btn" onclick="selectQuickColor('Rose Gold')">Rose Gold</button>
-                        </div>
-
-                        <label class="quick-label" for="quick-length">Select Chain Length:</label>
-                        <select id="quick-length">
-                            <option value="" disabled selected>Choose length...</option>
-                            <option value="16">16 inches</option>
-                            <option value="18">18 inches</option>
-                            <option value="20">20 inches</option>
-                        </select>
-
-                        <div id="quick-error-msg" class="status-message error" style="display: none; color: red; margin: 10px 0;"></div>
-
-                        <button class="quick-add-btn" onclick="addQuickToCart()">ADD TO BAG</button>
-                    </div>
+        <div class="nav-center">
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search..." onkeyup="auto_complete_products(this)">
+                <button type="submit" class="search-btn">🔍</button>
+                <div id="autocomplete" class="hidden">
+                    <ul></ul>
                 </div>
             </div>
         </div>
-    </body>
+
+        <div class="nav-right">
+            <a href="wishlist.html" class="icon wishlist-btn">♡</a>
+            <a href="login.html" class="icon account-btn">👤 <span id="account-name"></span></a>
+            <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
+        </div>
+    </header>
+
+    <section class="carousel-container">
+        <div class="carousel-slide">
+            <div class="slide fade">
+                <img src="../images/carousel/carousel1.jpg" alt="Summer Collection">
+                <div class="caption">Elegance in Every Detail</div>
+            </div>
+            <div class="slide fade">
+                <img src="../images/carousel/carousel2.jpg" alt="Handcrafted Gold">
+                <div class="caption">Handcrafted Gold Pieces</div>
+            </div>
+            <div class="slide fade">
+                <img src="../images/carousel/carousel3.jpg" alt="New Arrivals">
+                <div class="caption">Discover New Arrivals</div>
+            </div>
+
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <main>
+        <h2 id="category-title">OUR COLLECTION</h2>
+        <div id="product-grid" class="product-grid"></div>
+    </main>
+
+    <script src="../js/site-auth.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/main.js"></script>
+
+    <div id="quick-shop-modal" class="quick-modal" style="display: none;">
+        <div class="quick-modal-content">
+            <span class="quick-close" onclick="closeQuickShop()">&times;</span>
+            
+            <div class="quick-modal-body">
+                <div class="quick-modal-left">
+                    <img id="quick-img" src="" alt="Product Image">
+                </div>
+                
+                    <div class="quick-modal-right">
+                        <h2 id="quick-name"></h2>
+                        <p id="quick-price"></p>
+                        
+                        <div id="quick-length-area" style="margin-bottom: 10px; display: none;">
+                            <label style="font-size: 12px; font-weight: bold; display: block; margin-bottom: 5px;">SELECT LENGTH:</label>
+                            <select id="quick-length" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                                <option value="">Select Length...</option>
+                                <option value="16">16 inches</option>
+                                <option value="18">18 inches</option>
+                                <option value="20">20 inches</option>
+                            </select>
+                        </div>
+
+                        <div id="quick-color-area" style="margin-bottom: 10px; display: none;">
+                            <label style="font-size: 12px; font-weight: bold; display: block; margin-bottom: 5px;">SELECT COLOR:</label>
+                            <div class="quick-colors">
+                                <button class="q-color-btn" onclick="selectQuickColor('Gold')">Gold</button>
+                                <button class="q-color-btn" onclick="selectQuickColor('Silver')">Silver</button>
+                            </div>
+                        </div>
+
+                        <div class="quick-qty-area" style="margin-bottom: 20px;">
+                            <label style="font-size: 12px; font-weight: bold; display: block; margin-bottom: 5px;">QUANTITY:</label>
+                            <div class="qty-counter-wrapper" style="display: flex; align-items: center; gap: 5px;">
+                                <button type="button" class="qty-adjust-btn" onclick="adjustQuickQty(-1)" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cfc4ec; background: #fff; cursor: pointer; font-weight: bold;">-</button>
+                                <input type="number" id="quick-quantity" value="1" min="1" readonly style="width: 50px; text-align: center; padding: 6px; border: 1px solid #dcd3f2; border-radius: 6px; font-weight: bold; background: #fff;">
+                                <button type="button" class="qty-adjust-btn" onclick="adjustQuickQty(1)" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cfc4ec; background: #fff; cursor: pointer; font-weight: bold;">+</button>
+                            </div>
+                        </div>
+
+                        <p id="quick-error-msg" style="color: red; display: none; font-size: 12px; margin-bottom: 10px;"></p>
+                        <button class="quick-add-btn" onclick="addQuickToCart()">ADD TO BAG</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+        <footer class="global-footer">
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <h3>Shop Collections</h3>
+                <ul>
+                    <li><a href="categories.html?category=chains">Chains</a></li>
+                    <li><a href="categories.html?category=rings">Rings</a></li>
+                    <li><a href="categories.html?category=bracelets">Bracelets</a></li>
+                    <li><a href="categories.html?category=new">New Arrivals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Customer Support Available 24/7</p>
+                <p>Email: support@jewelrydeliverable.com</p>
+                <p>Phone: +1 (514) 676-2121</p>
+                <p>Location: 821 Sainte Croix Ave <br> Saint-Laurent, H4L 3X9 <br> Montreal, QC, Canada</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">📸</a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">📘</a>
+                <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">📌</a>
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok">🎵</a>
+            </div>
+            <p class="copyright"> 2026 Jewelry Deliverable. All front-end rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>

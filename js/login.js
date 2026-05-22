@@ -16,13 +16,6 @@
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 
-    function getRegisteredPassword(email) {
-        var users = JSON.parse(localStorage.getItem('jewelry_users') || '{}');
-        //to simulate sign in, so that we can log in under "another" username but w the same reqres email 
-        //if not local storage, it will just get refused. w local storage, its like an alias
-        return users[email.toLowerCase()] || '';
-    }
-
     function loginWithReqres(email, password, onSuccess, onError) {
         var request = new XMLHttpRequest();
         request.open('POST', 'https://reqres.in/api/login', true);
@@ -42,33 +35,41 @@
     }
 
     function renderState() {
-    if (!window.Auth) return;
-    var user = Auth.currentUser();
-    var form = document.getElementById('login-form');
-    var logoutBtn = document.getElementById('logout-btn');
-
-    if (user && user.token) {
-        setMessage('Signed in as ' + (user.displayName || user.email), 'success');
-        if (form) {
-            form.style.display = 'none';
-        }
-        if (logoutBtn) {
-            logoutBtn.style.display = 'inline-flex';
-        }
-    } else {
-        if (form) {
-            form.style.display = 'grid';
-        }
-        if (logoutBtn) {
-            logoutBtn.style.display = 'none';
-        }
+        if (!window.Auth) return;
         
-        var msg = getQueryParam('message');
-        if (msg) {
-            setMessage(msg, 'info');
+        var user = Auth.currentUser(); 
+        var form = document.getElementById('login-form');
+        var logoutBtn = document.getElementById('logout-btn');
+        var loggedInCta = document.getElementById('logged-in-cta');
+
+        if (user && user.token) {
+            setMessage('Signed in as ' + (user.displayName || user.email), 'success');
+            if (form) {
+                form.style.display = 'none';
+            }
+            if (logoutBtn) {
+                logoutBtn.style.display = 'inline-flex';
+            }
+            if (loggedInCta) {
+                loggedInCta.style.display = 'block'; 
+            }
+        } else {
+            if (form) {
+                form.style.display = 'grid';
+            }
+            if (logoutBtn) {
+                logoutBtn.style.display = 'none';
+            }
+            if (loggedInCta) {
+                loggedInCta.style.display = 'none'; 
+            }
+            
+            var msg = getQueryParam('message');
+            if (msg) {
+                setMessage(msg, 'info');
+            }
         }
     }
-}
 
     document.addEventListener('DOMContentLoaded', function () {
         var form = document.getElementById('login-form');
@@ -85,27 +86,29 @@
                     return;
                 }
 
-                // try local Storage First
-                var registeredPassword = getRegisteredPassword(email);
-                if (registeredPassword && registeredPassword == password) {
-                    Auth.setUser({
-                        email: email,
-                        displayName: email.split('@')[0],
-                        token: 'local_' + Date.now()
-                    });
-                    setMessage('Redirecting...', 'success');
-                    setTimeout(function() { window.location.href = 'index.html'; }, 800);
+                if (!isValidEmail(email)) {
+                    setMessage('Please enter a valid email address.', 'error');
                     return;
                 }
 
-                // try reqres
+                // Gather Remember Me settings
+                var rememberMeBox = document.getElementById('remember-me');
+                var rememberDaysInput = document.getElementById('remember-days');
+                var expiryDays = 1; // default to 1 day session fallback if unchecked
+
+                if (rememberMeBox && rememberMeBox.checked) {
+                    expiryDays = rememberDaysInput ? parseInt(rememberDaysInput.value) || 7 : 7;
+                }
+
+                // straight to the remote database API (Reqres)
                 setMessage('Checking credentials...', 'info');
                 loginWithReqres(email, password, function (data) {
                     Auth.setUser({
                         email: email,
                         displayName: email.split('@')[0],
                         token: data.token
-                    });
+                    }, expiryDays); 
+                    
                     setMessage('Success! Redirecting...', 'success');
                     setTimeout(function() { window.location.href = 'index.html'; }, 800);
                 }, function (err) {

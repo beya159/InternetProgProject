@@ -10,12 +10,12 @@
     }
 
     function isValidEmail(value) {
-        // Email regex: standard email format
+        // email regex
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 
     function isValidPassword(value) {
-        // Password regex: At least 6 characters, at least 1 uppercase, 1 lowercase, 1 number
+        // password regex: At least 6 characters, at least 1 uppercase, 1 lowercase, 1 number
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(value);
     }
 
@@ -24,7 +24,6 @@
 
         request.open('POST', 'https://reqres.in/api/register', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.setRequestHeader('x-api-key', 'pro_587d68e4bda8cd4aa3a17cfa11f10a1981478f266e2e043a');
 
         request.onreadystatechange = function () {
             if (request.readyState !== 4) {
@@ -82,6 +81,7 @@
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirm-password').value;
 
+            // frontend Validation Checks
             if (!name) {
                 setMessage('Name is required.', 'error');
                 return;
@@ -114,47 +114,23 @@
 
             setMessage('Creating account...', 'info');
 
-            // Store account locally first so the user can sign in even if ReqRes doesn't accept the credentials
-            var users = JSON.parse(localStorage.getItem('jewelry_users') || '{}');
-
-            if (users[email.toLowerCase()]) {
-                setMessage('Email is already registered.', 'error');
-                return;
-            }
-
-            users[email.toLowerCase()] = password;
-            localStorage.setItem('jewelry_users', JSON.stringify(users));
-
-            // Call ReqRes register; if it returns a token, use it, otherwise fall back to a local token
             registerWithReqres(email, password, function (data) {
-                var token = (data && data.token) ? data.token : 'local_token_' + Math.random().toString(36).substr(2, 9);
-
+                // if checking box is skipped, default to 1 day session fallback in Auth manager
                 Auth.setUser({
                     name: name,
                     email: email,
                     displayName: name,
-                    token: token
-                });
+                    token: data.token
+                }, 1);
 
                 setMessage('Registration successful. Redirecting to your profile...', 'success');
                 showSuccess('<p>Your account is ready.</p><p><a href="profile.html">Go to profile</a></p>');
                 window.setTimeout(function () {
                     window.location.href = 'profile.html';
                 }, 1200);
-            }, function () {
-                // ReqRes failed - we've already saved locally, use a local token
-                Auth.setUser({
-                    name: name,
-                    email: email,
-                    displayName: name,
-                    token: 'local_token_' + Math.random().toString(36).substr(2, 9)
-                });
-
-                setMessage('Registration saved locally (ReqRes unavailable). Redirecting...', 'success');
-                showSuccess('<p>Your account is ready (local).</p><p><a href="profile.html">Go to profile</a></p>');
-                window.setTimeout(function () {
-                    window.location.href = 'profile.html';
-                }, 1200);
+            }, function (errorMessage) {
+                // server rejected the request (e.g. email not in Reqres sandbox bank)
+                setMessage(errorMessage, 'error');
             });
         });
     });

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found -- Jewelry Deliverable</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .error-page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            padding: 20px 5%;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 300;
+            letter-spacing: 10px;
+            margin: 0;
+            line-height: 1;
+            font-family: serif;
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 20px 0 10px 0;
+            font-weight: 500;
+        }
+
+        .error-message {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .btn-home {
+            display: inline-block;
+            border: 2px solid #000;
+            padding: 12px 30px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="nav-left">
+            <ul class="menu">
+                <li><img src="../images/logo/logo.png" alt="Jewelry Deliverable Logo" class="logo-img"></li>
+                <li><a href="index.html">HOME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="error-page-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">The Piece is Missing</h2>
+        <p class="error-message">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="index.html" class="btn-home">Return Home</a>
+    </main>
+
+</body>
+</html>

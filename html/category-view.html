@@ -2,7 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Category View</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Category View -- Jewelry Deliverable</title>
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/category-view.css">
     </head>
@@ -10,9 +11,8 @@
         <header class="main-header">
             <nav class="nav-left">
                 <ul class="menu">
+                    <img src="../images/logo/logo.png" alt="Jewelry Deliverable Logo" class="logo-img">
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="shop.html">SHOP</a></li>
-            
                     <li class="dropdown">
                         <a href="categories.html">CATEGORIES</a>
                         <ul class="dropdown-content">
@@ -33,8 +33,11 @@
 
             <div class="nav-center">
                 <div class="search-container">
-                    <input type="text" id="global-search" placeholder="Search...">
+                    <input type="text" id="global-search" placeholder="Search..." onkeyup="auto_complete_products(this)">
                     <button type="submit" class="search-btn">🔍</button>
+                    <div id="autocomplete" class="hidden">
+                        <ul></ul>
+                    </div>
                 </div>
             </div>
 
@@ -44,39 +47,50 @@
                 <a href="cart.html" class="icon cart-btn">🛒 <span id="cart-badge">0</span></a>
             </div>
         </header>
-
-        <div class="category-header">
-            <div class="header-top">
-                <h1 id="cat-name-display">CATEGORY NAME</h1>
+        
+        <div class="category-header" style="padding: 20px 5%;">
+            <div class="header-top" style="display: flex; justify-content: space-between; align-items: center;">
+                <h1 id="cat-name-display" style="text-transform: uppercase;">LOADING...</h1>
                 <span id="item-count">0 ITEMS</span>
             </div>
-            <p id="cat-description">[Description goes here]</p>
+            <p id="cat-description"></p>
             <hr>
         </div>
 
-        <section class="list-container">
-            <aside class="sidebar">
+        <section class="list-container" style="display: flex; padding: 20px 5%; gap: 30px;">
+            <aside class="sidebar" style="width: 20%; min-width: 200px;">
                 <h3>PRICE</h3>
-                <div class="filter-group">[RANGE SLIDER]</div>
+                <div class="filter-group" style="margin-bottom: 20px;">
+                    <div class="price-slider-wrapper" style="display: flex; flex-direction: column; gap: 8px;">
+                        <div class="slider-inputs" style="display: flex; gap: 10px; align-items: center;">
+                            <input type="range" id="price-min" min="0" max="50" value="0" oninput="updatePriceLabels()" style="width: 100%;">
+                            <input type="range" id="price-max" min="0" max="100" value="100" oninput="updatePriceLabels()" style="width: 100%;">
+                        </div>
+                        <div class="price-labels" style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: bold; color: #333;">
+                            <span>Min: $<span id="min-label">0</span></span>
+                            <span>Max: $<span id="max-label">100</span></span>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>COLOUR</h3>
-                    <div class="filter-group">
-                        <input type="radio" name="color" value="all" checked> All<br>
-                        <input type="radio" name="color" value="silver"> Silver<br>
-                        <input type="radio" name="color" value="gold"> Gold<br>
-                        <input type="radio" name="color" value="rose-gold"> Rose Gold
-                    </div>
+                <div class="filter-group" style="margin-bottom: 20px; line-height: 1.8;">
+                    <input type="radio" name="color" value="all" checked> All<br>
+                    <input type="radio" name="color" value="silver"> Silver<br>
+                    <input type="radio" name="color" value="gold"> Gold<br>
+                    <input type="radio" name="color" value="rose-gold"> Rose Gold
+                </div>
 
-                    <h3>STYLE</h3>
-                    <div class="filter-group">
-                        <input type="radio" name="style" value="all" checked> All<br>
-                        <input type="radio" name="style" value="feminine"> Feminine<br>
-                        <input type="radio" name="style" value="masculine"> Masculine
-                    </div>
+                <h3>STYLE</h3>
+                <div class="filter-group" style="margin-bottom: 20px; line-height: 1.8;">
+                    <input type="radio" name="style" value="all" checked> All<br>
+                    <input type="radio" name="style" value="feminine"> Feminine<br>
+                    <input type="radio" name="style" value="masculine"> Masculine
+                </div>
             </aside>
 
-            <main class="content-area">
-                <div class="toolbar">
+            <main class="content-area" style="width: 80%;">
+                <div class="toolbar" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
                     <span>FILTER</span>
                     <select class="sort-dropdown" id="sort-price">
                         <option value="default">Sort By</option>
@@ -85,40 +99,56 @@
                     </select>
                 </div>
                 
-                <div id="product-grid" class="product-grid">
-                    </div>
+                <div id="product-grid" class="product-grid"></div>
+                <div id="pagination-controls" class="pagination-container"></div>
             </main>
         </section>
+
+            <div id="quick-shop-modal" class="quick-modal" style="display: none;">
+                <div class="quick-modal-content">
+                    <span class="quick-close" onclick="closeQuickShop()">&times;</span>
+                    <div class="quick-modal-body">
+                        <div class="quick-modal-left"><img id="quick-img" src=""></div>
+                            <div class="quick-modal-right">
+                                <h2 id="quick-name"></h2>
+                                <p id="quick-price"></p>
+                            
+                                <div id="quick-length-area" style="margin-bottom: 10px; display: none;">
+                                    <label style="font-size: 12px; font-weight: bold; display: block; margin-bottom: 5px;">SELECT LENGTH:</label>
+                                    <select id="quick-length" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                                        <option value="">Select Length...</option>
+                                        <option value="16">16 inches</option>
+                                        <option value="18">18 inches</option>
+                                        <option value="20">20 inches</option>
+                                    </select>
+                                </div>
+
+                                <div id="quick-color-area" style="margin-bottom: 10px; display: none;">
+                                    <label style="font-size: 12px; font-weight: bold; display: block; margin-bottom: 5px;">SELECT COLOR:</label>
+                                    <div class="quick-colors">
+                                        <button class="q-color-btn" onclick="selectQuickColor('Gold')">Gold</button>
+                                        <button class="q-color-btn" onclick="selectQuickColor('Silver')">Silver</button>
+                                    </div>
+                                </div>
+
+                                <div class="quick-qty-area" style="margin-bottom: 20px;">
+                                    <label style="font-size: 12px; font-weight: bold; display: block; margin-bottom: 5px;">QUANTITY:</label>
+                                    <div class="qty-counter-wrapper" style="display: flex; align-items: center; gap: 5px;">
+                                        <button type="button" class="qty-adjust-btn" onclick="adjustQuickQty(-1)" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cfc4ec; background: #fff; cursor: pointer; font-weight: bold;">-</button>
+                                        <input type="number" id="quick-quantity" value="1" min="1" readonly style="width: 50px; text-align: center; padding: 6px; border: 1px solid #dcd3f2; border-radius: 6px; font-weight: bold; background: #fff;">
+                                        <button type="button" class="qty-adjust-btn" onclick="adjustQuickQty(1)" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cfc4ec; background: #fff; cursor: pointer; font-weight: bold;">+</button>
+                                    </div>
+                                </div>
+
+                                <p id="quick-error-msg" style="color: red; display: none; font-size: 12px; margin-bottom: 10px;"></p>
+                            <button class="quick-add-btn" onclick="addQuickToCart()">ADD TO BAG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <script src="../js/site-auth.js"></script>
         <script src="../js/main.js"></script>
         <script src="../js/category-logic.js"></script>
-
-        <div id="quick-shop-modal" class="quick-modal" style="display: none;">
-            <div class="quick-modal-content">
-                <span class="quick-close" onclick="closeQuickShop()">&times;</span>
-                <div class="quick-modal-body">
-                    <div class="quick-modal-left"><img id="quick-img" src=""></div>
-                    <div class="quick-modal-right">
-                        <h2 id="quick-name"></h2>
-                        <p id="quick-price"></p>
-                        
-                        <select id="quick-length" style="margin-bottom: 10px; display: block;">
-                            <option value="16">16 inches</option>
-                            <option value="18" selected>18 inches</option>
-                            <option value="20">20 inches</option>
-                        </select>
-
-                        <div class="quick-colors" style="margin-bottom: 10px;">
-                            <button class="q-color-btn" onclick="selectQuickColor('Gold')">Gold</button>
-                            <button class="q-color-btn" onclick="selectQuickColor('Silver')">Silver</button>
-                        </div>
-                        
-                        <p id="quick-error-msg" style="color: red; display: none; font-size: 12px;"></p>
-                        <button class="quick-add-btn" onclick="addQuickToCart()">ADD TO BAG</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </body>
 </html>

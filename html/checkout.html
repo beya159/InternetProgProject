@@ -26,7 +26,8 @@
                     <div id="order-items" class="order-items"></div>
                     <div class="totals">
                         <div><span>Subtotal</span><span id="subtotal-amount">$0.00</span></div>
-                        <div><span>Shipping</span><span>FREE</span></div>
+                        <div><span>Estimated Tax (15%)</span><span id="tax-amount">$0.00</span></div>
+                        <div><span>Shipping</span><span id="shipping-rate-text">FREE</span></div>
                         <div class="grand-total"><span>Total</span><span id="final-total">$0.00</span></div>
                     </div>
                 </section>
@@ -40,11 +41,20 @@
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
 
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="514-555-0199" required>
+
                         <label for="address">Address</label>
                         <input type="text" id="address" name="address" required>
 
                         <label for="city">City</label>
                         <input type="text" id="city" name="city" required>
+
+                        <label for="delivery-option">Delivery Option</label>
+                        <select id="delivery-option" name="delivery-option" onchange="loadCart()" required>
+                            <option value="standard">Standard Shipping (FREE)</option>
+                            <option value="express">Express Delivery (+$15.00)</option>
+                        </select>
 
                         <label for="card-number">Card Number</label>
                         <input type="text" id="card-number" name="card-number" maxlength="19" required>
@@ -59,7 +69,7 @@
         </section>
     </main>
 
-    <script src="js/site-auth.js"></script>
-    <script src="js/checkout.js"></script>
+    <script src="../js/site-auth.js"></script>
+    <script src="../js/main.js"></script> <script src="../js/checkout.js"></script>
 </body>
 </html>
